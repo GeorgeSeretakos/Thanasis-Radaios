@@ -1,71 +1,164 @@
-import Image from "next/image";
 import Footer from "../components/Footer";
-import IntroSection from "../components/about/IntroSection"; // το generic component
+import IntroSection from "../components/about/IntroSection";
+import AboutSection from "../components/about/AboutSection";
+import TextBgImage from "../components/TextBgImage";
 
-const officeImages = [
-  "/images/office/4.jpg",
-  "/images/office/7.jpg",
-  "/images/office/16.jpg",
-  "/images/office/17.jpg",
-  "/images/office/24.jpg",
-  "/images/office/23.jpg",
-  "/images/office/25.jpg",
-  "/images/office/32.jpg",
-  "/images/office/34.jpg",
-  "/images/office/38.jpg",
-];
 
 export default function OfficePage() {
   return (
     <>
-      <main className="min-h-screen">
-        {/* IntroSection */}
-        <IntroSection
-          image="/images/office/13.jpg"
-          title="Ο Χώρος μας"
-          paragraph={
-            <>
-              <div>
-                Στη <strong className="font-great-vibes text-2xl">Believe in Yourself</strong> σε υποδεχόμαστε σε έναν
-                φωτεινό και ζεστό χώρο, στην καρδιά της Κηφισιάς. Το γραφείο μας έχει σχεδιαστεί για να προσφέρει ηρεμία και εμπιστοσύνη από την πρώτη στιγμή.
-              </div>
-
-              <div className="mt-6">
-                <strong>Εδώ μπορούμε μαζί:</strong>
-              </div>
-
-              <ul className="list-disc list-inside mt-2 space-y-1">
-                <li>Να γνωριστούμε και να συζητήσουμε για τις ανάγκες, τους στόχους και τις προτεραιότητές σου.</li>
-                <li>Να χαράξουμε το προσωπικό σου πλάνο και να βρούμε λύσεις που ταιριάζουν στη δική σου καθημερινότητα.</li>
-                <li>Να δουλέψουμε πάνω σε νέες συνήθειες και σκέψεις που ενισχύουν την αυτοπεποίθηση και την ισορροπία σου.</li>
-              </ul>
-
-              <p className="mt-6">
-                <i>Σε περιμένουμε για να κάνουμε μαζί το πρώτο βήμα σε μια καλύτερη σχέση με τον εαυτό σου!</i>
-              </p>
-            </>
-          }
-        />
-
-
-
-        {/* Φωτογραφίες */}
-        <div className="grid gap-6 md:grid-cols-1 px-4 py-12 md:px-12">
-          {officeImages.map((src, index) => (
-            <div
-              key={index}
-              className="relative w-full m-auto h-[80vh] rounded-lg overflow-hidden shadow-md"
-            >
-              <Image
-                src={src}
-                alt={`Office photo ${index + 1}`}
-                fill
-                className="object-cover"
-              />
+      {/* IntroSection */}
+      <IntroSection
+        image="/images/general/25.png"
+        title="Το προϊόν"
+        paragraph={
+          <>
+            <div>
+              <strong className="text-2xl">Η απόλυτη τεχνολογία EMS – Made in Germany</strong>
             </div>
-          ))}
-        </div>
-      </main>
+            <div className="mt-6">
+              Αναβαθμίστε την επιχείρησή σας με δύο κορυφαία ιατρικά μηχανήματα EMS, σχεδιασμένα και κατασκευασμένα στη Γερμανία, με πλήρη εξοπλισμό i-body, δωρεάν εκπαίδευση και πιστοποίηση.
+            </div>
+            <div className="mt-6">
+              Κάθε σύστημα Miha Bodytec πληροί αυστηρές διεθνείς ιατρικές προδιαγραφές, προσφέροντας αξιοπιστία, αντοχή στον χρόνο και χαμηλές ανάγκες συντήρησης — <i>έτσι επενδύετε σε μια υπηρεσία με υψηλή ζήτηση και χαμηλό λειτουργικό κόστος.</i>
+            </div>
+          </>
+        }
+      />
+
+
+      <AboutSection
+        title="Miha Bodytec II medical (ενσύρματο)"
+        image="/images/product/medical_2.jpg"
+        reverse
+        text={[
+          `<strong>Ιδανικό για επαγγελματική, σταθερή εγκατάσταση στούντιο EMS.</strong>`,
+          "Συνδυάζει μέγιστη αξιοπιστία, εργονομία και γερμανική ποιότητα κατασκευής.",
+          "<h3 class='font-semibold'>Κύρια χαρακτηριστικά:</h3>\
+           <ul class='list-disc pl-5 space-y-1'>\
+             <li>Πιστοποιημένο ιατρικό προϊόν (Ιατρική Συσκευή Κατηγορίας IIb)</li>\
+             <li>Κατασκευάζεται στη Γερμανία με περιβλήματα αλουμινίου υψηλής αντοχής</li>\
+             <li>Οθόνη υψηλής ευκρίνειας με εικονικό προπονητή (3D Animation)</li>\
+             <li>Μνήμη δεδομένων με RFID</li>\
+             <li>Σύνδεση με καλώδιο i-body connect ή i-body connect wireless</li>\
+             <li>Μέγιστη συνδεσιμότητα: Wi-Fi, Bluetooth, USB, WLAN</li>\
+             <li>Ενιαίο περιβάλλον χρήσης για μέγιστη ασφάλεια και ευκολία</li>\
+           </ul>"
+        ]}
+      />
+
+      <AboutSection
+        title="Miha Bodytec m.ove (ασύρματο & φορητό)"
+        image="/images/product/move_1.jpg"
+        reverse={false}
+        text={[
+          `<strong>Απόλυτη ελευθερία κίνησης για τον επαγγελματία του EMS.</strong>`,
+          "Κατάλληλο για πολυχώρους, φυσιοθεραπευτήρια και mobile υπηρεσίες.",
+          `<h3 class="font-semibold">Κύρια χαρακτηριστικά:</h3>
+           <ul class="list-disc pl-5 space-y-1">
+             <li>Πιστοποιημένο ιατρικό προϊόν</li>
+             <li>Ασύρματη μετάδοση παλμών μέσω Bluetooth</li>
+             <li>Μπαταρία λιθίου μεγάλης διάρκειας με μαγνητικό φορτιστή</li>
+             <li>
+               <span class="font-semibold">Διαθέσιμο σε δύο εκδόσεις:</span>
+               <ul class="list-disc pl-5 space-y-1 mt-1">
+                 <li><strong>Travelstation:</strong> Φορητό για εύκολη μεταφορά σε πελάτες ή συνεργάτες</li>
+                 <li><strong>Workstation:</strong> Κινητή βάση για εσωτερική μετακίνηση και αποθήκευση εξοπλισμού</li>
+               </ul>
+             </li>
+             <li>Ενιαίο περιβάλλον χρήσης για απλή και ασφαλή λειτουργία</li>
+           </ul>`
+        ]}
+      />
+
+      <TextBgImage
+        title="Η δύναμη του EMS… παντού"
+        text="
+          <div class='mt-6'>
+            Με τη Miha Bodytec δεν περιορίζεστε σε έναν χώρο. Επιλέξτε ανάμεσα στο σταθερό ιατρικά πιστοποιημένο σύστημα για στούντιο και το ευέλικτο m.ove που σας ακολουθεί παντού.
+          </div>
+          <div class='mt-6'>
+            Το m.ove έρχεται σε δύο μοναδικές εκδόσεις:
+            <ul class='list-disc pl-5 mt-2 space-y-1'>
+              <li><strong>Travelstation</strong> – Απόλυτη κινητικότητα και εύκολες μετακινήσεις.</li>
+              <li><strong>Workstation</strong> – Άψογη οργάνωση και ταχύτητα μέσα στο χώρο σας.</li>
+            </ul>
+          </div>
+          <div class='mt-6'>
+            <i>Επιλέξτε τη λύση που θα μεγιστοποιήσει την ευελιξία, την αποδοτικότητα και το κέρδος της επιχείρησής σας.</i>
+          </div>
+        "
+        videoSrc="/videos/3.mp4"
+        poster="/images/general/1.jpg"
+        overlay="bg-black/70"
+      />
+
+
+
+      <AboutSection
+        title="Miha Bodytec m.ove – Travelstation"
+        image="/images/product/travelstation_1.jpg"
+        reverse={false}
+        text={[
+          `<strong>Η φορητή λύση για νέες ευκαιρίες</strong>`,
+          "Η έκδοση Travelstation σας δίνει τη δυνατότητα να προσφέρετε EMS προπονήσεις οπουδήποτε, χωρίς περιορισμούς. Ελαφριά και συμπαγής, είναι η ιδανική λύση για επαγγελματίες που θέλουν να μεταφέρουν εύκολα την υπηρεσία τους σε διαφορετικούς χώρους.",
+          `<h3 class="font-semibold">Πλεονεκτήματα:</h3>
+           <ul class="list-disc pl-5 space-y-1">
+             <li>Απόλυτη φορητότητα – Εύκολη μεταφορά χάρη στο μικρό βάρος και το συμπαγές μέγεθος.</li>
+             <li>Ενσωματωμένη μπαταρία – Μεγάλη διάρκεια χρήσης χωρίς ανάγκη άμεσης τροφοδοσίας.</li>
+             <li>Ευελιξία χώρου – Προπονήσεις σε σπίτια πελατών, εξωτερικούς χώρους ή συνεργαζόμενα γυμναστήρια.</li>
+             <li>Επαγγελματική παρουσίαση – Premium design που ενισχύει την εικόνα σας.</li>
+           </ul>`
+        ]}
+      />
+
+      <AboutSection
+        title="Miha Bodytec m.ove – Workstation"
+        image="/images/product/workstation_3.jpg"
+        reverse={true}
+        text={[
+          `<strong>Οργανωμένη βάση για το στούντιο σας.</strong>`,
+          "Η έκδοση Workstation είναι η ιδανική επιλογή για στούντιο και πολυχώρους που χρειάζονται ευελιξία αλλά και σταθερή παρουσίαση. Εξοπλισμένη με κινητή βάση και αποθηκευτικό χώρο, κρατά τον εξοπλισμό σας οργανωμένο και έτοιμο προς χρήση.",
+          `<h3 class="font-semibold">Πλεονεκτήματα:</h3>
+         <ul class="list-disc pl-5 space-y-1">
+           <li>Κινητή βάση με ρόδες – Εύκολη μετακίνηση εντός του χώρου.</li>
+           <li>Ενσωματωμένος αποθηκευτικός χώρος – Οργανωμένη φύλαξη για καλώδια, γιλέκα και αξεσουάρ.</li>
+           <li>Επαγγελματική εμφάνιση – Καθαρή, μοντέρνα αισθητική που εντυπωσιάζει τους πελάτες.</li>
+           <li>Αντοχή & Σταθερότητα – Κατασκευασμένη για καθημερινή επαγγελματική χρήση.</li>
+         </ul>`
+        ]}
+      />
+
+      <TextBgImage
+        title="Εξοπλισμός i-body"
+        text="
+        "
+        image="/images/general/2.jpg"
+        overlay="bg-black/50"
+        height="50vh"
+      />
+
+      <AboutSection
+        title="Miha Bodytec m.ove – Workstation"
+        image="/images/product/workstation_3.jpg"
+        reverse={true}
+        text={[
+          `<strong>Οργανωμένη βάση για το στούντιο σας.</strong>`,
+          "Η έκδοση Workstation είναι η ιδανική επιλογή για στούντιο και πολυχώρους που χρειάζονται ευελιξία αλλά και σταθερή παρουσίαση. Εξοπλισμένη με κινητή βάση και αποθηκευτικό χώρο, κρατά τον εξοπλισμό σας οργανωμένο και έτοιμο προς χρήση.",
+          `<h3 class="font-semibold">Πλεονεκτήματα:</h3>
+         <ul class="list-disc pl-5 space-y-1">
+           <li>Κινητή βάση με ρόδες – Εύκολη μετακίνηση εντός του χώρου.</li>
+           <li>Ενσωματωμένος αποθηκευτικός χώρος – Οργανωμένη φύλαξη για καλώδια, γιλέκα και αξεσουάρ.</li>
+           <li>Επαγγελματική εμφάνιση – Καθαρή, μοντέρνα αισθητική που εντυπωσιάζει τους πελάτες.</li>
+           <li>Αντοχή & Σταθερότητα – Κατασκευασμένη για καθημερινή επαγγελματική χρήση.</li>
+         </ul>`
+        ]}
+      />
+
+
+
+
+
 
       <Footer />
     </>

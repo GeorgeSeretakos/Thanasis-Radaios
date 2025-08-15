@@ -6,12 +6,12 @@ export default function Contact() {
 
       {/* Contact Section */}
       <section
-        className="relative text-white py-12 px-4 h-[100vh] flex items-center"
+        className="relative text-white py-12 px-4 h-[90vh] flex items-center"
       >
         {/* Background image */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/office/32.jpg')" }}
+          style={{ backgroundImage: "url('/images/general/9.jpg')" }}
         ></div>
 
         {/* Overlay */}
@@ -29,29 +29,22 @@ export default function Contact() {
                 <strong>Διεύθυνση</strong><br />
                 <ul className="list-disc pl-5">
                   <li>
-                    Ελαιών 25 και Ρέμβης, Κηφισιά 145 64
+                    Ηρώων Πολυτεχνείου 5, Νέα Ερυθραία 146 71
                   </li>
                 </ul>
               </div>
               <div className="mb-4">
-                <strong>Τηλέφωνα</strong><br />
+                <strong>Τηλέφωνο</strong><br />
                 <ul className="list-disc pl-5">
-                  <li>213 0478 022</li>
-                  <li>6932762720</li>
-                  <li>6972774734</li>
+                  <li>210 8070010</li>
                 </ul>
               </div>
               <div className="mb-4">
                 <strong>Email</strong><br />
                 <ul className="list-disc pl-5">
                   <li>
-                    <a href="mailto:t.believeinyourself@gmail.com" className="text-teal-400 hover:underline">
-                      t.believeinyourself@gmail.com
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:maria.believeinyourself@gmail.com" className="text-teal-400 hover:underline">
-                      maria.believeinyourself@gmail.com
+                    <a href="mailto:ffmedicwell@gmail.com" className="text-blue-400 hover:underline">
+                      ffmedicwell@gmail.com
                     </a>
                   </li>
                 </ul>
@@ -59,9 +52,8 @@ export default function Contact() {
               <div>
                 <strong>Ώρες Λειτουργίας</strong><br />
                 <ul className="list-disc pl-5">
-                  <li>Δευτέρα & Τετάρτη: 09:00 - 19:00</li>
-                  <li>Τρίτη, Πέμπτη, Παρασκευή: 09:00 - 20:00</li>
-                  <li>Σάββατο: Κλειστά</li>
+                  <li>Δευτέρα - Παρασκευή: 09:00 – 18:00</li>
+                  <li>Σάββατο - Κυριακή: Κλειστά</li>
                 </ul>
               </div>
             </div>
@@ -117,28 +109,15 @@ export default function Contact() {
                   className="w-full p-2 rounded bg-black/30 border border-gray-700 text-white"
                 />
 
-                {/* Λόγος επικοινωνίας */}
-                <div className="flex items-center gap-2 text-sm">
-                  <input
-                    type="checkbox"
-                    name="appointment"
-                    id="appointment"
-                    className="accent-teal-500 scale-125"
-                  />
-                  <label htmlFor="appointment" className="text-xs">
-                    Επικοινωνώ για να κλείσω ραντεβού
-                  </label>
-                </div>
-
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                   <label className="flex items-center gap-2 text-xs">
                     <input
                       type="checkbox"
                       required
-                      className="accent-teal-500 scale-125"
+                      className="accent-blue-500 scale-125"
                     />
                     Αποδέχομαι την{" "}
-                    <a href="/privacy-policy" className="text-teal-400 hover:underline">
+                    <a href="/privacy-policy" className="text-blue-400 hover:underline">
                       Πολιτική Απορρήτου
                     </a>
                   </label>
@@ -158,34 +137,55 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="map pt-12 font-bold">
-        <footer className="py-4">
-          <div className="max-w-6xl mx-auto text-center flex flex-col gap-2">
-            <p className="text-sm">
-              &copy; 2025 Believe in Yourself. All rights reserved.
-            </p>
+      <section className="map font-bold">
+        <section className="map font-bold">
+          <footer className="py-4">
+            <div className="max-w-6xl mx-auto flex flex-col items-center text-center gap-4">
 
-            <div className="flex flex-wrap justify-center gap-2 text-sm">
-              <a href="mailto:t.believeinyourself@gmail.com" className="hover:underline">
-                t.believeinyourself@gmail.com
-              </a>
-              <span>·</span>
-              <a href="tel:2102289929" className="hover:underline">
-                2130478022
-              </a>
-              <span>·</span>
-              <a href="/privacy-policy" className="hover:underline">
-                Πολιτική Απορρήτου
-              </a>
+              {/* Logo on top */}
+              <div className="w-full max-w-[400px]">
+                <img
+                  src="/logo/3.png"
+                  alt="Miha Bodytec Logo"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+
+              {/* Text + Social */}
+              <div className="flex flex-col items-center gap-2">
+                <p className="text-sm">
+                  &copy; 2025 FF Medical & Wellness. All rights reserved.
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-2 text-sm">
+                  <a
+                    href="mailto:ffmedicwell@gmail.com"
+                    className="hover:underline"
+                  >
+                    ffmedicwell@gmail.com
+                  </a>
+                  <span>·</span>
+                  <a href="tel:210 8070010" className="hover:underline">
+                    210 8070010
+                  </a>
+                  <span>·</span>
+                  <a href="/privacy-policy" className="hover:underline">
+                    Πολιτική Απορρήτου
+                  </a>
+                </div>
+
+                {/* Social icons */}
+                <SocialSection/>
+              </div>
+
             </div>
-          </div>
-        </footer>
+          </footer>
+        </section>
 
-        <SocialSection/>
 
         <div className="mx-auto w-1/2 md:w-full sm:w-full">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.1567385292055!2d23.79469867585517!3d38.09001529393853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a19f0fc0ec198d%3A0xb2392dc40dec8949!2zzpXOu86xzrnPjs69IDI1LCDOms63z4bOuc-DzrnOrCAxNDUgNjQ!5e0!3m2!1sel!2sgr!4v1752897940956!5m2!1sel!2sgr"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.1926897680096!2d23.812853375855056!3d38.08917839398699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a19efc17b18f5f%3A0x8b7caf8209b192c1!2zzpfPgS4gzqDOv867z4XPhM61z4fOvc61zq_Ov8-FIDUsIM6dzq3OsSDOlc-Bz4XOuM-BzrHOr86xIDE0NiA3MQ!5e0!3m2!1sel!2sgr!4v1755200375385!5m2!1sel!2sgr"
             className="rounded-lg w-full"
             height="450"
             style={{border: 0}}

@@ -1,20 +1,26 @@
-export default function ServiceCard({ icon, title, description }) {
+// components/ServiceCard.jsx
+export default function ServiceCard({ iconSrc, iconAlt, title, description }) {
   return (
-    <div className="border border-teal-200 rounded-xl p-4 hover:shadow transition w-64 h-80 flex flex-col justify-between">
+    <div className="border border-[#1C86D1] rounded-xl p-4 hover:shadow transition w-64 h-60 flex flex-col items-center text-center">
       {/* Icon */}
-      <div className="w-12 h-12 flex items-center justify-center bg-teal-50 rounded mb-4">
-        <div className="text-2xl text-cyan-500">{icon}</div>
+      <div className="w-16 h-16 flex items-center justify-center rounded-full mb-4">
+        {typeof iconSrc === "string" ? (
+          <img
+            src={iconSrc}
+            alt={iconAlt || title}
+            className="w-12 h-12 object-contain"
+          />
+        ) : (
+          // If iconSrc is a React component (like an imported SVG)
+          <div className="w-8 h-8 text-cyan-500">{iconSrc}</div>
+        )}
       </div>
 
       {/* Title */}
-      <h3 className="text-lg font-semibold text-teal-600 mb-2">
-        {title}
-      </h3>
+      <h3 className="text-lg font-semibold text-[#1C86D1] mb-2">{title}</h3>
 
       {/* Description */}
-      <p className="text-gray-600 text-sm flex-1">
-        {description}
-      </p>
+      <p className="text-gray-600 text-sm">{description}</p>
     </div>
   );
 }

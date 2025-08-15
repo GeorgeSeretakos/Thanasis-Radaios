@@ -6,46 +6,27 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const [hydrated, setHydrated] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    // This code only runs on the client after hydration
-    const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token);
-    setHydrated(true);
-  }, []);
-
-  // Avoid rendering anything auth-related until hydration is done
-  if (!hydrated) return null;
 
   return (
     <nav className="bg-white text-black shadow right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-24">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Link href="/" className="flex items-center space-x-2">
-              <Image src="/icons/logo.png" alt="Logo" width={80} height={80} />
-              <span className="text-4xl font-great-vibes whitespace-nowrap">
-                Believe in Yourself
-              </span>
+          <div className="flex items-center space-x-2 h-24">
+            <Link href="/" className="flex items-center space-x-2 h-full">
+              <Image src="/logo/3.png" alt="Logo" width={300} height={300} className="h-20 w-auto" />
             </Link>
           </div>
 
           {/* Links */}
-          <div className="hidden sm:flex sm:space-x-4 items-center font-semibold">
-            <NavItem href="/" label="Αρχική Σελίδα" />
-            <NavItem href="/about-us" label="Ποιοί Είμαστε" />
-            <NavItem href="/office" label="Ο Χώρος" />
-            <NavItem href="/services" label="Υπηρεσίες" />
+          <div className="hidden sm:flex sm:space-x-4 items-center font-semibold text-sm">
+            <NavItem href="/" label="Αρχική" />
+            <NavItem href="/about-us" label="Η εταιρεία" />
+            <NavItem href="/office" label="Το προϊόν" />
+            <NavItem href="/ems" label="Προπόνηση EMS" />
+            <NavItem href="/services" label="Εκπαίδευση/Πιστοποίηση" />
             <NavItem href="/blog" label="Blog" />
             <NavItem href="/contact" label="Επικοινωνία" />
-            {isLoggedIn ? (
-              <NavItem href="/personal-info" label="Τα Στοιχεία Μου" />
-            ) : (
-              <NavItem href="/login" label="Σύνδεση" />
-            )}
           </div>
         </div>
       </div>
@@ -61,7 +42,7 @@ function NavItem({ href, label }) {
     <Link
       href={href}
       className={`inline-flex items-center px-2 py-1 rounded-md transition whitespace-nowrap
-        ${isActive ? "text-teal-800 border-b-2 border-teal-800" : "hover:text-teal-800 hover:border-b-2 hover:border-teal-800"}
+        ${isActive ? "text-[#1C86D1] border-b-2 border-[#1C86D1]" : "hover:text-[#1C86D1] hover:border-b-2 hover:border-[#1C86D1]"}
       `}
     >
       {label}

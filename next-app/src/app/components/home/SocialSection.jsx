@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function SocialSection() {
   return (
-    <section className="py-12">
+    <section className="py-8">
       <div className="flex flex-col items-center gap-4">
         {/* top line */}
         <div className="w-16 h-1 bg-black"></div>
@@ -10,7 +10,7 @@ export default function SocialSection() {
         {/* icons */}
         <div className="flex gap-4">
           <a
-            href="https://www.facebook.com/profile.php?id=100092161156931&locale=el_GR"
+            href="" // TODO: Add link
             className="w-12 h-12 rounded-full flex items-center justify-center"
             aria-label="Facebook"
           >
@@ -23,7 +23,7 @@ export default function SocialSection() {
             />
           </a>
           <a
-            href="https://www.instagram.com/t_kaparelioti_wellness/"
+            href="" // TODO: Add link
             className="w-12 h-12 rounded-full flex items-center justify-center"
             aria-label="Instagram"
           >
@@ -36,7 +36,7 @@ export default function SocialSection() {
             />
           </a>
           <a
-            href="https://www.tiktok.com/@t_kaparelioti_wellness"
+            href="" // TODO: Add link
             className="w-12 h-12 rounded-full flex items-center justify-center"
             aria-label="TikTok"
           >
@@ -49,7 +49,7 @@ export default function SocialSection() {
             />
           </a>
           <a
-            href="https://www.linkedin.com/in/tonia-kaparelioti-676296292/"
+            href="" // TODO: Add link
             className="w-12 h-12 rounded-full flex items-center justify-center"
             aria-label="LinkedIn"
           >

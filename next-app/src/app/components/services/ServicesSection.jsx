@@ -6,11 +6,10 @@ export default function ServicesSection({ preview = false }) {
   return (
     <section className="w-full py-12">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="title-teal">Οι υπηρεσίες μας</h2>
+        <h2 className="title-teal">Προπόνηση EMS - Η υπηρεσία που θα αλλάξει την επιχείρησή σας</h2>
         <div className="max-w-2xl mb-8">
           <p className="text-lg text-gray-700 max-w-3xl">
-            Οι υπηρεσίες μας δεν είναι "<i>ένας ακόμα οδηγός διατροφής</i>", αλλά μια προσωπική διαδικασία αλλαγής που αγγίζει
-            όχι μόνο το σώμα, αλλά και τον τρόπο που φροντίζεις τον εαυτό σου συνολικά.
+            Εισάγετε στην επιχείρησή σας μια μέθοδο εκγύμνασης και θεραπείας που είναι ταυτόχρονα ασφαλής, σύντομη και εξαιρετικά αποτελεσματική. Κατάλληλη για όλες τις ηλικίες και για ευρύ φάσμα πελατών.
           </p>
 
           {preview && (
@@ -26,7 +25,8 @@ export default function ServicesSection({ preview = false }) {
           {services.map((service) => (
             <ServiceCard
               key={service.title}
-              icon={service.icon}
+              iconSrc={service.iconSrc}
+              iconAlt={service.iconAlt}
               title={service.title}
               description={service.description}
               />

@@ -1,4 +1,10 @@
-export default function AboutSection({ title, text, image, reverse = false, imageDimensions = "" }) {
+export default function AboutSection({
+                                       title,
+                                       text,
+                                       image,
+                                       reverse = false,
+                                       imageDimensions = "",
+                                     }) {
   return (
     <section className="w-full px-4 py-12 rounded-xl">
       <div
@@ -11,7 +17,7 @@ export default function AboutSection({ title, text, image, reverse = false, imag
           <img
             src={image}
             alt={title}
-            className={`rounded-lg shadow-md object-cover ${imageDimensions || "w-full"}`}
+            className={`rounded-lg object-cover ${imageDimensions || "w-full"}`}
           />
         </div>
 
@@ -19,9 +25,16 @@ export default function AboutSection({ title, text, image, reverse = false, imag
         <div className="flex-1">
           <h2 className="title-black">{title}</h2>
           <div className="leading-relaxed space-y-4">
-            {text.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p> // JSX paragraph
-            ))}
+            {text.map((item, i) =>
+              typeof item === "string" && /<[^>]+>/.test(item) ? (
+                <div
+                  key={i}
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
+              ) : (
+                <p key={i}>{item}</p>
+              )
+            )}
           </div>
         </div>
       </div>
