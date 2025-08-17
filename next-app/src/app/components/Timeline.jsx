@@ -1,7 +1,7 @@
 // components/Timeline.jsx
 export default function Timeline({ items }) {
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full py-16 bg-gradient-to-b from-[#E6F4FB] via-white to-[#F9FCFF]">
       <div className="max-w-6xl mx-auto px-4">
 
         {/* Title */}
@@ -24,8 +24,8 @@ export default function Timeline({ items }) {
                   <>
                     {/* Text (left) */}
                     <div className="md:text-right">
-                      <p className="text-gray-700 leading-relaxed">
-                        {it.text}
+                      <p className="leading-relaxed font-semibold">
+                        <i>{it.text}</i>
                       </p>
                     </div>
 
@@ -49,8 +49,8 @@ export default function Timeline({ items }) {
 
                     {/* Text (right) */}
                     <div>
-                      <p className="text-gray-700 leading-relaxed">
-                        {it.text}
+                      <p className="leading-relaxed font-semibold">
+                        <i>{it.text}</i>
                       </p>
                     </div>
                   </>

@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <main>
       <IntroSection
-        image="/images/general/2.jpg" // 2 or 10
+        image="/images/general/2.webp" // 2 or 10
         title="Προπόνηση EMS"
         paragraph={
           <>

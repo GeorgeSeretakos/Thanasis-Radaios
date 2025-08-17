@@ -24,7 +24,7 @@ export default function Navbar() {
             <NavItem href="/about-us" label="Η εταιρεία" />
             <NavItem href="/office" label="Το προϊόν" />
             <NavItem href="/ems" label="Προπόνηση EMS" />
-            <NavItem href="/services" label="Εκπαίδευση/Πιστοποίηση" />
+            <NavItem href="/services" label="Πακέτο Συνεργασίας" />
             <NavItem href="/blog" label="Blog" />
             <NavItem href="/contact" label="Επικοινωνία" />
           </div>

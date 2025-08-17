@@ -1,7 +1,6 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    /*padding: 2rem 0;*/
 }
 
 .advantage-grid {
@@ -12,6 +11,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
     grid-auto-rows: 1fr;
+    margin-top: 3rem;
 }
 
 .card {

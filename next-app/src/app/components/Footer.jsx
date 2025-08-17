@@ -11,7 +11,7 @@ export default function Contact() {
         {/* Background image */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/general/9.jpg')" }}
+          style={{ backgroundImage: "url('/images/general/28.jpg')" }}
         ></div>
 
         {/* Overlay */}

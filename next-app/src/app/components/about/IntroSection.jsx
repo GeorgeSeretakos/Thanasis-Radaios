@@ -1,21 +1,41 @@
-export default function IntroSection({ image, title, paragraph }) {
+export default function IntroSection({
+                                       image,
+                                       videoSrc,
+                                       videoType = "video/mp4",
+                                       poster,
+                                       title,
+                                       paragraph,
+                                     }) {
+  const hasVideo = !!videoSrc;
+
   return (
     <section className="relative text-white">
-      {/* Εικόνα & Τίτλος */}
+      {/* Εικόνα ή Βίντεο + Τίτλος */}
       <div className="relative h-[60vh] flex items-center justify-center text-center">
         <div className="absolute inset-0">
-          <img
-            src={image}
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
+          {hasVideo ? (
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={poster}
+            >
+              <source src={videoSrc} type={videoType} />
+            </video>
+          ) : (
+            <img
+              src={image}
+              alt="Background"
+              className="w-full h-full object-cover"
+            />
+          )}
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
         <div className="relative z-10 max-w-3xl px-4">
-          <h1 className="text-3xl md:text-4xl font-bold">
-            {title}
-          </h1>
+          <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
         </div>
       </div>
 
