@@ -1,14 +1,18 @@
 // components/AboutSection.jsx
+import Link from "next/link";
+
 export default function AboutSection({
                                        title,
                                        image,
                                        reverse = false,
-                                       fullWidthTitle = true,          // toggle between styles
+                                       fullWidthTitle = true, // toggle between styles
                                        imageDimensions = "",
                                        description = [],
                                        ticks = [],
                                        features = [],
                                        tickIcon = "/icons/check.png",
+                                       ctaText = "",
+                                       ctaLink = "",
                                      }) {
   return (
     <section className="w-4/5 m-auto px-4 py-12 rounded-xl">
@@ -36,9 +40,7 @@ export default function AboutSection({
         {/* Content */}
         <div className="flex-1">
           {/* Inline title (if NOT full width) */}
-          {!fullWidthTitle && (
-            <h2 className="title-teal mb-6">{title}</h2>
-          )}
+          {!fullWidthTitle && <h2 className="title-teal mb-6">{title}</h2>}
 
           {/* Description paragraphs */}
           <div className="leading-relaxed space-y-4">
@@ -79,9 +81,20 @@ export default function AboutSection({
                     className="w-14 h-14 object-contain mb-3 select-none"
                     aria-hidden="true"
                   />
-                  <p className="text-sm font-medium leading-snug">{f.text}</p>
+                  <p className="text-sm text-gray-600 font-semibold leading-snug">
+                    {f.text}
+                  </p>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* CTA Button */}
+          {ctaText && (
+            <div className="mt-12">
+              <Link href={ctaLink || "#"} className="btn">
+                {ctaText}
+              </Link>
             </div>
           )}
         </div>

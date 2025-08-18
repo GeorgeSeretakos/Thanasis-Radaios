@@ -1,11 +1,9 @@
 import AboutSection from "../components/about/AboutSection";
-import NlpSection from "../components/services/VideoSection";
 import IntroSection from "../components/about/IntroSection";
 import Footer from "../components/Footer";
 import DietApproach from "../components/services/DietApproach/DietApproach";
 import timelineItems from "../../../public/data/timelineItems";
 import Timeline from "../components/Timeline";
-import VideoSection from "../components/services/VideoSection";
 
 export default function AboutPage() {
   return (

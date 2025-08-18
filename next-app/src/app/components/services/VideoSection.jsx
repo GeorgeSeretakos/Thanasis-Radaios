@@ -1,22 +1,36 @@
-export default function VideoSection({ title, paragraphs=[], videoUrl, reverse = false }) {
+export default function VideoSection({ title, paragraphs = [], videoUrl, reverse = false }) {
+  const hasText = title || (paragraphs && paragraphs.length > 0);
+
   return (
     <section className="w-full py-12">
       <div
-        className={`max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center ${
-          reverse ? "md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1" : ""
+        className={`max-w-6xl mx-auto px-4 ${
+          hasText
+            ? `grid md:grid-cols-2 gap-8 items-center ${
+              reverse
+                ? "md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1"
+                : ""
+            }`
+            : "flex justify-center"
         }`}
       >
-        {/* Text */}
-        <div>
-          <h2 className="title-teal">{title}</h2>
-          {paragraphs.map((text, idx) => (
-            <p key={idx} className="leading-7 mb-4 last:mb-0" dangerouslySetInnerHTML={{ __html: text }} />
-          ))}
-        </div>
+        {/* Text (render only if exists) */}
+        {hasText && (
+          <div>
+            {title && <h2 className="title-teal">{title}</h2>}
+            {paragraphs.map((text, idx) => (
+              <p
+                key={idx}
+                className="leading-7 mb-4 last:mb-0"
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Video */}
         <div
-          className="relative w-full rounded-xl overflow-hidden shadow-lg"
+          className="relative w-full max-w-3xl rounded-xl overflow-hidden shadow-lg"
           style={{ paddingTop: "56.25%" }}
         >
           <iframe

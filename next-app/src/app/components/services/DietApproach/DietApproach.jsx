@@ -25,7 +25,7 @@ export default function DietApproach() {
           {/* Card 2 – Εκπαίδευση & Πιστοποίηση */}
           <div
             className={`${styles.card} ${styles.small}`}
-            style={{ backgroundImage: "url('/images/general/25.jpg')" }}
+            style={{ backgroundImage: "url('/images/equipment/cards_1.jpg')" }}
           >
             <div className={styles.content}>
               <h3>Εκπαίδευση & Πιστοποίηση</h3>
@@ -38,7 +38,7 @@ export default function DietApproach() {
           {/* Card 4 – Οικονομικό Όφελος */}
           <div
             className={`${styles.card} ${styles.small}`}
-            style={{ backgroundImage: "url('/images/general/21.jpg')" }}
+            style={{ backgroundImage: "url('/images/general/30.jpg')" }}
           >
             <div className={styles.content}>
               <h3>Οικονομικό Όφελος</h3>

@@ -1,26 +1,45 @@
-import ServiceCard from "./ServiceCard";
+// components/home/ServicesSection.jsx
 import Link from "next/link";
-import services from "../../../../public/data/services";
+import ServiceCard from "./ServiceCard";
 
-export default function ServicesSection({ preview = false }) {
+export default function ServicesSection({
+                                          title = "",
+                                          paragraphs = [],          // array of strings or HTML strings
+                                          ctaText = "",
+                                          ctaHref = "",
+                                          services = []
+                                        }) {
   return (
     <section className="w-full py-12">
       <div className="max-w-6xl mx-auto px-4">
-        {/*<h2 className="title-teal">Προπόνηση EMS - Η υπηρεσία που θα αλλάξει την επιχείρησή σας</h2>*/}
-        {/*<div className="max-w-2xl mb-8">*/}
-        {/*  <p className="text-lg text-gray-700 max-w-3xl">*/}
-        {/*    Εισάγετε στην επιχείρησή σας μια μέθοδο εκγύμνασης και θεραπείας που είναι ταυτόχρονα ασφαλής, σύντομη και εξαιρετικά αποτελεσματική. Κατάλληλη για όλες τις ηλικίες και για ευρύ φάσμα πελατών.*/}
-        {/*  </p>*/}
+        {/* Title */}
+        {title && <h2 className="title-teal mb-4">{title}</h2>}
 
-          {preview && (
-            <div className="mt-4">
-              <Link href="/services" className="btn">
-                Προβολή όλων
-              </Link>
-            </div>
-          )}
-        {/*</div>*/}
+        {/* Paragraphs (support HTML) */}
+        {Array.isArray(paragraphs) && paragraphs.length > 0 && (
+          <div className="max-w-3xl mb-8 space-y-4">
+            {paragraphs.map((p, i) =>
+              typeof p === "string" && /<[^>]+>/.test(p) ? (
+                <div key={i} dangerouslySetInnerHTML={{ __html: p }} />
+              ) : (
+                <p key={i} className="text-lg text-gray-700">
+                  {p}
+                </p>
+              )
+            )}
+          </div>
+        )}
 
+        {/* CTA */}
+        {ctaText && (
+          <div className="my-10">
+            <Link href={ctaHref || "#"} className="btn">
+              {ctaText}
+            </Link>
+          </div>
+        )}
+
+        {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {services.map((service) => (
             <ServiceCard
@@ -29,11 +48,11 @@ export default function ServicesSection({ preview = false }) {
               iconAlt={service.iconAlt}
               title={service.title}
               description={service.description}
-              />
-            ))}
-          </div>
-
+            />
+          ))}
         </div>
+
+      </div>
     </section>
-);
+  );
 }

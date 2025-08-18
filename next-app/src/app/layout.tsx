@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}
         >
         <Navbar />
-        <main>{children}</main>
+        <main className="mt-18">{children}</main>
         </body>
         </html>
     );

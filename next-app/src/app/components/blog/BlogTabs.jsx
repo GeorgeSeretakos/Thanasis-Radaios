@@ -8,9 +8,9 @@ export default function BlogTabs() {
 
   const tabs = [
     { href: "/blog", label: "Προβολή Όλων" },
-    { href: "/blog/recipes", label: "Συνταγές" },
-    { href: "/blog/articles", label: "Αρθρογραφία" },
-    { href: "/blog/media", label: "Media" },
+    { href: "/blog/recipes", label: "Προϊόν" },
+    { href: "/blog/articles", label: "Εξοπλισμός" },
+    { href: "/blog/media", label: "Μελέτες" },
   ];
 
   return (

@@ -22,7 +22,7 @@ export default function MedicalBenefitsSection() {
             </div>
             <div className="p-6 flex flex-col flex-1">
               <h3 className="text-xl font-semibold text-brandBlue mb-4">
-                Αντιμετώπιση Χρόνιου Πόνου στη Μέση (Back Pain)
+                Αντιμετώπιση Χρόνιου Πόνου στη Μέση
               </h3>
               <p className="text-gray-700 mb-4">
                 60%–70% των ανθρώπων θα εμφανίσουν πόνο στη μέση κάποια στιγμή στη ζωή τους.
