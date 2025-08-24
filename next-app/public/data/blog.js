@@ -2,10 +2,10 @@ const posts = [
   // 📋 Προϊόν
   {
     slug: "miha-bodytec-benefits",
-    image: "/images/product/1.jpg",
+    image: "/logo/4.png",
     title: "Γιατί το miha bodytec ξεχωρίζει",
     description: "Μάθε πώς η τεχνολογία EMS ενεργοποιεί πάνω από το 90% των μυών ταυτόχρονα, προσφέροντας μέγιστα αποτελέσματα σε λιγότερο χρόνο.",
-    category: "προϊόν",
+    category: "products",
     date: "2025-07-25",
     content: [
       "Το miha bodytec χρησιμοποιείται τόσο στη γυμναστική όσο και στην αποκατάσταση.",
@@ -15,10 +15,10 @@ const posts = [
   },
   {
     slug: "safe-training",
-    image: "/images/product/2.jpg",
+    image: "/logo/4.png",
     title: "Ασφάλεια & Αποτελεσματικότητα",
     description: "Το miha bodytec είναι πιστοποιημένο ιατρικό προϊόν, χρησιμοποιείται από φυσιοθεραπευτές και γυμναστές παγκοσμίως.",
-    category: "προϊόν",
+    category: "products",
     date: "2025-07-20",
     content: [
       "Απολύτως ασφαλές για υγιείς χρήστες και άτομα σε αποκατάσταση.",
@@ -30,10 +30,10 @@ const posts = [
   // 📋 Εξοπλισμός
   {
     slug: "studio-setup",
-    image: "/images/equipment/1.jpg",
+    image: "/logo/4.png",
     title: "Οργάνωση Χώρου & Εξοπλισμού",
     description: "Το miha bodytec απαιτεί ελάχιστο χώρο και προσφέρει ολοκληρωμένη λύση εκγύμνασης με έναν μόνο σταθμό.",
-    category: "εξοπλισμός",
+    category: "news",
     date: "2025-06-15",
     content: [
       "Ο εξοπλισμός είναι φορητός και εύκολος στη μετακίνηση.",
@@ -44,10 +44,10 @@ const posts = [
   },
   {
     slug: "low-investment",
-    image: "/images/equipment/2.jpg",
+    image: "/logo/4.png",
     title: "Μικρή Επένδυση, Μεγάλη Απόδοση",
     description: "Ξεκίνα το δικό σου studio με χαμηλό αρχικό κεφάλαιο και γρήγορη απόσβεση.",
-    category: "εξοπλισμός",
+    category: "news",
     date: "2025-05-30",
     content: [
       "Απαιτείται λιγότερη επένδυση σε σχέση με ένα πλήρες γυμναστήριο.",
@@ -60,10 +60,10 @@ const posts = [
   // 📋 Μελέτες
   {
     slug: "ems-research",
-    image: "/images/studies/1.jpg",
+    image: "/logo/4.png",
     title: "Επιστημονικές Μελέτες για το EMS",
     description: "Διεθνείς έρευνες δείχνουν σημαντικά οφέλη στην ενδυνάμωση, στη μείωση λίπους και στη βελτίωση στάσης σώματος.",
-    category: "μελέτες",
+    category: "studies",
     date: "2025-04-10",
     content: [
       "Μελέτες σε πανεπιστήμια της Γερμανίας αποδεικνύουν την αποτελεσματικότητα της EMS προπόνησης.",
@@ -74,10 +74,10 @@ const posts = [
   },
   {
     slug: "back-pain-study",
-    image: "/images/studies/2.jpg",
+    image: "/logo/4.png",
     title: "Η EMS ως Λύση για Οσφυαλγία",
     description: "Έρευνες δείχνουν μείωση του πόνου στην πλάτη με τη χρήση του miha bodytec.",
-    category: "μελέτες",
+    category: "studies",
     date: "2025-03-15",
     content: [
       "Η EMS συμβάλλει στην ενδυνάμωση των εν τω βάθει μυών της σπονδυλικής στήλης.",

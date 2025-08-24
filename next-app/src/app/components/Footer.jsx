@@ -6,7 +6,7 @@ export default function Contact() {
 
       {/* Contact Section */}
       <section
-        className="relative text-white py-12 px-4 h-[90vh] flex items-center"
+        className="relative text-white py-12 px-4 h-[95vh] flex items-center"
       >
         {/* Background image */}
         <div

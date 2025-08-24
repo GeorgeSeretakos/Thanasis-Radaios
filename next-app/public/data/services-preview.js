@@ -1,4 +1,3 @@
-// public/data/services.js
 const services_preview = [
   {
     iconSrc: "/icons/joints.png",

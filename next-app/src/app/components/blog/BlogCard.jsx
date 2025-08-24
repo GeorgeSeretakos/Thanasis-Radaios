@@ -17,7 +17,7 @@ export default function BlogCard({ image, title, description }) {
         <p className="text-sm text-gray-700 flex-1">
           {description}
         </p>
-        <span className="mt-4 text-sm text-teal-800 font-medium flex items-center gap-1">
+        <span className="mt-4 text-sm text-[#1C86D1] font-medium flex items-center gap-1">
           Μάθετε περισσότερα →
         </span>
       </div>

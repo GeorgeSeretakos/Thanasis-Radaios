@@ -1,11 +1,11 @@
-import IntroSection from "../components/about/IntroSection";
+import IntroSection from "../components/IntroSection";
 import Footer from "../components/Footer";
 import ServicesSection from "../components/services/ServicesSection";
 import StepsSection from "../components/StepsSection";
 import steps from "../../../public/data/steps";
-import FeatureColumns from "../components/FeatureColumns";
-import VideoSection from "../components/services/VideoSection";
-import AboutSection from "../components/about/AboutSection";
+import SplitColumnsWithImage from "../components/SplitColumnsWithImage";
+import VideoSection from "../components/VideoSection";
+import AboutSection from "../components/AboutSection";
 import services from "../../../public/data/services";
 
 export default function AboutPage() {
@@ -55,7 +55,7 @@ export default function AboutPage() {
 
       <ServicesSection services={services}/>
 
-      <FeatureColumns
+      <SplitColumnsWithImage
         rightTitle="Άσκηση & Γυμναστική"
         rightBullets={[
           "Προπόνηση όλου του σώματος σε 20' τη βδομάδα",
@@ -81,11 +81,9 @@ export default function AboutPage() {
           `Η Ηλεκτρομυϊκή Διέγερση (EMS) ενεργοποιεί έως και 10 μυϊκές ομάδες ταυτόχρονα, συμπεριλαμβανομένων βαθύτερων μυών που δύσκολα στοχεύονται με κλασική άσκηση.`,
           `Ο συνδυασμός εκούσιας σύσπασης και ηλεκτρικού ερεθίσματος προσφέρει μέγιστη ενεργοποίηση με ελάχιστη επιβάρυνση στις αρθρώσεις.`,
           `<p class="flex items-center gap-2 mt-6">
-       <img src="/icons/goal.png" alt="steps icon" class="w-8 h-8 select-none" />
-       <i class="font-semibold">
-         Η διαδικασία είναι απλή και ολοκληρώνεται σε 3 βήματα.
-       </i>
-     </p>`
+            <img src="/icons/goal.png" alt="steps icon" class="w-8 h-8 select-none" />
+            <i class="font-semibold">Η διαδικασία είναι απλή και ολοκληρώνεται σε 3 βήματα.</i>
+          </p>`
         ]}
         videoUrl="https://www.youtube.com/embed/9E5-icT4ptU?si=aTT34fdRm5fylp2U"
       />

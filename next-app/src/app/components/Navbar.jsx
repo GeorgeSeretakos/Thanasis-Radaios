@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -21,10 +20,10 @@ export default function Navbar() {
           {/* Links */}
           <div className="hidden sm:flex sm:space-x-4 items-center font-semibold text-sm">
             <NavItem href="/" label="Αρχική" />
-            <NavItem href="/about-us" label="Η εταιρεία" />
-            <NavItem href="/office" label="Το προϊόν" />
+            <NavItem href="/company" label="Η εταιρεία" />
+            <NavItem href="/product" label="Το προϊόν" />
             <NavItem href="/ems" label="Προπόνηση EMS" />
-            <NavItem href="/services" label="Πακέτο Συνεργασίας" />
+            <NavItem href="/collab" label="Πακέτο Συνεργασίας" />
             <NavItem href="/blog" label="Blog" />
             <NavItem href="/contact" label="Επικοινωνία" />
           </div>

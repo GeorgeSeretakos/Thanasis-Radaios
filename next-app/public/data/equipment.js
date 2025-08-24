@@ -40,7 +40,6 @@ export const equipmentItems = [
     images: [
       "/images/equipment/connect_5.jpg",
       "/images/equipment/connect_1.jpg",
-      // "/images/equipment/connect_2.jpg",
       "/images/equipment/connect_3.jpg",
       "/images/equipment/connect_4.jpg",
     ],
