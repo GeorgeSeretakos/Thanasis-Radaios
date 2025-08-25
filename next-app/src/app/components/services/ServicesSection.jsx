@@ -19,11 +19,11 @@ services = []
           <div className="max-w-3xl mb-8 space-y-4">
             {paragraphs.map((p, i) =>
               typeof p === "string" && /<[^>]+>/.test(p) ? (
-                <div key={i} dangerouslySetInnerHTML={{ __html: p }} />
+                <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
               ) : (
-                <div key={i} className="text-gray-700">
-                  <p>{p}</p>
-                </div>
+                <p key={i} className="text-gray-700">
+                  {p}
+                </p>
               )
             )}
           </div>
