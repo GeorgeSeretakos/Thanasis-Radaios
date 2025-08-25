@@ -109,7 +109,7 @@ export default function AboutPage() {
 
       <AboutSection
         title="Ανακούφιση και Πρόληψη Πόνου στη Μέση"
-        image="/images/general/36.jpg"
+        image="/images/general/36.webp"
         reverse={false}
         imageDimensions="h-150 mx-auto object-contain"
         description={[

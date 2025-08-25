@@ -35,7 +35,7 @@ const presentationCards = [
   },
   {
     title: "Οικονομικό Όφελος",
-    image: "/images/general/31.jpg",
+    image: "/images/general/31.webp",
     bullets: [
       "Χαμηλό αρχικό κόστος επένδυσης",
       "Ταχεία απόσβεση κεφαλαίου",

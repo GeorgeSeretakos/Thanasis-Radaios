@@ -11,7 +11,7 @@ export default function ProductPage() {
   return (
     <>
       <IntroSection
-        image="/images/general/25.png"
+        image="/images/general/25.jpg"
         title="Το προϊόν"
         paragraph={
           <>
@@ -128,7 +128,7 @@ export default function ProductPage() {
           </>
         }
         videoSrc="/videos/3.mp4"
-        poster="/images/general/1.jpg"
+        poster="/images/general/28.jpg"
       />
 
       <AboutSection
@@ -204,7 +204,7 @@ export default function ProductPage() {
 
 
       <IntroSection
-        image="/images/general/17.png"
+        image="/images/general/17.webp"
         title="Εξοπλισμός i-body"
         paragraph={
           <>

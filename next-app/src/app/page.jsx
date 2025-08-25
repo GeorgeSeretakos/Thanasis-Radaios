@@ -99,7 +99,7 @@ export default function Home() {
           />
 
           <IntroSection
-              image="/images/general/13.jpg"
+              image="/images/general/13.webp"
               title="Αφοσίωση & Εμπιστοσύνη που Μετράνε"
               paragraph={
                   <>
