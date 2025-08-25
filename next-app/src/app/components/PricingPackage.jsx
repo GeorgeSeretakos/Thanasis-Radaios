@@ -16,14 +16,14 @@ export default function PricingPackage({
         {/* Title + text */}
         <div className="max-w-3xl mx-auto space-y-4">
           {title && (
-            <h1 className="font-extrabold text-center text-[#1C86D1]">
+            <h2 className="title-teal">
               {title}
-            </h1>
+            </h2>
           )}
           {text && (
-            <div className="text-gray-700 text-justify">
+            <p className="text-gray-700 text-justify">
               {text}
-            </div>
+            </p>
           )}
         </div>
 
