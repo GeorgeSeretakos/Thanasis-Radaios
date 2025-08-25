@@ -203,7 +203,7 @@ export default function ProductPage() {
 
 
       <IntroSection
-        image="/images/general/17.webp"
+        image="/images/general/17.png"
         title="Εξοπλισμός i-body"
         paragraph={
           <>

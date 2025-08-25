@@ -2,7 +2,7 @@ import QuoteSection from "@/app/components/home/QuoteSection";
 import Footer from "@/app/components/Footer";
 import ServicesSection from "@/app/components/services/ServicesSection";
 import AboutSection from "@/app/components/AboutSection";
-import PresentationGrid from "@/app/components/PricingPackage";
+import PricingPackage from "@/app/components/PricingPackage";
 import presentationCards from "../../public/data/presentationCards";
 import IntroSection from "@/app/components/IntroSection";
 import services_preview from "../../public/data/services-preview";
@@ -72,7 +72,7 @@ export default function Home() {
               ctaLink="/company"
           />
 
-          <PresentationGrid
+          <PricingPackage
               title="Δύο λύσεις, άπειρες δυνατότητες"
               text="Επιλέξτε ανάμεσα στο ενσύρματο Miha Bodytec || medical και στο ασύρματο Miha Bodytec m.ove (με in-door & outdoor εκδόσεις). Με την απόκτηση ενός συστήματος Miha Bodytec, δεν αγοράζετε απλώς εξοπλισμό, αλλά ένα πλήρες πακέτο: εκπαίδευση, τεχνική υποστήριξη και επιχειρηματική καθοδήγηση."
               ctaLink="/collab"

@@ -2,22 +2,59 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {useEffect, useState} from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <nav className="bg-white text-black shadow right-0 z-50 fixed top-0 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-18">
+        <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-2 h-18">
-            <Link href="/" className="flex items-center space-x-2 h-full">
-              <img src="/logo/3.png" alt="Logo" width={200} height={200} className="h-14 w-auto" />
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2">
+              <img
+                src="/logo/3.png"
+                alt="Logo"
+                className="h-10 w-auto sm:h-12 lg:h-14"
+              />
             </Link>
           </div>
 
-          {/* Links */}
-          <div className="hidden sm:flex sm:space-x-4 items-center font-semibold text-sm">
+          {/* Desktop Links */}
+          <div className="hidden sm:flex sm:space-x-6 items-center font-semibold text-sm">
+            <NavItem href="/" label="Αρχική" />
+            <NavItem href="/company" label="Η εταιρεία" />
+            <NavItem href="/product" label="Το προϊόν" />
+            <NavItem href="/ems" label="Προπόνηση EMS" />
+            <NavItem href="/collab" label="Πακέτο Συνεργασίας" />
+            <NavItem href="/blog" label="Blog" />
+            <NavItem href="/contact" label="Επικοινωνία" />
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="sm:hidden">
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1C86D1]"
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Links */}
+      {mobileOpen && (
+        <div className="sm:hidden bg-white shadow-md border-t">
+          <div className="flex flex-col space-y-2 px-4 py-4 font-medium">
             <NavItem href="/" label="Αρχική" />
             <NavItem href="/company" label="Η εταιρεία" />
             <NavItem href="/product" label="Το προϊόν" />
@@ -27,7 +64,7 @@ export default function Navbar() {
             <NavItem href="/contact" label="Επικοινωνία" />
           </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 }
@@ -40,12 +77,12 @@ function NavItem({ href, label }) {
     <Link
       href={href}
       className={`inline-flex items-center px-2 py-1 rounded-sm transition whitespace-nowrap
-        ${isActive ? "text-[#1C86D1] border-b-2 border-[#1C86D1]" : "hover:text-[#1C86D1] hover:border-b-2 hover:border-[#1C86D1]"}
-      `}
+        ${isActive
+        ? "text-[#1C86D1]"
+        : "hover:text-[#1C86D1]"
+      }`}
     >
       {label}
     </Link>
   );
 }
-
-

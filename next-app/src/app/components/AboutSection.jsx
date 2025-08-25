@@ -1,12 +1,10 @@
-// components/AboutSection.jsx
 import Link from "next/link";
 
 export default function AboutSection({
                                        title,
                                        image,
                                        reverse = false,
-                                       fullWidthTitle = true, // toggle between styles
-                                       imageDimensions = "",
+                                       fullWidthTitle = true,
                                        description = [],
                                        ticks = [],
                                        features = [],
@@ -16,9 +14,9 @@ export default function AboutSection({
                                      }) {
   return (
     <section className="w-4/5 m-auto px-4 py-12 rounded-xl">
-      {/* Full width title (always centered if enabled) */}
+      {/* Full width title */}
       {fullWidthTitle && (
-        <div className="bg-[#1C86D1] p-4 rounded-xl text-2xl font-bold text-white text-center !mb-8">
+        <div className="bg-[#1C86D1] p-4 rounded-none md:rounded-xl text-xl sm:text-2xl font-bold text-white text-center mb-8 w-screen relative left-1/2 right-1/2 -ml-[50vw] md:w-auto md:relative md:left-0 md:right-0 md:ml-0">
           {title}
         </div>
       )}
@@ -28,25 +26,39 @@ export default function AboutSection({
           reverse ? "md:flex-row-reverse" : ""
         } gap-8 items-center`}
       >
+
         {/* Image */}
-        <div className="flex-1">
-          <img
-            src={image}
-            alt={title}
-            className={`rounded-lg ${imageDimensions || "w-full object-cover"}`}
-          />
+        <div className="w-full md:flex-1">
+          <div className="block md:hidden w-screen relative left-1/2 right-1/2 -ml-[50vw]">
+            <img
+              src={image}
+              alt={title}
+              className="w-full object-cover rounded-none"
+            />
+          </div>
+
+          <div className="hidden md:block w-full">
+            <img
+              src={image}
+              alt={title}
+              className="w-full object-cover rounded-lg"
+            />
+          </div>
         </div>
 
+
+
+
+
         {/* Content */}
-        <div className="flex-1">
-          {/* Inline title (if NOT full width) */}
+        <div className="w-full md:flex-1">
           {!fullWidthTitle && <h2 className="title-teal mb-6">{title}</h2>}
 
-          {/* Description paragraphs */}
+          {/* Description */}
           <div className="leading-relaxed space-y-4">
             {description.map((item, i) =>
               typeof item === "string" && /<[^>]+>/.test(item) ? (
-                <div key={i} dangerouslySetInnerHTML={{ __html: item }} />
+                <div key={i} dangerouslySetInnerHTML={{__html: item}}/>
               ) : (
                 <p key={i}>{item}</p>
               )
@@ -72,16 +84,19 @@ export default function AboutSection({
 
           {/* Features */}
           {features.length > 0 && (
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {features.map((f, i) => (
-                <div key={i} className="flex flex-col items-center text-center">
+                <div
+                  key={i}
+                  className="flex flex-col items-center text-center"
+                >
                   <img
                     src={f.icon}
                     alt=""
                     className="w-14 h-14 object-contain mb-3 select-none"
                     aria-hidden="true"
                   />
-                  <p className="text-sm text-gray-600 font-semibold leading-snug">
+                  <p className="text-gray-600 font-semibold leading-snug">
                     {f.text}
                   </p>
                 </div>
@@ -89,7 +104,7 @@ export default function AboutSection({
             </div>
           )}
 
-          {/* CTA Button */}
+          {/* CTA */}
           {ctaText && (
             <div className="mt-12">
               <Link href={ctaLink || "#"} className="btn">

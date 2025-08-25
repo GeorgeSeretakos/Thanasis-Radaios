@@ -1,11 +1,11 @@
 export default function IntroSection({
-                                       image,
-                                       videoSrc,
-                                       videoType = "video/mp4",
-                                       poster,
-                                       title,
-                                       paragraph,
-                                     }) {
+image,
+videoSrc,
+videoType = "video/mp4",
+poster,
+title,
+paragraph,
+}) {
   const hasVideo = !!videoSrc;
 
   return (

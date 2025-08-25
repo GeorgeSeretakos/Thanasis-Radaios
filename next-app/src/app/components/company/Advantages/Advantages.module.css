@@ -25,6 +25,13 @@
     align-items: flex-end;
 }
 
+/* Remove rounded corners on tablet & mobile */
+@media (max-width: 1024px) {
+    .card {
+        border-radius: 0;
+    }
+}
+
 .card::before {
     content: "";
     position: absolute;

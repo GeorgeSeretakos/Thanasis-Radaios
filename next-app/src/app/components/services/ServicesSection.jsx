@@ -1,14 +1,13 @@
-// components/home/ServicesSection.jsx
 import Link from "next/link";
 import ServiceCard from "./ServiceCard";
 
 export default function ServicesSection({
-                                          title = "",
-                                          paragraphs = [],          // array of strings or HTML strings
-                                          ctaText = "",
-                                          ctaHref = "",
-                                          services = []
-                                        }) {
+title = "",
+paragraphs = [],
+ctaText = "",
+ctaHref = "",
+services = []
+}) {
   return (
     <section className="w-full py-12">
       <div className="max-w-6xl mx-auto px-4">
@@ -22,7 +21,7 @@ export default function ServicesSection({
               typeof p === "string" && /<[^>]+>/.test(p) ? (
                 <div key={i} dangerouslySetInnerHTML={{ __html: p }} />
               ) : (
-                <p key={i} className="text-lg text-gray-700">
+                <p key={i} className="text-gray-700">
                   {p}
                 </p>
               )

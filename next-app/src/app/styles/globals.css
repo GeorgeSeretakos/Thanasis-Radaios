@@ -17,11 +17,6 @@
   font-family: var(--font-great-vibes);
 }
 
-
-/*dark: "#2B2D31",*/
-/*light: "#1E1F23",*/
-
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -35,6 +30,39 @@ body {
   font-family: var(--font-sans);
 }
 
+/*dark: "#2B2D31",*/
+/*light: "#1E1F23",*/
+
+/* Titles */
+h1 {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-snug;
+}
+h2 {
+  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-snug;
+}
+h3 {
+  @apply text-sm sm:text-base md:text-lg lg:text-xl font-semibold;
+}
+h4 {
+  @apply text-sm sm:text-base font-medium;
+}
+
+/* Paragraphs + content links */
+p, .content a {
+  @apply text-xs sm:text-sm md:text-base leading-relaxed;
+}
+
+
+/* Lists */
+ul, ol {
+  @apply list-inside pl-4 text-xs sm:text-sm md:text-base leading-relaxed;
+}
+li {
+  @apply mb-1;
+}
+
+
+/* ✅ Global utility classes */
 .btn {
   @apply inline-block px-6 py-2 rounded-xl text-white bg-[#1C86D1] hover:bg-blue-400 transition font-bold;
 }

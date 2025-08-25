@@ -14,10 +14,10 @@ export default function QuoteSection() {
       <div className="absolute inset-0 bg-black/60 z-10"></div>
 
       {/* Text content */}
-      <div className="relative z-20 h-full text-white w-full flex items-center justify-center">
-        <p className="text-2xl md:text-3xl font-semibold max-w-3xl text-center">
+      <div className="relative z-20 h-full text-white flex items-center justify-center">
+        <h2 className="font-semibold max-w-3/4 text-center">
           20 λεπτά αρκούν για να αλλάξουν την καθημερινότητα των πελατών σας
-        </p>
+        </h2>
       </div>
     </section>
   );
