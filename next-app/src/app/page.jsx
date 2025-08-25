@@ -20,7 +20,7 @@ export default function Home() {
               paragraph={
                   <>
                       <div>
-                          <strong className="text-2xl">Η ευκαιρία που δεν έχει ανταγωνισμό</strong>
+                          <h2>Η ευκαιρία που δεν έχει ανταγωνισμό</h2>
                       </div>
                       <div className="mt-6 space-y-3 leading-relaxed">
                           <p>

@@ -13,7 +13,7 @@ ctaText = "",
 ctaLink = "",
 }) {
   return (
-    <section className="w-4/5 m-auto px-4 py-12 rounded-xl">
+    <section className="max-w-6xl m-auto px-4 py-12 rounded-xl">
       {/* Full width title */}
       {fullWidthTitle && (
         <div className="bg-[#1C86D1] p-4 rounded-none md:rounded-xl text-xl sm:text-2xl font-bold text-white text-center mb-8 w-screen relative left-1/2 right-1/2 -ml-[50vw] md:w-auto md:relative md:left-0 md:right-0 md:ml-0">
@@ -57,7 +57,7 @@ ctaLink = "",
               typeof item === "string" && /<[^>]+>/.test(item) ? (
                 <div key={i} dangerouslySetInnerHTML={{__html: item}}/>
               ) : (
-                <p key={i}>{item}</p>
+                <div key={i}>{item}</div>
               )
             )}
           </div>
@@ -93,9 +93,9 @@ ctaLink = "",
                     className="w-14 h-14 object-contain mb-3 select-none"
                     aria-hidden="true"
                   />
-                  <p className="text-gray-600 font-semibold leading-snug !text-sm">
+                  <div className="text-gray-600 font-semibold leading-snug !text-sm">
                     {f.text}
-                  </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -103,7 +103,7 @@ ctaLink = "",
 
           {/* CTA */}
           {ctaText && (
-            <div className="mt-12">
+            <div className="my-10 flex justify-center md:justify-start">
               <Link href={ctaLink || "#"} className="btn">
                 {ctaText}
               </Link>

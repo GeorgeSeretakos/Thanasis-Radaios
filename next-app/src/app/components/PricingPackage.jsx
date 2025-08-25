@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 export default function PricingPackage({
-                                         title,
-                                         text,
-                                         ctaText,
-                                         ctaLink,
-                                         items = [],
-                                       }) {
+ title,
+ text,
+ ctaText,
+ ctaLink,
+ items = [],
+}) {
   // make images taller on mobile
   const imgHeightClasses = "h-48 sm:h-56 md:h-48 lg:h-56";
 

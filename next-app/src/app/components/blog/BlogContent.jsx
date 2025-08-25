@@ -3,6 +3,8 @@ import BlogCard from "./BlogCard";
 import Link from "next/link";
 
 export default function BlogContent({ category }) {
+  if (!posts) return <section></section>;
+
   const filteredPosts =
     category === "all"
       ? posts

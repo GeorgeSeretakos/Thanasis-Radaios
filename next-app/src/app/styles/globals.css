@@ -55,7 +55,7 @@ p, .content a {
 
 /* Lists */
 ul, ol {
-  @apply list-inside pl-4 text-xs sm:text-sm md:text-base leading-relaxed;
+  @apply list-inside pl-4 text-[0.7rem] sm:text-sm md:text-base leading-relaxed;
 }
 li {
   @apply mb-1;
@@ -68,9 +68,9 @@ li {
 }
 
 .title-teal {
-  @apply text-3xl font-bold mb-6 text-[#1C86D1];
+  @apply font-bold mb-6 text-[#1C86D1];
 }
 
 .title-black {
-  @apply text-3xl font-bold mb-6 text-black;
+  @apply font-bold mb-6 text-black;
 }

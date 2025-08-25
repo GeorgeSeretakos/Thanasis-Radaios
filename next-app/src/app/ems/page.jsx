@@ -18,10 +18,15 @@ export default function AboutPage() {
         paragraph={
           <>
             <div>
-              <strong className="text-2xl">Προπόνηση EMS – Η υπηρεσία που θα απογειώσει την επιχείρησή σας</strong>
+              <h2>Προπόνηση EMS – Η υπηρεσία που θα απογειώσει την επιχείρησή σας</h2>
             </div>
-            <div className="mt-6">
-              Το whole body  EMS της miha bodytec είναι η πιο σύγχρονη μορφή ηλεκτρομυοδιέγερσης: μια επιστημονικά τεκμηριωμένη μέθοδος που προσφέρει ασφάλεια, ταχύτητα και εντυπωσιακά αποτελέσματα. Με μόλις 20 λεπτά την εβδομάδα, η EMS απευθύνεται σε:            </div>
+            <div className="mt-6 space-y-3 leading-relaxed">
+              <p>
+                Το whole body EMS της miha bodytec είναι η πιο σύγχρονη μορφή ηλεκτρομυοδιέγερσης: μια επιστημονικά
+                τεκμηριωμένη μέθοδος που προσφέρει ασφάλεια, ταχύτητα και εντυπωσιακά αποτελέσματα. Με μόλις 20 λεπτά την
+                εβδομάδα, η EMS απευθύνεται σε:
+              </p>
+            </div>
             <div className="mt-4">
               <ul className="list-disc pl-6 space-y-1">
                 <li>άτομα με περιορισμένο χρόνο,</li>
@@ -103,7 +108,14 @@ export default function AboutPage() {
       </div>
 
       <AboutSection
-        title="Ανακούφιση και Πρόληψη Πόνου στη Μέση"
+        title={
+          <>
+            Ανακούφιση και Πρόληψη
+            <span className="block md:hidden" /> {/* break only on mobile */}
+            <span className="hidden md:inline"> </span> {/* space on desktop */}
+            Πόνου στη Μέση
+          </>
+        }
         image="/images/general/36.webp"
         reverse={false}
         imageDimensions="h-150 mx-auto object-contain"

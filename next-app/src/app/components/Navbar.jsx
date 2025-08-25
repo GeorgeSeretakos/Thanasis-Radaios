@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white text-black shadow right-0 z-50 fixed top-0 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
+        <div className="flex justify-between items-center h-16 sm:h-16 lg:h-18">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
@@ -60,7 +60,7 @@ export default function Navbar() {
             <NavItem href="/company" label="Η εταιρεία"/>
             <NavItem href="/product" label="Το προϊόν"/>
             <NavItem href="/ems" label="Προπόνηση EMS"/>
-            <NavItem href="/collab" label="Πακέτο Συνεργασίας"/>
+            <NavItem href="/collab" label="Συνεργασία"/>
             <NavItem href="/blog" label="Blog"/>
             <NavItem href="/contact" label="Επικοινωνία"/>
           </div>

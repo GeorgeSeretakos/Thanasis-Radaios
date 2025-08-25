@@ -35,7 +35,7 @@ paragraph,
         </div>
 
         <div className="relative z-10 max-w-3xl px-4">
-          <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
+          <h1 className="font-bold">{title}</h1>
         </div>
       </div>
 

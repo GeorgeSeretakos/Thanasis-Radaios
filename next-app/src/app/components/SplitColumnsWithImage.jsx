@@ -1,5 +1,4 @@
 export default function SplitColumnsWithImage({
-title,
 leftTitle,
 leftBullets = [],
 rightTitle,
@@ -11,19 +10,15 @@ bulletAlt = "bullet icon",
 }) {
   return (
     <div className="w-full my-12 bg-gradient-to-b from-[#E6F4FB] via-white to-[#F9FCFF] px-4 sm:px-6 lg:px-8">
-      {/* Main Section Title */}
-      {title && (
-        <h2 className="title-black text-center mb-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-          {title}
-        </h2>
-      )}
 
       {/* Layout */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
         {/* Left Column */}
         <div className="flex flex-col justify-center text-center lg:text-left">
-          <h3 className="title-teal mb-4">{leftTitle}</h3>
-          <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg">
+
+          <h2 className="title-teal mb-4 !text-center">{leftTitle}</h2>
+
+          <ul className="space-y-3 sm:space-y-4">
             {leftBullets.map((bullet, idx) => (
               <li
                 key={idx}
@@ -51,8 +46,10 @@ bulletAlt = "bullet icon",
 
         {/* Right Column */}
         <div className="flex flex-col justify-center text-center lg:text-left">
-          <h3 className="title-teal mb-4">{rightTitle}</h3>
-          <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg">
+
+          <h2 className="title-teal mb-4 !text-center">{rightTitle}</h2>
+
+          <ul className="space-y-3 sm:space-y-4">
             {rightBullets.map((bullet, idx) => (
               <li
                 key={idx}

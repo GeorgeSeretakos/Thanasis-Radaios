@@ -4,9 +4,9 @@ export default function Advantages() {
   return (
     <section className="py-12">
       <div className={styles.container}>
-        <div className="border-b-4 border-t-4 border-[#1C86D1] text-[#1C86D1] p-4 rounded-xl text-3xl font-bold text-center !mb-8">
+        <h2 className="text-center">
           Γιατί να μας επιλέξετε
-        </div>
+        </h2>
 
         <div className={styles["advantage-grid"]}>
         {/* Card 1 – Γερμανική Ποιότητα */}

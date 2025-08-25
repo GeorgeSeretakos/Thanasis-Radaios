@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function BlogCard({ image, title, description }) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">

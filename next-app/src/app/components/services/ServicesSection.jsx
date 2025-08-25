@@ -21,9 +21,9 @@ services = []
               typeof p === "string" && /<[^>]+>/.test(p) ? (
                 <div key={i} dangerouslySetInnerHTML={{ __html: p }} />
               ) : (
-                <p key={i} className="text-gray-700">
-                  {p}
-                </p>
+                <div key={i} className="text-gray-700">
+                  <p>{p}</p>
+                </div>
               )
             )}
           </div>
