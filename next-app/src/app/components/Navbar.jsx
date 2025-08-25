@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -13,7 +12,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center space-x-2 h-18">
             <Link href="/" className="flex items-center space-x-2 h-full">
-              <Image src="/logo/3.png" alt="Logo" width={200} height={200} className="h-14 w-auto" />
+              <img src="/logo/3.png" alt="Logo" width={200} height={200} className="h-14 w-auto" />
             </Link>
           </div>
 

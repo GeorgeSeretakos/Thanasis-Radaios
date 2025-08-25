@@ -4,7 +4,7 @@ export default function BlogCard({ image, title, description }) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
       <div className="relative w-full h-56">
-        <Image
+        <img
           src={image}
           alt={title}
           fill

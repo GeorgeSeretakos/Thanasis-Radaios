@@ -4,11 +4,10 @@ export default function QuoteSection() {
   return (
     <section className="relative h-[60vh]">
       {/* Background Image */}
-      <Image
+      <img
         src="/images/general/9.webp"
         alt="Quote Background"
-        fill
-        className="absolute inset-0 w-full h-full object-cover object-center z-0"
+        className="absolute inset-0 fill w-full h-full object-cover object-center z-0"
       />
 
       {/* Black Overlay */}

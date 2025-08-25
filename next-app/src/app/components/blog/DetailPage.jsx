@@ -34,7 +34,7 @@ export default function DetailPage({ category, slug }) {
         </p>
 
         {/* Image */}
-        <Image
+        <img
           src={post.image}
           alt={post.title}
           width={800}
