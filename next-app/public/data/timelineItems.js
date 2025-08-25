@@ -1,12 +1,12 @@
 const timelineItems = [
   {
     year: "2007",
-    text: "Ίδρυση της Miha Bodytec και λανσάρισμα πρώτου Whole-Body EMS συστήματος",
+    text: "Ίδρυση της miha bodytec και λανσάρισμα πρώτου Whole-Body EMS συστήματος",
     image: "/images/mother/1.jpg",
   },
   {
     year: "2012",
-    text: "Πιστοποίηση ιατρικού προϊόντος Miha Bodytec Medical",
+    text: "Πιστοποίηση ιατρικού προϊόντος miha bodytec medical",
     image: "/images/mother/2.jpg",
   },
   {
@@ -21,7 +21,7 @@ const timelineItems = [
   },
   {
     year: "2019",
-    text: "Έγκριση FDA και ίδρυση Miha Bodytec Inc. στις ΗΠΑ",
+    text: "Έγκριση FDA και ίδρυση miha bodytec Inc. στις ΗΠΑ",
     image: "/images/mother/6.jpg",
   },
   {

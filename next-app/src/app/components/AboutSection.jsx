@@ -1,17 +1,17 @@
 import Link from "next/link";
 
 export default function AboutSection({
-                                       title,
-                                       image,
-                                       reverse = false,
-                                       fullWidthTitle = true,
-                                       description = [],
-                                       ticks = [],
-                                       features = [],
-                                       tickIcon = "/icons/check.png",
-                                       ctaText = "",
-                                       ctaLink = "",
-                                     }) {
+title,
+image,
+reverse = false,
+fullWidthTitle = true,
+description = [],
+ticks = [],
+features = [],
+tickIcon = "/icons/check.png",
+ctaText = "",
+ctaLink = "",
+}) {
   return (
     <section className="w-4/5 m-auto px-4 py-12 rounded-xl">
       {/* Full width title */}
@@ -45,9 +45,6 @@ export default function AboutSection({
             />
           </div>
         </div>
-
-
-
 
 
         {/* Content */}
@@ -96,7 +93,7 @@ export default function AboutSection({
                     className="w-14 h-14 object-contain mb-3 select-none"
                     aria-hidden="true"
                   />
-                  <p className="text-gray-600 font-semibold leading-snug">
+                  <p className="text-gray-600 font-semibold leading-snug !text-sm">
                     {f.text}
                   </p>
                 </div>

@@ -16,28 +16,29 @@ export default function Navbar() {
   return (
     <nav className="bg-white text-black shadow right-0 z-50 fixed top-0 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <img
                 src="/logo/3.png"
                 alt="Logo"
-                className="h-10 w-auto sm:h-12 lg:h-14"
+                className="h-10 sm:h-12 lg:h-16 w-auto"
               />
             </Link>
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden sm:flex sm:space-x-6 items-center font-semibold text-sm">
-            <NavItem href="/" label="Αρχική" />
-            <NavItem href="/company" label="Η εταιρεία" />
-            <NavItem href="/product" label="Το προϊόν" />
-            <NavItem href="/ems" label="Προπόνηση EMS" />
-            <NavItem href="/collab" label="Πακέτο Συνεργασίας" />
-            <NavItem href="/blog" label="Blog" />
-            <NavItem href="/contact" label="Επικοινωνία" />
+          <div className="hidden sm:flex sm:space-x-4 lg:space-x-5 items-center font-semibold text-xs lg:text-sm">
+            <NavItem href="/" label="Αρχική"/>
+            <NavItem href="/company" label="Η εταιρεία"/>
+            <NavItem href="/product" label="Το προϊόν"/>
+            <NavItem href="/ems" label="Προπόνηση EMS"/>
+            <NavItem href="/collab" label="Συνεργασία"/>
+            <NavItem href="/blog" label="Blog"/>
+            <NavItem href="/contact" label="Επικοινωνία"/>
           </div>
+
 
           {/* Mobile Menu Button */}
           <div className="sm:hidden">
@@ -45,7 +46,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1C86D1]"
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileOpen ? <X size={24}/> : <Menu size={24}/>}
             </button>
           </div>
         </div>
@@ -55,13 +56,13 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="sm:hidden bg-white shadow-md border-t">
           <div className="flex flex-col space-y-2 px-4 py-4 font-medium">
-            <NavItem href="/" label="Αρχική" />
-            <NavItem href="/company" label="Η εταιρεία" />
-            <NavItem href="/product" label="Το προϊόν" />
-            <NavItem href="/ems" label="Προπόνηση EMS" />
-            <NavItem href="/collab" label="Πακέτο Συνεργασίας" />
-            <NavItem href="/blog" label="Blog" />
-            <NavItem href="/contact" label="Επικοινωνία" />
+            <NavItem href="/" label="Αρχική"/>
+            <NavItem href="/company" label="Η εταιρεία"/>
+            <NavItem href="/product" label="Το προϊόν"/>
+            <NavItem href="/ems" label="Προπόνηση EMS"/>
+            <NavItem href="/collab" label="Πακέτο Συνεργασίας"/>
+            <NavItem href="/blog" label="Blog"/>
+            <NavItem href="/contact" label="Επικοινωνία"/>
           </div>
         </div>
       )}
@@ -69,7 +70,7 @@ export default function Navbar() {
   );
 }
 
-function NavItem({ href, label }) {
+function NavItem({href, label}) {
   const pathname = usePathname();
   const isActive = pathname === href;
 

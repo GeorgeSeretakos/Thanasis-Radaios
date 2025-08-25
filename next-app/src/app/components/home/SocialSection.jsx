@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function SocialSection() {
   return (
     <section className="py-8">
@@ -10,7 +8,7 @@ export default function SocialSection() {
         {/* icons */}
         <div className="flex gap-4">
           <a
-            href="" // TODO: Add link
+            href="https://www.facebook.com/groups/997770326951786?locale=el_GR"
             className="w-12 h-12 rounded-full flex items-center justify-center"
             aria-label="Facebook"
           >
@@ -22,39 +20,39 @@ export default function SocialSection() {
               // style={{backgroundColor: "white", border: "2px solid white", borderRadius: "50%"}}
             />
           </a>
+          {/*<a*/}
+          {/*  href="" // TODO: Add link*/}
+          {/*  className="w-12 h-12 rounded-full flex items-center justify-center"*/}
+          {/*  aria-label="Instagram"*/}
+          {/*>*/}
+          {/*  <img*/}
+          {/*    src="/icons/instagram.png"*/}
+          {/*    alt="Instagram"*/}
+          {/*    width={40}*/}
+          {/*    height={40}*/}
+          {/*    // style={{backgroundColor: "white", border: "2px solid white", borderRadius: "50%"}}*/}
+          {/*  />*/}
+          {/*</a>*/}
+          {/*<a*/}
+          {/*  href="" // TODO: Add link*/}
+          {/*  className="w-12 h-12 rounded-full flex items-center justify-center"*/}
+          {/*  aria-label="TikTok"*/}
+          {/*>*/}
+          {/*  <img*/}
+          {/*    src="/icons/tiktok.png"*/}
+          {/*    alt="TikTok"*/}
+          {/*    width={40}*/}
+          {/*    height={40}*/}
+          {/*    style={{border: "2px solid white", backgroundColor: "white", borderRadius: "50%"}}*/}
+          {/*  />*/}
+          {/*</a>*/}
           <a
-            href="" // TODO: Add link
+            href="https://www.youtube.com/@FFMEDICALWELLNESS"
             className="w-12 h-12 rounded-full flex items-center justify-center"
-            aria-label="Instagram"
+            aria-label="Youtube"
           >
             <img
-              src="/icons/instagram.png"
-              alt="Instagram"
-              width={40}
-              height={40}
-              // style={{backgroundColor: "white", border: "2px solid white", borderRadius: "50%"}}
-            />
-          </a>
-          <a
-            href="" // TODO: Add link
-            className="w-12 h-12 rounded-full flex items-center justify-center"
-            aria-label="TikTok"
-          >
-            <img
-              src="/icons/tiktok.png"
-              alt="TikTok"
-              width={40}
-              height={40}
-              style={{border: "2px solid white", backgroundColor: "white", borderRadius: "50%"}}
-            />
-          </a>
-          <a
-            href="" // TODO: Add link
-            className="w-12 h-12 rounded-full flex items-center justify-center"
-            aria-label="LinkedIn"
-          >
-            <img
-              src="/icons/linkedin.png"
+              src="/icons/youtube.png"
               alt="LinkedIn"
               width={40}
               height={40}

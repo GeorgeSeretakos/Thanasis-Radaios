@@ -12,12 +12,12 @@ export default function Advantages() {
         {/* Card 1 – Γερμανική Ποιότητα */}
           <div
             className={`${styles.card} ${styles.large}`}
-            style={{ backgroundImage: "url('/images/general/3.webp')" }}
+            style={{ backgroundImage: "url('/images/general/10.webp')" }}
           >
             <div className={styles.content}>
               <h3>Γερμανική Ποιότητα</h3>
               <p>
-                Πλήρης εξοπλισμός EMS <strong>“Made in Germany”</strong> με εγγύηση ποιότητας
+                Πιστοποιημένη ιατρική συσκευή ηλεκτρομυοδιέγερσης. Πλήρης εξοπλισμός EMS <strong>“Made in Germany”</strong> με εγγύηση ποιότητας
               </p>
             </div>
           </div>

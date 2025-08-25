@@ -1,12 +1,12 @@
 export const equipmentItems = [
   {
-    name: "i-body® belt",
+    name: "i-body® belt flex",
     description: "Ελαστική ζώνη μέσης με ηλεκτρόδια για τους γλουτιαίους, που συνδέεται εύκολα με μαγνητικές επαφές στο γιλέκο.",
     images: ["/images/equipment/belt_1.png"],
     large: true,
   },
   {
-    name: "i-body® strap",
+    name: "i-body® strap flex",
     description: "Ιμάντας για χέρια και πόδια με άνετη εφαρμογή, αγώγιμα ηλεκτρόδια και σύστημα χωρίς Velcro για μεγάλη αντοχή.",
     images: [
       "/images/equipment/strap_2.jpg",
@@ -25,8 +25,8 @@ export const equipmentItems = [
     ],
   },
   {
-    name: "i-body® underwear",
-    description: "Ειδικό λειτουργικό ύφασμα που εξασφαλίζει άνεση, υγιεινή και σωστή εφαρμογή κάτω από τον ιμάντα προπόνησης.",
+    name: "i-body® Functional Underwear",
+    description: "Ειδικό λειτουργικό ύφασμα που εξασφαλίζει άνεση, υγιεινή και σωστή εφαρμογή κάτω από τον ιμάντα προπόνησης. H αντιβακτηριακή αποτελεσματικότητα του έχει ελεγχθεί και πιστοποιηθεί απο την Hohenstein. OEKO-TEX Standard 100 , Sanitized Actifresh, Tencel ίνες, LYCRA sport.",
     images: [
       "/images/equipment/underwear_1.jpg",
       "/images/equipment/underwear_10.jpg",

@@ -14,16 +14,16 @@ export default function PricingPackage({
     <section className="w-full py-12">
       <div className="w-9/10 mx-auto flex flex-col gap-10">
         {/* Title + text */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-4">
           {title && (
-            <h1 className="font-extrabold text-[#1C86D1] text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+            <h1 className="font-extrabold text-center text-[#1C86D1]">
               {title}
             </h1>
           )}
           {text && (
-            <p className="text-gray-700 text-sm sm:text-base md:text-lg">
+            <div className="text-gray-700 text-justify">
               {text}
-            </p>
+            </div>
           )}
         </div>
 
@@ -73,12 +73,12 @@ export default function PricingPackage({
                   </h3>
 
                   {Array.isArray(it.bullets) && it.bullets.length > 0 && (
-                    <ul className="space-y-2 font-semibold text-sm">
+                    <ul className="space-y-2 font-semibold !text-sm">
                       {it.bullets.map((b, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <img
                             src="/icons/check.png"
-                            alt=""
+                            alt="Check icon"
                             className="w-5 h-5 mt-0.5 select-none"
                             aria-hidden="true"
                           />

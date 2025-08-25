@@ -31,9 +31,9 @@ services = []
 
         {/* CTA */}
         {ctaText && (
-          <div className="my-10">
+          <div className="my-10 flex justify-center md:justify-start">
             <Link href={ctaHref || "#"} className="btn">
-              {ctaText}
+            {ctaText}
             </Link>
           </div>
         )}

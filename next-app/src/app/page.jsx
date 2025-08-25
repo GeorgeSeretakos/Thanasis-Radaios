@@ -3,7 +3,7 @@ import Footer from "@/app/components/Footer";
 import ServicesSection from "@/app/components/services/ServicesSection";
 import AboutSection from "@/app/components/AboutSection";
 import PricingPackage from "@/app/components/PricingPackage";
-import presentationCards from "../../public/data/presentationCards";
+import pricingPackage from "../../public/data/pricingPackage";
 import IntroSection from "@/app/components/IntroSection";
 import services_preview from "../../public/data/services-preview";
 import VideoSection from "@/app/components/VideoSection";
@@ -24,10 +24,10 @@ export default function Home() {
                       </div>
                       <div className="mt-6 space-y-3 leading-relaxed">
                           <p>
-                              Τα περισσότερα γυμναστήρια ανταγωνίζονται για το <strong>5% του πληθυσμού</strong> που ήδη αθλείται.
+                            Οι περισσότεροι επαγγελματίες στον χώρο του fitness & wellness ανταγωνίζονται για το <strong>5% του πληθυσμού</strong> που ήδη ασκείται.
                           </p>
                           <p>
-                              Η EMS με Miha Bodytec ανοίγει πρόσβαση σε ένα εντελώς νέο κοινό: το <strong>75% του πληθυσμού</strong> που μέχρι σήμερα έμενε εκτός παραδοσιακής άσκησης — είτε λόγω έλλειψης χρόνου, είτε λόγω χαμηλού ενδιαφέροντος, είτε λόγω περιορισμών κίνησης.                          </p>
+                            Η whole body EMS άσκηση με miha bodytec ανοίγει τις πόρτες σε ένα εντελώς νέο κοινό: το <strong>75% του πληθυσμού</strong> που μέχρι σήμερα ήταν εκτός παραδοσιακής άσκησης — είτε λόγω έλλειψης χρόνου, είτε λόγω χαμηλού ενδιαφέροντος, είτε λόγω περιορισμών υγείας.                          </p>
                           <p className="flex items-center gap-2">
                               <img
                                   src="/icons/opportunity.png"
@@ -35,7 +35,7 @@ export default function Home() {
                                   className="w-10 h-10 select-none"
                               />
                               <i>
-                                  Εδώ δεν μιλάμε για ανταγωνισμό. Μιλάμε για πραγματική ευκαιρία ανάπτυξης.
+                                  Δεν μιλάμε για «άλλο ένα γυμναστήριο». Μιλάμε για αναπτυξιακή ευκαιρία: διαφοροποίηση υπηρεσίας, νέο πελατολόγιο, αυξημένα έσοδα και γρήγορη απόσβεση.
                               </i>
                           </p>
 
@@ -48,8 +48,8 @@ export default function Home() {
               <ServicesSection
                   title="Πώς το πετυχαίνουμε"
                   paragraphs={[
-                      "Η Ηλεκτρομυϊκή Διέγερση (EMS) της Miha Bodytec ενώνει <strong>ασφάλεια</strong>, <strong>ταχύτητα</strong> και <strong>αποτελεσματικότητα</strong> σε μια premium υπηρεσία που χωρά σε 20’ την εβδομάδα.",
-                      "Αποδεδειγμένα οφέλη σε <em>σαρκοπενία</em> & <em>πόνο μέσης</em> σημαίνουν νέο, ευρύ κοινό για το στούντιό σας — από αποκατάσταση έως high-end προπόνηση."
+                      "Η Ηλεκτρομυϊκή Διέγερση όλου του σώματος (whole body-EMS) της miha bodytec συνδυάζει <strong>ασφάλεια</strong>, <strong>ταχύτητα</strong> και <strong>αποτελεσματικότητα</strong> σε μια premium υπηρεσία που χωράει σε 20’ την εβδομάδα.",
+                      "Αποδεδειγμένα οφέλη σε <em>σαρκοπενία</em> & <em>πόνο μέσης</em> σημαίνουν νέο, ευρύ κοινό για την παροχή σας — από αποκατάσταση έως high-end προπόνηση."
                   ]}
                   ctaText="Δείτε περισσότερα για την EMS"
                   ctaHref="/ems"
@@ -60,13 +60,15 @@ export default function Home() {
 
           <AboutSection
               title="Ποιοί Είμαστε"
-              image="/images/general/8.webp"
+              image="/images/general/3.webp"
               fullWidthTitle={false}
               reverse={false}
               description={[
-                  "Είμαστε ο αποκλειστικός αντιπρόσωπος της Miha Bodytec στην Ελλάδα. Η αποστολή μας είναι να στηρίζουμε επιχειρήσεις στον χώρο της άσκησης και της υγείας, παρέχοντάς τους τα κατάλληλα εργαλεία για να αναπτυχθούν μέσω της τεχνολογίας EMS.",
-                  "Δεν είμαστε απλώς διανομείς. Στεκόμαστε δίπλα στους συνεργάτες μας από την πρώτη μέρα: από την προμήθεια του εξοπλισμού, μέχρι την εκπαίδευση, την πιστοποίηση και τη συνεχή επιχειρηματική καθοδήγηση.",
-                  "Με πολυετή εμπειρία στον χώρο της ευεξίας, γνωρίζουμε πώς να μετατρέπουμε μια καινοτόμα τεχνολογία σε μια βιώσιμη και κερδοφόρα επιχειρηματική υπηρεσία.",
+                  "Η <span class='font-semibold'>FF MEDICAL AND WELLNESS</span> είναι ο <strong>αποκλειστικός αντιπρόσωπος και διανομέας</strong> της miha bodytec στην Ελλάδα, την Κύπρο & την Αλβανία.",
+                  "Με μία σταθερή πορεία ανάπτυξης από το  2013 ξεκινώντας ως Fast Fitness,επί 12 έτη η αποστολή μας είναι να <strong>στηρίζουμε επιχειρήσεις</strong> στον χώρο της άσκησης, της ευεξίας και της υγείας, παρέχοντάς τους τα κατάλληλα εργαλεία για να αναπτυχθούν μέσω της τεχνολογίας EMS.",
+                  "Με ενα δίκτυο πελατών μας με <strong>πάνω απο 150 ems studio & φυσικοθεραπευτήρια</strong> στεκόμαστε δίπλα τους από την πρώτη μέρα: από την προμήθεια του εξοπλισμού, μέχρι την εκπαίδευση, την πιστοποίηση και τη συνεχή επιχειρηματική καθοδήγηση.",
+                  "Με <strong>πολυετή εμπειρία στον χώρο της ευεξίας</strong>, γνωρίζουμε πώς να μετατρέπουμε μια καινοτόμα τεχνολογία οπως ειναι αυτη του whole body EMS  σε μια βιώσιμη και κερδοφόρα  υπηρεσία.",
+                  `<i class="font-bold">Δεν είμαστε απλώς διανομείς — είμαστε στρατηγικός συνεργάτης ανάπτυξης.</i>`
               ]}
               ctaText="Δείτε περισσότερα για εμάς"
               ctaLink="/company"
@@ -74,10 +76,10 @@ export default function Home() {
 
           <PricingPackage
               title="Δύο λύσεις, άπειρες δυνατότητες"
-              text="Επιλέξτε ανάμεσα στο ενσύρματο Miha Bodytec || medical και στο ασύρματο Miha Bodytec m.ove (με in-door & outdoor εκδόσεις). Με την απόκτηση ενός συστήματος Miha Bodytec, δεν αγοράζετε απλώς εξοπλισμό, αλλά ένα πλήρες πακέτο: εκπαίδευση, τεχνική υποστήριξη και επιχειρηματική καθοδήγηση."
+              text="Επιλέξτε ανάμεσα στο ενσύρματο miha bodytec || medical και στο ασύρματο miha bodytec m.ove (με in-door & outdoor εκδόσεις). Με την απόκτηση ενός συστήματος miha bodytec, δεν αγοράζετε απλώς εξοπλισμό, αλλά ένα πλήρες πακέτο: εκπαίδευση, τεχνική υποστήριξη και επιχειρηματική καθοδήγηση."
               ctaLink="/collab"
               ctaText="Δείτε περισσότερα για το προϊόν"
-              items={presentationCards}
+              items={pricingPackage}
           />
 
 
@@ -95,7 +97,7 @@ export default function Home() {
              <li>Φορητές λύσεις: με το m.ove προσφέρετε EMS on-the-go.</li>
            </ul>`
               ]}
-              videoUrl="https://www.youtube.com/embed/IbxjhSCqeYg?si=m-M11G3rK2ALQIk_"
+              videoUrl="https://www.youtube.com/embed/z1UuZjxtDpc?si=fyIwPKbSefy3UKvA"
           />
 
           <IntroSection
@@ -109,43 +111,68 @@ export default function Home() {
                           </strong>
                       </div>
 
-                      <div className="mt-6 space-y-3 leading-relaxed">
-                          <p>
-                              Συνήθως ο ασθενής σταματά όταν υποχωρήσει ο πόνος. Με το
-                              <strong> miha bodytec</strong>, η <strong>ολόσωμη ενδυνάμωση σε 20’/εβδομάδα </strong>
-                              μετατρέπει την αποσπασματική επίσκεψη σε σταθερή συνήθεια.
-                          </p>
+                    <div className="mt-6 space-y-3 leading-relaxed">
+                      <p>
+                        Συνήθως ο ασκούμενος ή ασθενής σταματά την εκγύμναση είτε λόγω έλλειψης πια ενδιαφέροντος &
+                        χρόνου είτε όταν υποχωρήσει ο πόνος. Με το <strong>miha bodytec</strong>, η <strong>ολόσωμη
+                        ενδυνάμωση σε 20’/εβδομάδα </strong> μετατρέπει την αποσπασματική επίσκεψη σε σταθερή συνήθεια.
+                      </p>
 
-                          <p>
-                              Το αποτέλεσμα; Οι πελάτες βλέπουν την υγεία τους
-                              <strong> ολιστικά</strong> (πρόληψη &amp; απόδοση) και παραμένουν ενεργοί,
-                              πέρα από την αντιμετώπιση του συμπτώματος.
-                          </p>
+                      <p>
+                        Το αποτέλεσμα; Οι πελάτες βλέπουν την υγεία τους <strong>ολιστικά</strong> (πρόληψη & απόδοση) και παραμένουν ενεργοί, πέρα από την αντιμετώπιση του συμπτώματος.                         Μέσα από αυτή τη δέσμευση, το αρχικό κίνητρο εξελίσσεται σε <strong>διαρκή αλλαγή συμπεριφοράς </strong> και πιο <strong>ενεργό τρόπο ζωής</strong>.
+                      </p>
 
-                          <p>
-                              Μέσα από αυτή τη δέσμευση, το αρχικό κίνητρο
-                              εξελίσσεται σε <strong>διαρκή αλλαγή συμπεριφοράς </strong>
-                              και πιο <strong>ενεργό τρόπο ζωής</strong>.
-                          </p>
+                      <p className="flex items-center gap-2">
+                        <img
+                          src="/icons/opportunity.png"
+                          alt="opportunity"
+                          className="w-10 h-10 select-none"
+                        />
+                        <i>
+                          Δίνουν προτεραιότητα στην υγεία έναντι της εμφάνισης.
+                        </i>
+                      </p>
 
-                          <p className="flex items-center gap-2">
-                              <img
-                                  src="/icons/opportunity.png"
-                                  alt="opportunity"
-                                  className="w-10 h-10 select-none"
-                              />
-                              <i>
-                                  Από το «έρχομαι όταν πονάω» στο «προπονούμαι για να μη πονάω».
-                              </i>
-                          </p>
-                      </div>
+                      <p className="flex items-center gap-2">
+                        <img
+                          src="/icons/opportunity.png"
+                          alt="opportunity"
+                          className="w-10 h-10 select-none"
+                        />
+                        <i>
+                          Εκτιμούν την προσωπική προσοχή έναντι της αυτοματοποίησης.
+                        </i>
+                      </p>
+
+                      <p className="flex items-center gap-2">
+                        <img
+                          src="/icons/opportunity.png"
+                          alt="opportunity"
+                          className="w-10 h-10 select-none"
+                        />
+                        <i>
+                          Ενδιαφέρονται λιγότερο για τις εφαρμογές και τη δυναμική των ομάδων.
+                        </i>
+                      </p>
+
+                      <p className="flex items-center gap-2">
+                        <img
+                          src="/icons/opportunity.png"
+                          alt="opportunity"
+                          className="w-10 h-10 select-none"
+                        />
+                        <i>
+                          Και είναι πρόθυμοι να επενδύσουν στη μακροπρόθεσμη ευεξία.
+                        </i>
+                      </p>
+                    </div>
                   </>
               }
           />
 
-          <QandA items={qa} />
+        <QandA items={qa}/>
 
-          <Footer />
+        <Footer/>
       </main>
   );
 }

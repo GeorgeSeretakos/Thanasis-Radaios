@@ -21,20 +21,15 @@ export default function AboutPage() {
               <strong className="text-2xl">Προπόνηση EMS – Η υπηρεσία που θα απογειώσει την επιχείρησή σας</strong>
             </div>
             <div className="mt-6">
-              Η EMS είναι η πιο σύγχρονη μορφή ηλεκτρομυοδιέγερσης: μια επιστημονικά τεκμηριωμένη μέθοδος που προσφέρει
-              ασφάλεια, ταχύτητα και εντυπωσιακά αποτελέσματα. Με μόλις 20 λεπτά την εβδομάδα, η EMS απευθύνεται σε:
-            </div>
+              Το whole body  EMS της miha bodytec είναι η πιο σύγχρονη μορφή ηλεκτρομυοδιέγερσης: μια επιστημονικά τεκμηριωμένη μέθοδος που προσφέρει ασφάλεια, ταχύτητα και εντυπωσιακά αποτελέσματα. Με μόλις 20 λεπτά την εβδομάδα, η EMS απευθύνεται σε:            </div>
             <div className="mt-4">
               <ul className="list-disc pl-6 space-y-1">
                 <li>άτομα με περιορισμένο χρόνο,</li>
                 <li>όσους θέλουν να εντάξουν την άσκηση στην καθημερινότητά τους,</li>
-                <li>αλλά και σε ανθρώπους που δυσκολεύονται να αθληθούν με τις κλασικές μεθόδους λόγω πόνου ή κινητικών
-                  προβλημάτων.
-                </li>
+                <li>αλλά και σε ανθρώπους που δυσκολεύονται να αθληθούν με τις κλασικές μεθόδους λόγω πόνου ή κινητικών προβλημάτων.</li>
               </ul>
               <p className="mt-4">
-                Για το στούντιό σας, η EMS είναι μια επένδυση που ξεχωρίζει: προσελκύει premium πελάτες και δημιουργεί
-                πιστό κοινό.
+                Για τον επαγγελματικό σας χώρο, η EMS είναι μια επένδυση που ξεχωρίζει: προσελκύει premium πελάτες και δημιουργεί πιστό κοινό.
               </p>
             </div>
 
@@ -45,7 +40,7 @@ export default function AboutPage() {
                 className="w-8 h-8 select-none"
               />
               <i className="font-semibold">
-                Γιατί να επιλέξετε την EMS ;
+                Γιατί να επιλέξετε την EMS άσκηση ;
               </i>
             </p>
 
@@ -78,14 +73,14 @@ export default function AboutPage() {
       <VideoSection
         title="Η EMS σε πάει ένα βήμα παραπέρα — πιο γρήγορα"
         paragraphs={[
-          `Η Ηλεκτρομυϊκή Διέγερση (EMS) ενεργοποιεί έως και 10 μυϊκές ομάδες ταυτόχρονα, συμπεριλαμβανομένων βαθύτερων μυών που δύσκολα στοχεύονται με κλασική άσκηση.`,
+          `Η whole body EMS ενεργοποιεί όλες τις μυϊκές ομάδες ταυτόχρονα, συμπεριλαμβανομένων βαθύτερων μυών που δύσκολα στοχεύονται με κλασική άσκηση.`,
           `Ο συνδυασμός εκούσιας σύσπασης και ηλεκτρικού ερεθίσματος προσφέρει μέγιστη ενεργοποίηση με ελάχιστη επιβάρυνση στις αρθρώσεις.`,
           `<p class="flex items-center gap-2 mt-6">
             <img src="/icons/goal.png" alt="steps icon" class="w-8 h-8 select-none" />
             <i class="font-semibold">Η διαδικασία είναι απλή και ολοκληρώνεται σε 3 βήματα.</i>
           </p>`
         ]}
-        videoUrl="https://www.youtube.com/embed/9E5-icT4ptU?si=aTT34fdRm5fylp2U"
+        videoUrl="https://www.youtube.com/embed/vJZO6uhucKE?si=YwB9oZsAQqrTKfZF"
       />
 
 
@@ -96,7 +91,7 @@ export default function AboutPage() {
             className="relative w-full max-w-3xl rounded-xl overflow-hidden shadow-lg"
           >
             <iframe
-              src="https://www.youtube.com/embed/x5kIXBS0JOk?si=8U3qbtWwOA_3B-NJ"
+              src="https://www.youtube.com/embed/yT9KJMncPEM?si=zlfRtCoxhL4NTAS6"
               title="Video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"

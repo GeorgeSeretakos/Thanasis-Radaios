@@ -1,4 +1,4 @@
-const presentationCards = [
+const pricingPackage = [
   {
     title: "Εξοπλισμός i-body®",
     image: "/images/general/27.jpg",
@@ -16,7 +16,7 @@ const presentationCards = [
     bullets: [
       "Δωρεάν εκπαίδευση από έμπειρους ειδικούς",
       "Διεθνώς αναγνωρισμένο πιστοποιητικό EMS",
-      "Ένταξη στο δίκτυο συνεργατών Miha Bodytec",
+      "Ένταξη στο δίκτυο συνεργατών miha bodytec",
       "Πρακτικά εργαλεία για ασφαλή & αποδοτική λειτουργία",
       "Συνεχής ανανέωση γνώσης σε νέες τεχνικές",
     ],
@@ -45,4 +45,4 @@ const presentationCards = [
   },
 ];
 
-export default presentationCards;
+export default pricingPackage;

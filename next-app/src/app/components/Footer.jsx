@@ -32,6 +32,7 @@ export default function Contact() {
                 <strong>Τηλέφωνο</strong>
                 <ul className="list-disc pl-5">
                   <li>210 8070010</li>
+                  <li>211 2143161</li>
                 </ul>
               </div>
               <div className="mb-4">
@@ -50,8 +51,9 @@ export default function Contact() {
               <div>
                 <strong>Ώρες Λειτουργίας</strong>
                 <ul className="list-disc pl-5">
-                  <li>Δευτέρα - Παρασκευή: 09:00 – 18:00</li>
-                  <li>Σάββατο - Κυριακή: Κλειστά</li>
+                  <li>Δευτέρα - Παρασκευή: 09:00 – 21:00</li>
+                  <li>Σάββατο: 10:00 - 15.00</li>
+                  <li>Κυριακή: Κλειστά</li>
                 </ul>
               </div>
             </div>

@@ -1,14 +1,14 @@
 export default function SplitColumnsWithImage({
-                                                title,
-                                                leftTitle,
-                                                leftBullets = [],
-                                                rightTitle,
-                                                rightBullets = [],
-                                                imageSrc,
-                                                imageAlt,
-                                                bulletIcon = "/icons/check.png",
-                                                bulletAlt = "bullet icon",
-                                              }) {
+title,
+leftTitle,
+leftBullets = [],
+rightTitle,
+rightBullets = [],
+imageSrc,
+imageAlt,
+bulletIcon = "/icons/check.png",
+bulletAlt = "bullet icon",
+}) {
   return (
     <div className="w-full my-12 bg-gradient-to-b from-[#E6F4FB] via-white to-[#F9FCFF] px-4 sm:px-6 lg:px-8">
       {/* Main Section Title */}

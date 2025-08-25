@@ -6,10 +6,15 @@ export default function EquipmentGrid({ title, items = [], rowMaxH = 420 }) {
   return (
     <section className="w-4/5 max-w-7xl mx-auto py-12">
       {title && (
-        <div className="bg-[#1C86D1] p-4 rounded-xl text-2xl font-bold text-white text-center !mb-8">
+        <div className="
+    bg-[#1C86D1] p-4 text-2xl font-bold text-white text-center mb-8
+    w-screen relative left-1/2 right-1/2 -ml-[50vw] rounded-none
+    md:w-auto md:relative md:left-0 md:right-0 md:ml-0 md:rounded-xl
+  ">
           {title}
         </div>
       )}
+
 
       <div className="flex flex-col divide-y divide-[#1C86D1]">
         {items.map((item, idx) => (

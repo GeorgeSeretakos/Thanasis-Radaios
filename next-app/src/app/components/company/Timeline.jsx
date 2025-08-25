@@ -1,11 +1,11 @@
 // components/Timeline.jsx
-export default function Timeline({ items }) {
+export default function Timeline({ title, items }) {
   return (
     <section className="w-full py-16 bg-gradient-to-b from-[#E6F4FB] via-white to-[#F9FCFF]">
       <div className="max-w-6xl mx-auto px-4">
         {/* Title */}
         <h2 className="title-teal mb-12 sm:mb-16 text-center sm:text-left">
-          Η πορεία της Miha-Bodytec
+          {title}
         </h2>
 
         <div className="space-y-12 sm:space-y-16">
