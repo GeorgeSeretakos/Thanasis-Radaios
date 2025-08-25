@@ -60,7 +60,7 @@ export default function Home() {
 
           <AboutSection
               title="Ποιοί Είμαστε"
-              image="/images/equipment/cards_2.jpg"
+              image="/images/general/8.webp"
               fullWidthTitle={false}
               reverse={false}
               description={[

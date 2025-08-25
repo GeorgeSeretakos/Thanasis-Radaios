@@ -103,7 +103,6 @@ export default function ProductPage() {
 
 
       <IntroSection
-        // title="Η δύναμη του EMS… παντού"
         paragraph={
           <>
             <div>

@@ -9,7 +9,7 @@ export default function ColabPage() {
   return (
     <main className="w-full">
       <IntroSection
-        image="/images/general/16.png"
+        image="/images/general/15.webp"
         title="Πακέτο Συνεργασίας"
         paragraph={
           <>

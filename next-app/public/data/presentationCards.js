@@ -1,4 +1,3 @@
-// src/data/presentationCards.js
 const presentationCards = [
   {
     title: "Εξοπλισμός i-body®",

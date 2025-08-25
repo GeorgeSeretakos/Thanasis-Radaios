@@ -70,7 +70,7 @@ export default function AboutPage() {
           "Μυϊκή επανεκπαίδευση μετά από τραυματισμό ή χειρουργείο",
           "Διατήρηση κινητικότητας και ποιότητας ζωής"
         ]}
-        imageSrc="/images/general/25.jpg"
+        imageSrc="/images/general/38.jpg"
         imageAlt="Προπόνηση και Αποκατάσταση"
         bulletIcon="/icons/check.png"
       />

@@ -7,8 +7,7 @@ export default function BlogCard({ image, title, description }) {
         <img
           src={image}
           alt={title}
-          fill
-          className="object-cover"
+          className="object-cover fill"
         />
       </div>
 
