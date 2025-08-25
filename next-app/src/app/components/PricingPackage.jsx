@@ -16,9 +16,12 @@ export default function PricingPackage({
         {/* Title + text */}
         <div className="max-w-3xl mx-auto space-y-4">
           {title && (
-            <h2 className="title-teal">
-              {title}
-            </h2>
+            <div className="w-full flex md:justify-center">
+              <h2 className="title-teal text-left md:text-center">
+                {title}
+              </h2>
+            </div>
+
           )}
           {text && (
             <p className="text-gray-700 text-justify">

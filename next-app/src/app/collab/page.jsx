@@ -15,7 +15,7 @@ export default function ColabPage() {
         paragraph={
           <>
             <div>
-              <strong className="text-2xl">Από την τεχνολογία… στην ολοκληρωμένη λύση EMS</strong>
+              <h2>Από την τεχνολογία… στην ολοκληρωμένη λύση EMS</h2>
             </div>
             <div className="mt-6 space-y-3 leading-relaxed">
               <p>
