@@ -22,7 +22,7 @@ export default function BlogSlugPage({ params }) {
 
       {post.image && (
         <div className="mb-6">
-          <Image
+          <img
             src={post.image}
             alt={post.title}
             width={800}
