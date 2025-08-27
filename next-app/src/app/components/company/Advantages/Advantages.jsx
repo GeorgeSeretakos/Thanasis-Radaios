@@ -25,7 +25,7 @@ export default function Advantages() {
           {/* Card 2 – Εκπαίδευση & Πιστοποίηση */}
           <div
             className={`${styles.card} ${styles.small}`}
-            style={{ backgroundImage: "url('/images/equipment/cards_1.jpg')" }}
+            style={{ backgroundImage: "url('/images/news/cards_1.jpg')" }}
           >
             <div className={styles.content}>
               <h3>Εκπαίδευση & Πιστοποίηση</h3>
