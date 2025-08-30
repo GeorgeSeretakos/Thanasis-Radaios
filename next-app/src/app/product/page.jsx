@@ -5,6 +5,7 @@ import FeatureGrid from "../components/product/FeatureGrid";
 import {equipmentItems} from "../../../public/data/equipment";
 import features from "../../../public/data/features";
 import EquipmentGrid from "../components/product/EquipmentGrid";
+import OrderForm from "../components/product/OrderForm";
 
 
 export default function ProductPage() {
@@ -245,10 +246,9 @@ export default function ProductPage() {
         }
       />
 
-
-
       <EquipmentGrid title="Εξοπλισμός i-body ®" items={equipmentItems}   rowMaxH={280} />
 
+      <OrderForm />
 
       <Footer />
     </>

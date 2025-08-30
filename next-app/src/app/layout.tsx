@@ -41,6 +41,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <input type="tel" name="phone"/>
         </form>
 
+        <form
+            name="order-request"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            hidden
+        >
+            <input type="hidden" name="form-name" value="order-request"/>
+            <textarea name="order_items_text"/>
+            <input type="hidden" name="order_items_json"/>
+            <input type="text" name="firstName"/>
+            <input type="text" name="lastName"/>
+            <input type="tel" name="phone"/>
+            <textarea name="message"/>
+        </form>
+
 
         <Navbar/>
         <NewsletterModal/>
