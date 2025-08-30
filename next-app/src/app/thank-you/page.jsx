@@ -6,9 +6,6 @@ export default function ThankYou() {
       <h1 className="text-3xl md:text-4xl font-bold mb-4">
         Ευχαριστούμε για την επικοινωνία σας!
       </h1>
-      <p className="mb-6">
-        Θα σας απαντήσουμε το συντομότερο δυνατό.
-      </p>
       <Link
         href="/"
         className="text-sky-400 underline hover:text-sky-300 transition"

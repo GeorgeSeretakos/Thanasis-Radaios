@@ -1,15 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function NewsletterModal() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // check if user has already seen the modal
-    const hasSeen = localStorage.getItem("newsletterModalSeen");
+    // check if user has already seen the modal in this session
+    const hasSeen = sessionStorage.getItem("newsletterModalSeen");
     if (!hasSeen) {
       setOpen(true);
-      localStorage.setItem("newsletterModalSeen", "true");
+      sessionStorage.setItem("newsletterModalSeen", "true");
     }
   }, []);
 
@@ -86,12 +87,12 @@ export default function NewsletterModal() {
                 className="accent-blue-600 scale-110"
               />
               Αποδέχομαι την{" "}
-              <a
+              <Link
                 href="/privacy-policy"
                 className="text-blue-600 hover:underline"
               >
                 Πολιτική Απορρήτου
-              </a>
+              </Link>
             </label>
             <button type="submit" className="btn">
               Εγγραφή
