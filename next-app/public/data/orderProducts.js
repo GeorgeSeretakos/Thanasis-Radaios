@@ -7,7 +7,7 @@ const U = {
 const products = [
   { id: "ii-med-stand", desc: "miha bodytec II medical with stand", unit: U.PIECE, image: "/images/product/medical_2.jpg" },
   { id: "move-no-stand", desc: "miha bodytec m.ove (without stand)", unit: U.PIECE, image: "/images/product/medical_1.webp" },
-  { id: "ibody-connect-bt", desc: "set IBODY connect wireless (BLUETOOTH)", unit: U.SET, image: "/images/products/ibody-connect-bt.webp" },
+  { id: "ibody-connect-bt", desc: "set IBODY connect wireless (BLUETOOTH)", unit: U.SET, image: "/images/equipment/connect_4.jpg" },
   { id: "move", desc: "miha bodytec m.ove", unit: U.PIECE, image: "/images/product/workstation_1.jpg" },
   { id: "travel-station", desc: "travel station m.ove", unit: U.PIECE, image: "/images/product/travelstation_4.jpg" },
   { id: "workstation", desc: "workstation", unit: U.PIECE, image: "/images/product/workstation_4.png" },
