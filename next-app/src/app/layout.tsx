@@ -15,7 +15,10 @@ export const metadata = {
     description: "Website for Miha Bodytec",
 };
 
+
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+
     return (
         <html lang="en">
         <body
@@ -25,8 +28,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           antialiased
         `}
         >
-        <Navbar />
-        <NewsletterModal />
+        <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+            <input type="hidden" name="form-name" value="newsletter"/>
+            <input type="text" name="firstName"/>
+            <input type="text" name="lastName"/>
+            <input type="email" name="email"/>
+            <input type="tel" name="phone"/>
+        </form>
+
+
+        <Navbar/>
+        <NewsletterModal/>
         <main className="mt-16">{children}</main>
         </body>
         </html>
