@@ -14,11 +14,11 @@ export default function AboutPage() {
     <main>
       <IntroSection
         image="/images/general/2.webp"
-        title="Προπόνηση EMS"
+        title="Άσκηση EMS"
         paragraph={
           <>
             <div>
-              <h2>Προπόνηση EMS – Η υπηρεσία που θα απογειώσει την επιχείρησή σας</h2>
+              <h2>Άσκηση EMS – Η υπηρεσία που θα απογειώσει την επιχείρησή σας</h2>
             </div>
             <div className="mt-6 space-y-3 leading-relaxed">
               <p>
