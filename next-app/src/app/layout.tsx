@@ -28,7 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           antialiased
         `}
         >
-        <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+        <form
+            name="newsletter"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            hidden
+        >
             <input type="hidden" name="form-name" value="newsletter"/>
             <input type="text" name="firstName"/>
             <input type="text" name="lastName"/>
