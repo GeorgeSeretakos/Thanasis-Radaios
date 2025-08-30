@@ -4,16 +4,14 @@ import posts from "../../../public/data/blog";
 import BlogCard from "../components/blog/BlogCard";
 
 export default function BlogPage() {
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState("news");
 
   const tabs = [
-    { value: "all", label: "Προβολή Όλων" },
     { value: "news", label: "Νέα" },
     { value: "studies", label: "Μελέτες" },
   ];
 
-  const filteredPosts =
-    category === "all" ? posts : posts.filter((p) => p.category === category);
+  const filteredPosts = posts.filter((p) => p.category === category);
 
   return (
     <main>
@@ -41,7 +39,7 @@ export default function BlogPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredPosts.filter(Boolean).map((post) => (
             <div key={post.slug || post.pdfUrl || post.title}>
-              <BlogCard post={post}/>
+              <BlogCard post={post} />
             </div>
           ))}
         </div>

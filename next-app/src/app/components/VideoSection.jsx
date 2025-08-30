@@ -1,4 +1,13 @@
-export default function VideoSection({ title, paragraphs = [], videoUrl, reverse = false }) {
+import Link from "next/link";
+
+export default function VideoSection({
+                                       title,
+                                       paragraphs = [],
+                                       videoUrl,
+                                       reverse = false,
+                                       ctaText = "",
+                                       ctaLink = "",
+                                     }) {
   const hasText = title || (paragraphs && paragraphs.length > 0);
 
   return (
@@ -29,6 +38,15 @@ export default function VideoSection({ title, paragraphs = [], videoUrl, reverse
                 />
               );
             })}
+
+            {/* CTA */}
+            {ctaText && (
+              <div className="my-10 flex justify-center md:justify-start">
+                <Link href={ctaLink || "#"} className="btn">
+                  {ctaText}
+                </Link>
+              </div>
+            )}
           </div>
         )}
 

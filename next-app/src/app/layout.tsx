@@ -1,7 +1,7 @@
-// src/app/layout.tsx
 import { Geist, Geist_Mono, Great_Vibes, Manrope, Open_Sans, Roboto } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from "./components/Navbar";
+import NewsletterModal from "./components/NewsletterModal";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -26,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}
         >
         <Navbar />
+        <NewsletterModal />
         <main className="mt-16">{children}</main>
         </body>
         </html>

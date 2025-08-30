@@ -31,9 +31,9 @@ export default function Navbar() {
           {/* Desktop Links */}
           <div className="hidden sm:flex sm:space-x-4 lg:space-x-5 items-center font-semibold text-xs lg:text-sm">
             <NavItem href="/" label="Αρχική"/>
-            <NavItem href="/company" label="Η εταιρεία"/>
             <NavItem href="/product" label="Το προϊόν"/>
-            <NavItem href="/ems" label="Προπόνηση EMS"/>
+            <NavItem href="/company" label="Η εταιρεία"/>
+            <NavItem href="/ems" label="Άσκηση EMS"/>
             <NavItem href="/collab" label="Συνεργασία"/>
             <NavItem href="/blog" label="Blog"/>
             <NavItem href="/contact" label="Επικοινωνία"/>
@@ -57,9 +57,9 @@ export default function Navbar() {
         <div className="sm:hidden bg-white shadow-md border-t">
           <div className="flex flex-col space-y-2 px-4 py-4 font-medium">
             <NavItem href="/" label="Αρχική"/>
-            <NavItem href="/company" label="Η εταιρεία"/>
             <NavItem href="/product" label="Το προϊόν"/>
-            <NavItem href="/ems" label="Προπόνηση EMS"/>
+            <NavItem href="/company" label="Η εταιρεία"/>
+            <NavItem href="/ems" label="Άσκηση EMS"/>
             <NavItem href="/collab" label="Συνεργασία"/>
             <NavItem href="/blog" label="Blog"/>
             <NavItem href="/contact" label="Επικοινωνία"/>

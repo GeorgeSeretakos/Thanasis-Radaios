@@ -52,17 +52,6 @@ ctaLink = "",
           {!fullWidthTitle && <h2 className="title-teal mb-6">{title}</h2>}
 
           {/* Description */}
-          {/*<div className="leading-relaxed space-y-4">*/}
-          {/*  {description.map((item, i) =>*/}
-          {/*    typeof item === "string" && /<[^>]+>/.test(item) ? (*/}
-          {/*      <div key={i} dangerouslySetInnerHTML={{__html: item}}/>*/}
-          {/*    ) : (*/}
-          {/*      <div key={i}>{item}</div>*/}
-          {/*    )*/}
-          {/*  )}*/}
-          {/*</div>*/}
-
-          {/* Description */}
           <div className="leading-relaxed space-y-4">
             {description.map((item, i) => (
               <p
@@ -71,7 +60,6 @@ ctaLink = "",
               />
             ))}
           </div>
-
 
           {/* Ticks */}
           {ticks.length > 0 && (

@@ -61,18 +61,19 @@ export default function ColabPage() {
 
       <VideoSection
         title="Ανοίξτε το δικό σας EMS studio"
-        reverse
         paragraphs={[
           "Δεν χρειάζεστε μεγάλους χώρους ή πολύπλοκες εγκαταστάσεις. Δημιουργούμε λειτουργικά EMS studios από μόλις 25 τ.μ., είτε ως αυτόνομα mini στούντιο είτε ενσωματωμένα σε πολυλειτουργικά κέντρα.",
           "Με το miha bodytec m.ove (φορητό workstation) μπορείτε να προσφέρετε συνεδρίες παντού: σε εταιρικούς χώρους, κατ’ οίκον ή σε events.",
           `<h3 class="mt-6 mb-2 font-semibold text-lg"><i>Είναι τόσο απλό!</i></h3>
-           <ul class="list-disc pl-5 space-y-1">
-             <li>Μικρές απαιτήσεις χώρου: πλήρες setup από 25 τ.μ.</li>
-             <li>Ευελιξία λειτουργίας: standalone ή integration σε υπάρχον κέντρο</li>
-             <li>Φορητές λύσεις: με το m.ove προσφέρετε EMS on-the-go.</li>
-           </ul>`
+               <ul class="list-disc pl-5 space-y-1">
+                 <li>Μικρές απαιτήσεις χώρου: πλήρες setup από 25 τ.μ.</li>
+                 <li>Ευελιξία λειτουργίας: standalone ή integration σε υπάρχον κέντρο</li>
+                 <li>Φορητές λύσεις: με το m.ove προσφέρετε EMS on-the-go.</li>
+               </ul>`
         ]}
         videoUrl="https://www.youtube.com/embed/z1UuZjxtDpc?si=fyIwPKbSefy3UKvA"
+        ctaText="Επικοινωνία"
+        ctaLink="/contact"
       />
 
 

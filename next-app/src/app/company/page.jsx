@@ -9,12 +9,12 @@ export default function AboutPage() {
   return (
     <main>
       <IntroSection
-        image="/images/general/23.jpg"
+        image="/images/general/39.jpg"
         title="Η εταιρεία"
         paragraph={
           <>
             <div>
-              <h2>miha bodytec - Αποκλειστικός αντιπρόσωπος διανομέας σε Ελλάδα, Κύπρο και Αλβανία</h2>
+              <h2>FF Medical & Wellness miha bodytec - Αποκλειστικός αντιπρόσωπος διανομέας σε Ελλάδα, Κύπρο και Αλβανία</h2>
             </div>
             <div className="mt-6 space-y-3 leading-relaxed">
               <p>
@@ -27,9 +27,9 @@ export default function AboutPage() {
 
       <AboutSection
         title="Ποιοί Είμαστε"
-        image="/images/general/3.webp"
+        image="/images/general/27.jpg"
         fullWidthTitle={false}
-        reverse={false}
+        reverse={true}
         description={[
           "Η FF MEDICAL AND WELLNESS είναι ο <strong>αποκλειστικός αντιπρόσωπος και διανομέας</strong> της miha bodytec στην Ελλάδα, την Κύπρο & την Αλβανία.",
           "Με μία σταθερή πορεία ανάπτυξης από το 2013 ξεκινώντας ως Fast Fitness, επί 12 έτη η αποστολή μας είναι να <strong>στηρίζουμε επιχειρήσεις</strong> στον χώρο της άσκησης, της ευεξίας και της υγείας, παρέχοντάς τους τα κατάλληλα εργαλεία για να αναπτυχθούν μέσω της τεχνολογίας EMS.",
@@ -41,9 +41,9 @@ export default function AboutPage() {
 
       <AboutSection
         title="Η μητρική εταιρεία - miha bodytec"
-        image="/images/general/27.jpg"
+        image="/images/general/23.jpg"
         fullWidthTitle={false}
-        reverse
+        reverse={false}
         description={[
           "Η miha bodytec, με έδρα στη Γερμανία, είναι ο <strong>παγκόσμιος ηγέτης</strong> στην τεχνολογία ηλεκτρομυϊκής διέγερσης ολόκληρου του σώματος (Whole-Body EMS).",
           "Από το 2007, σχεδιάζει και κατασκευάζει ιατρικές συσκευές EMS σύμφωνα με τα υψηλότερα πρότυπα <strong>“Made in Germany”</strong>, σε συνεργασία με διεθνή επιστημονικά και ιατρικά ιδρύματα.",

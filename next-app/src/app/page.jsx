@@ -60,9 +60,9 @@ export default function Home() {
 
           <AboutSection
               title="Ποιοί Είμαστε"
-              image="/images/general/3.webp"
+              image="/images/general/27.jpg"
               fullWidthTitle={false}
-              reverse={false}
+              reverse={true}
               description={[
                   "Η <span class='font-semibold'>FF MEDICAL AND WELLNESS</span> είναι ο <strong>αποκλειστικός αντιπρόσωπος και διανομέας</strong> της miha bodytec στην Ελλάδα, την Κύπρο & την Αλβανία.",
                   "Με μία σταθερή πορεία ανάπτυξης από το  2013 ξεκινώντας ως Fast Fitness,επί 12 έτη η αποστολή μας είναι να <strong>στηρίζουμε επιχειρήσεις</strong> στον χώρο της άσκησης, της ευεξίας και της υγείας, παρέχοντάς τους τα κατάλληλα εργαλεία για να αναπτυχθούν μέσω της τεχνολογίας EMS.",
@@ -85,20 +85,23 @@ export default function Home() {
 
           <QuoteSection />
 
-          <VideoSection
-              title="Ανοίξτε το δικό σας EMS studio"
-              paragraphs={[
-                  "Δεν χρειάζεστε μεγάλους χώρους ή πολύπλοκες εγκαταστάσεις. Δημιουργούμε λειτουργικά EMS studios από μόλις 25 τ.μ., είτε ως αυτόνομα mini στούντιο είτε ενσωματωμένα σε πολυλειτουργικά κέντρα.",
-                  "Με το miha bodytec m.ove (φορητό workstation) μπορείτε να προσφέρετε συνεδρίες παντού: σε εταιρικούς χώρους, κατ’ οίκον ή σε events.",
-                  `<h3 class="mt-6 mb-2 font-semibold text-lg"><i>Είναι τόσο απλό!</i></h3>
-           <ul class="list-disc pl-5 space-y-1">
-             <li>Μικρές απαιτήσεις χώρου: πλήρες setup από 25 τ.μ.</li>
-             <li>Ευελιξία λειτουργίας: standalone ή integration σε υπάρχον κέντρο</li>
-             <li>Φορητές λύσεις: με το m.ove προσφέρετε EMS on-the-go.</li>
-           </ul>`
-              ]}
-              videoUrl="https://www.youtube.com/embed/z1UuZjxtDpc?si=fyIwPKbSefy3UKvA"
-          />
+        <VideoSection
+          title="Ανοίξτε το δικό σας EMS studio"
+          paragraphs={[
+            "Δεν χρειάζεστε μεγάλους χώρους ή πολύπλοκες εγκαταστάσεις. Δημιουργούμε λειτουργικά EMS studios από μόλις 25 τ.μ., είτε ως αυτόνομα mini στούντιο είτε ενσωματωμένα σε πολυλειτουργικά κέντρα.",
+            "Με το miha bodytec m.ove (φορητό workstation) μπορείτε να προσφέρετε συνεδρίες παντού: σε εταιρικούς χώρους, κατ’ οίκον ή σε events.",
+            `<h3 class="mt-6 mb-2 font-semibold text-lg"><i>Είναι τόσο απλό!</i></h3>
+               <ul class="list-disc pl-5 space-y-1">
+                 <li>Μικρές απαιτήσεις χώρου: πλήρες setup από 25 τ.μ.</li>
+                 <li>Ευελιξία λειτουργίας: standalone ή integration σε υπάρχον κέντρο</li>
+                 <li>Φορητές λύσεις: με το m.ove προσφέρετε EMS on-the-go.</li>
+               </ul>`
+          ]}
+          videoUrl="https://www.youtube.com/embed/z1UuZjxtDpc?si=fyIwPKbSefy3UKvA"
+          ctaText="Επικοινωνία"
+          ctaLink="/contact"
+        />
+
 
           <IntroSection
               image="/images/general/13.webp"

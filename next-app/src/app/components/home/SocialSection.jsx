@@ -17,35 +17,8 @@ export default function SocialSection() {
               alt="Facebook"
               width={40}
               height={40}
-              // style={{backgroundColor: "white", border: "2px solid white", borderRadius: "50%"}}
             />
           </a>
-          {/*<a*/}
-          {/*  href="" // TODO: Add link*/}
-          {/*  className="w-12 h-12 rounded-full flex items-center justify-center"*/}
-          {/*  aria-label="Instagram"*/}
-          {/*>*/}
-          {/*  <img*/}
-          {/*    src="/icons/instagram.png"*/}
-          {/*    alt="Instagram"*/}
-          {/*    width={40}*/}
-          {/*    height={40}*/}
-          {/*    // style={{backgroundColor: "white", border: "2px solid white", borderRadius: "50%"}}*/}
-          {/*  />*/}
-          {/*</a>*/}
-          {/*<a*/}
-          {/*  href="" // TODO: Add link*/}
-          {/*  className="w-12 h-12 rounded-full flex items-center justify-center"*/}
-          {/*  aria-label="TikTok"*/}
-          {/*>*/}
-          {/*  <img*/}
-          {/*    src="/icons/tiktok.png"*/}
-          {/*    alt="TikTok"*/}
-          {/*    width={40}*/}
-          {/*    height={40}*/}
-          {/*    style={{border: "2px solid white", backgroundColor: "white", borderRadius: "50%"}}*/}
-          {/*  />*/}
-          {/*</a>*/}
           <a
             href="https://www.youtube.com/@FFMEDICALWELLNESS"
             className="w-12 h-12 rounded-full flex items-center justify-center"
@@ -56,7 +29,6 @@ export default function SocialSection() {
               alt="LinkedIn"
               width={40}
               height={40}
-              // style={{backgroundColor: "white", border: "2px solid white", borderRadius: "50%"}}
             />
           </a>
         </div>

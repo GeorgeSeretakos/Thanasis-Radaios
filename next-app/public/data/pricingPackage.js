@@ -1,7 +1,7 @@
 const pricingPackage = [
   {
     title: "Εξοπλισμός i-body®",
-    image: "/images/general/27.jpg",
+    image: "/images/general/40.jpg",
     bullets: [
       "Πλήρες σετ ηλεκτροδίων, ζωνών & υφασμάτων για άμεση εκκίνηση",
       "Διαθέσιμο σε όλα τα μεγέθη, με εργονομική εφαρμογή",

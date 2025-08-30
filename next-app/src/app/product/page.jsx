@@ -11,7 +11,7 @@ export default function ProductPage() {
   return (
     <>
       <IntroSection
-        image="/images/general/25.jpg"
+        image="/images/product/medical_1.png"
         title="Το προϊόν"
         paragraph={
           <>
@@ -34,6 +34,7 @@ export default function ProductPage() {
             </div>
           </>
         }
+        imageClassName="object-contain bg-white"
       />
 
       <AboutSection
