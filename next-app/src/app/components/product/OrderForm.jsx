@@ -104,7 +104,7 @@ export default function OrderForm() {
           <div className="mt-6 flex items-center gap-4">
             <div className="w-28 h-20 md:w-32 md:h-24 bg-gray-50 rounded overflow-hidden">
               <img
-                src={selected.image || "/images/products/placeholder.webp"}
+                src={selected.image || "logo/4.png"}
                 alt={selected.desc}
                 className="w-full h-full object-contain"
               />
@@ -218,7 +218,7 @@ export default function OrderForm() {
         </p>
 
         {/* Only the text payload now */}
-        <input ref={textRef} type="hidden" name="order_items_text" />
+        <input ref={textRef} type="hidden" name="Σύνοψη_Παραγγελίας:" />
 
         {/* Customer info */}
         <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">

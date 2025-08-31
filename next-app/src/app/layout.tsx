@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             hidden
         >
             <input type="hidden" name="form-name" value="order-request"/>
-            <textarea name="order_items_text"/>
+            <textarea name="Σύνοψη_Παραγγελίας"/>
             <input type="text" name="Όνομα"/>
             <input type="text" name="Επώνυμο"/>
             <input type="tel" name="Τηλέφωνο"/>
