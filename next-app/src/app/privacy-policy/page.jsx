@@ -1,15 +1,9 @@
-// app/privacy-policy/page.jsx
+// app/privacy-policy/PrivacyPolicyContent.jsx
 "use client";
 
 import { useEffect, useState } from "react";
 
-export const metadata = {
-  title: "Πολιτική Απορρήτου & Όροι Χρήσης | FF Medical & Wellness",
-  description:
-    "Αναλυτική Πολιτική Απορρήτου και Όροι Χρήσης της ιστοσελίδας FF Medical & Wellness. Φόρμες επικοινωνίας/παραγγελίας/newsletter (Netlify Forms), ενσωματωμένα YouTube & Google Maps.",
-};
-
-export default function PrivacyPolicyPage() {
+export default function PrivacyPolicyContent() {
   const [locale, setLocale] = useState("el");
 
   useEffect(() => {
@@ -57,7 +51,7 @@ export default function PrivacyPolicyPage() {
     changesTerms: isEN ? "Changes" : "Τροποποιήσεις",
     law: isEN ? "Governing law & jurisdiction" : "Εφαρμοστέο δίκαιο & δικαιοδοσία",
 
-    // Body text (selected)
+    // Bodies (selected)
     controllerBody: isEN
       ? <>
         The data controller is <strong>FF Medical & Wellness</strong>.
@@ -105,7 +99,7 @@ export default function PrivacyPolicyPage() {
           <ul>
             <li><strong>Responding to your enquiry</strong> via the contact form (Art. 6(1)(b) GDPR – pre-contractual steps and/or Art. 6(1)(f) GDPR – legitimate interests).</li>
             <li><strong>Processing your order request</strong> and communicating with you about it (Art. 6(1)(b) GDPR; and/or Art. 6(1)(f) GDPR).</li>
-            <li><strong>Sending the newsletter</strong> only if you have given your prior <strong>consent</strong> through the newsletter form (Art. 6(1)(a) GDPR). You can withdraw consent at any time.</li>
+            <li><strong>Sending the newsletter</strong> only if you have given your prior <strong>consent</strong> (Art. 6(1)(a) GDPR). You can withdraw consent at any time.</li>
             <li><strong>Compliance with legal obligations</strong> where required (Art. 6(1)(c) GDPR).</li>
           </ul>
           We do not use analytics/remarketing tools on this site.
@@ -115,9 +109,9 @@ export default function PrivacyPolicyPage() {
         <>
           Χρησιμοποιούμε τα στοιχεία σας αποκλειστικά για:
           <ul>
-            <li><strong>Ανταπόκριση στο αίτημά σας</strong> μέσω της φόρμας επικοινωνίας (άρθρο 6(1)(b) GDPR – προσυμβατικές ενέργειες και/ή άρθρο 6(1)(f) GDPR – έννομο συμφέρον).</li>
+            <li><strong>Ανταπόκριση στο αίτημά σας</strong> μέσω της φόρμας επικοινωνίας (άρθρο 6(1)(b) GDPR και/ή άρθρο 6(1)(f) GDPR).</li>
             <li><strong>Διαχείριση του αιτήματος παραγγελίας</strong> και επικοινωνία σχετικά με αυτό (άρθρο 6(1)(b) GDPR και/ή άρθρο 6(1)(f) GDPR).</li>
-            <li><strong>Αποστολή newsletter</strong> μόνο εφόσον έχετε παράσχει προηγουμένως <strong>συγκατάθεση</strong> μέσω της σχετικής φόρμας (άρθρο 6(1)(a) GDPR). Η συγκατάθεση μπορεί να ανακληθεί ανά πάσα στιγμή.</li>
+            <li><strong>Αποστολή newsletter</strong> μόνο με προηγούμενη <strong>συγκατάθεση</strong> (άρθρο 6(1)(a) GDPR). Μπορείτε να ανακαλέσετε ανά πάσα στιγμή.</li>
             <li><strong>Συμμόρφωση με νομικές υποχρεώσεις</strong> όπου απαιτείται (άρθρο 6(1)(c) GDPR).</li>
           </ul>
           Δεν χρησιμοποιούμε εργαλεία στατιστικών/remarketing στον ιστότοπο.
@@ -141,10 +135,10 @@ export default function PrivacyPolicyPage() {
           Πρόσβαση στα δεδομένα σας μπορεί να έχουν:
           <ul>
             <li><strong>Netlify (Netlify Forms)</strong> ως εκτελών την επεξεργασία για λήψη/αποθήκευση υποβολών.</li>
-            <li><strong>Ο πάροχος email</strong> της εταιρείας μας για την αποστολή/παραλαβή σχετικών μηνυμάτων.</li>
+            <li><strong>Ο πάροχος email</strong> της εταιρείας μας για αποστολή/παραλαβή σχετικών μηνυμάτων.</li>
             <li><strong>Φιλοξενία/CDN (Netlify)</strong> για λειτουργία και ασφάλεια του ιστότοπου.</li>
           </ul>
-          Οι συνεργάτες μας επεξεργάζονται δεδομένα μόνο κατ’ εντολή μας και βάσει συμβάσεων επεξεργασίας (άρθρο 28 GDPR). Δεν κοινοποιούμε τα στοιχεία σας σε πλατφόρμες μάρκετινγκ τρίτων, εκτός αν εγγραφείτε ρητά στο newsletter.
+          Οι συνεργάτες μας επεξεργάζονται δεδομένα μόνο κατ’ εντολή μας και βάσει συμβάσεων επεξεργασίας (άρθρο 28 GDPR). Δεν κοινοποιούμε στοιχεία σας σε πλατφόρμες μάρκετινγκ τρίτων, εκτός αν εγγραφείτε ρητά στο newsletter.
         </>
       ),
 
@@ -155,17 +149,17 @@ export default function PrivacyPolicyPage() {
     retentionBody: isEN
       ? (
         <ul>
-          <li><strong>Contact form submissions:</strong> retained for as long as necessary to respond and manage your request, with <em>periodic review</em> and deletion when no longer needed (at least annually).</li>
-          <li><strong>Order request form:</strong> retained for pre-contract communication and follow-up for up to <em>24 months</em> after the last interaction, unless a longer period is required by law or to establish/exercise legal claims.</li>
-          <li><strong>Newsletter sign-ups:</strong> retained <em>until you withdraw consent</em> (unsubscribe) or after prolonged inactivity. You may unsubscribe at any time via reply or by contacting us.</li>
-          <li><strong>Corporate email correspondence:</strong> retained as necessary for service and record-keeping, with <em>periodic review</em> and deletion when no longer required.</li>
+          <li><strong>Contact form submissions:</strong> retained as needed to respond/manage your request, with <em>periodic review</em> and deletion when no longer needed (at least annually).</li>
+          <li><strong>Order request form:</strong> retained for pre-contract communication and follow-up for up to <em>24 months</em> after last interaction, unless longer is required by law or to establish/exercise legal claims.</li>
+          <li><strong>Newsletter sign-ups:</strong> retained <em>until you withdraw consent</em> (unsubscribe) or after prolonged inactivity. You can unsubscribe anytime.</li>
+          <li><strong>Corporate email correspondence:</strong> retained as necessary for service/record-keeping, with <em>periodic review</em> and deletion when no longer required.</li>
         </ul>
       )
       : (
         <ul>
           <li><strong>Υποβολές φόρμας επικοινωνίας:</strong> διατηρούνται όσο απαιτείται για απάντηση/διαχείριση, με <em>περιοδική ανασκόπηση</em> και διαγραφή όταν δεν χρειάζονται πλέον (τουλάχιστον ετήσια).</li>
-          <li><strong>Φόρμα αίτησης παραγγελίας:</strong> διατηρείται για προσυμβατική επικοινωνία και παρακολούθηση έως <em>24 μήνες</em> από την τελευταία αλληλεπίδραση, εκτός αν απαιτείται μεγαλύτερο διάστημα από τον νόμο ή για θεμελίωση/άσκηση νομικών αξιώσεων.</li>
-          <li><strong>Εγγραφές στο newsletter:</strong> διατηρούνται <em>μέχρι την ανάκληση συγκατάθεσης</em> (unsubscribe) ή μετά από παρατεταμένη αδράνεια. Μπορείτε να απεγγραφείτε ανά πάσα στιγμή με απάντηση ή επικοινωνία μαζί μας.</li>
+          <li><strong>Φόρμα αίτησης παραγγελίας:</strong> διατηρείται για προσυμβατική επικοινωνία και παρακολούθηση έως <em>24 μήνες</em> από την τελευταία αλληλεπίδραση, εκτός αν απαιτείται μεγαλύτερο διάστημα από τον νόμο ή για νομικές αξιώσεις.</li>
+          <li><strong>Εγγραφές στο newsletter:</strong> διατηρούνται <em>μέχρι ανάκληση συγκατάθεσης</em> (unsubscribe) ή μετά από παρατεταμένη αδράνεια. Μπορείτε να απεγγραφείτε ανά πάσα στιγμή.</li>
           <li><strong>Ανταλλαγή email στο εταιρικό mailbox:</strong> διατηρείται όσο είναι αναγκαίο για εξυπηρέτηση/τεκμηρίωση, με <em>περιοδική ανασκόπηση</em> και διαγραφή όταν δεν είναι πλέον απαραίτητα.</li>
         </ul>
       ),
@@ -198,7 +192,7 @@ export default function PrivacyPolicyPage() {
             <li><code>localStorage</code> to remember your language preference (<code>locale</code>).</li>
             <li><code>sessionStorage</code> to limit showing the newsletter modal (<code>newsletterModalSeen:&lt;locale&gt;</code>).</li>
           </ul>
-          These items are functional and can be cleared from your browser at any time.
+          These are functional items you can clear from your browser at any time.
         </>
       )
       : (
@@ -208,7 +202,7 @@ export default function PrivacyPolicyPage() {
             <li><code>localStorage</code> για την προτίμηση γλώσσας (<code>locale</code>).</li>
             <li><code>sessionStorage</code> για τον περιορισμό εμφάνισης του newsletter modal (<code>newsletterModalSeen:&lt;locale&gt;</code>).</li>
           </ul>
-          Τα στοιχεία αυτά είναι λειτουργικά και μπορούν να διαγραφούν ανά πάσα στιγμή από τον φυλλομετρητή σας.
+          Τα στοιχεία αυτά είναι λειτουργικά και μπορείτε να τα διαγράψετε ανά πάσα στιγμή από τον φυλλομετρητή σας.
         </>
       ),
 
@@ -284,16 +278,8 @@ export default function PrivacyPolicyPage() {
       ? "The content (marks, logos, texts, images, presentation material) is protected by intellectual property laws. Reproduction, distribution or modification is prohibited without prior written permission, unless expressly permitted by a relevant third-party license."
       : "Το περιεχόμενο (σήματα, λογότυπα, κείμενα, εικόνες, υλικό παρουσίασης) προστατεύεται από δικαιώματα πνευματικής ιδιοκτησίας. Απαγορεύεται η αναπαραγωγή, διανομή ή τροποποίηση χωρίς προηγούμενη γραπτή άδεια, εκτός εάν ρητά επιτρέπεται από σχετική άδεια τρίτου.",
     thirdLicBody: isEN
-      ? (
-        <>
-          We use images and icons from third-party free resources under their licenses (e.g., Pexels, Unsplash, Freepik, FreeImages, Flaticon). Where attribution is required, it is provided on this page and/or near the relevant material. Trademarks and names belong to their respective owners. If any rights holder believes their rights are affected, please contact us for prompt resolution.
-        </>
-      )
-      : (
-        <>
-          Χρησιμοποιούμε εικόνες και εικονίδια από τρίτες πλατφόρμες δωρεάν πόρων σύμφωνα με τις άδειές τους (π.χ. Pexels, Unsplash, Freepik, FreeImages, Flaticon). Όπου απαιτείται αναφορά προέλευσης (attribution), αυτή παρέχεται στην παρούσα σελίδα ή/και δίπλα στο σχετικό υλικό. Τα εμπορικά σήματα και οι ονομασίες ανήκουν στους νόμιμους δικαιούχους τους. Αν οποιοσδήποτε δικαιούχος θεωρεί ότι θίγονται δικαιώματά του, παρακαλούμε επικοινωνήστε μαζί μας για άμεση διευθέτηση.
-        </>
-      ),
+      ? "We use images and icons from third-party free resources under their licenses (e.g., Pexels, Unsplash, Freepik, FreeImages, Flaticon). Where attribution is required, it is provided on this page and/or near the relevant material. Trademarks and names belong to their respective owners. If any rights holder believes their rights are affected, please contact us for prompt resolution."
+      : "Χρησιμοποιούμε εικόνες και εικονίδια από τρίτες πλατφόρμες δωρεάν πόρων σύμφωνα με τις άδειές τους (π.χ. Pexels, Unsplash, Freepik, FreeImages, Flaticon). Όπου απαιτείται αναφορά προέλευσης, αυτή παρέχεται στην παρούσα σελίδα ή/και δίπλα στο σχετικό υλικό. Τα εμπορικά σήματα ανήκουν στους νόμιμους δικαιούχους τους. Αν θεωρείτε ότι θίγονται δικαιώματά σας, επικοινωνήστε μαζί μας για άμεση διευθέτηση.",
     acceptableUseBody: isEN
       ? (
         <ul>
