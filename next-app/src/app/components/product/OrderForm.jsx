@@ -52,7 +52,7 @@ export default function OrderForm() {
       return;
     }
     const textLines = items
-      .map((p) => `• ${p.desc} | ${p.unit} | Ποσ.: ${p.quantity}`)
+      .map((p) => `• ${p.desc} | ${p.unit} | Ποσότητα: ${p.quantity}`)
       .join("\n");
     if (textRef.current) textRef.current.value = textLines;
   };

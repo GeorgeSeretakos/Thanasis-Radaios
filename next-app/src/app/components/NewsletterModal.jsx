@@ -57,14 +57,14 @@ export default function NewsletterModal() {
           <div className="flex flex-col sm:flex-row gap-4">
             <input
               type="text"
-              name="firstName"
+              name="Όνομα"
               placeholder="Όνομα"
               required
               className="flex-1 p-2 rounded border border-gray-300"
             />
             <input
               type="text"
-              name="lastName"
+              name="Επώνυμο"
               placeholder="Επώνυμο"
               required
               className="flex-1 p-2 rounded border border-gray-300"
@@ -81,7 +81,7 @@ export default function NewsletterModal() {
 
           <input
             type="tel"
-            name="phone"
+            name="Τηλέφωνο"
             placeholder="Τηλέφωνο (προαιρετικό)"
             className="w-full p-2 rounded border border-gray-300"
           />

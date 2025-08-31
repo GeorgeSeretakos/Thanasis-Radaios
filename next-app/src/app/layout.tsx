@@ -35,10 +35,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             hidden
         >
             <input type="hidden" name="form-name" value="newsletter"/>
-            <input type="text" name="firstName"/>
-            <input type="text" name="lastName"/>
+            <input type="text" name="Όνομα"/>
+            <input type="text" name="Επώνυμο"/>
             <input type="email" name="email"/>
-            <input type="tel" name="phone"/>
+            <input type="tel" name="Τηλέφωνο"/>
         </form>
 
         <form
@@ -49,10 +49,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
             <input type="hidden" name="form-name" value="order-request"/>
             <textarea name="order_items_text"/>
-            <input type="text" name="firstName"/>
-            <input type="text" name="lastName"/>
-            <input type="tel" name="phone"/>
-            <textarea name="message"/>
+            <input type="text" name="Όνομα"/>
+            <input type="text" name="Επώνυμο"/>
+            <input type="tel" name="Τηλέφωνο"/>
+            <textarea name="Μήνυμα / Σχόλιο"/>
         </form>
 
 
