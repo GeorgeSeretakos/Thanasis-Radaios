@@ -1,6 +1,16 @@
+// app/contact/page.jsx
+"use client";
+
+import { useEffect, useState } from "react";
 import SocialSection from "../components/home/SocialSection";
 
 export default function Contact() {
+  const [locale, setLocale] = useState("el");
+  useEffect(() => {
+    const saved = localStorage.getItem("locale") || "el";
+    setLocale(saved);
+  }, []);
+
   return (
     <main className="flex flex-col">
       {/* Contact Section */}
@@ -8,7 +18,7 @@ export default function Contact() {
         {/* Background image */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{backgroundImage: "url('/images/general/28.jpg')"}}
+          style={{ backgroundImage: "url('/images/general/28.jpg')" }}
         ></div>
 
         {/* Overlay */}
@@ -16,20 +26,20 @@ export default function Contact() {
 
         <div className="relative z-10 w-full max-w-6xl mx-auto">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8">
-            Επικοινώνησε Μαζί μας
+            {locale === "en" ? "Contact Us" : "Επικοινώνησε Μαζί μας"}
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Contact Info */}
             <div className="bg-white/5 p-6 rounded-lg text-sm sm:text-base">
               <div className="mb-4">
-                <strong>Διεύθυνση</strong>
+                <strong>{locale === "en" ? "Address" : "Διεύθυνση"}</strong>
                 <ul className="list-disc pl-5">
-                  <li>Ηρώων Πολυτεχνείου 5, Νέα Ερυθραία 146 71</li>
+                  <li>{locale === "en" ? "Iroon Polytechneiou 5, Nea Erythraia" : "Ηρώων Πολυτεχνείου 5, Νέα Ερυθραία 146 71"}</li>
                 </ul>
               </div>
               <div className="mb-4">
-                <strong>Τηλέφωνο</strong>
+                <strong>{locale === "en" ? "Phone" : "Τηλέφωνο"}</strong>
                 <ul className="list-disc pl-5">
                   <li>210 8070010</li>
                   <li>211 2143161</li>
@@ -49,11 +59,15 @@ export default function Contact() {
                 </ul>
               </div>
               <div>
-                <strong>Ώρες Λειτουργίας</strong>
+                <strong>{locale === "en" ? "Opening Hours" : "Ώρες Λειτουργίας"}</strong>
                 <ul className="list-disc pl-5">
-                  <li>Δευτέρα - Παρασκευή: 09:00 – 21:00</li>
-                  <li>Σάββατο: 10:00 - 15.00</li>
-                  <li>Κυριακή: Κλειστά</li>
+                  <li>
+                    {locale === "en"
+                      ? "Monday – Friday: 09:00 – 21:00"
+                      : "Δευτέρα - Παρασκευή: 09:00 – 21:00"}
+                  </li>
+                  <li>{locale === "en" ? "Saturday: 10:00 – 15:00" : "Σάββατο: 10:00 - 15.00"}</li>
+                  <li>{locale === "en" ? "Sunday: Closed" : "Κυριακή: Κλειστά"}</li>
                 </ul>
               </div>
             </div>
@@ -61,8 +75,9 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="bg-white/5 p-6 rounded-lg text-sm sm:text-base">
               <p className="mb-4 font-bold">
-                Συμπλήρωσε τη φόρμα και θα επικοινωνήσουμε μαζί σου το
-                συντομότερο.
+                {locale === "en"
+                  ? "Fill out the form and we'll get back to you as soon as possible."
+                  : "Συμπλήρωσε τη φόρμα και θα επικοινωνήσουμε μαζί σου το συντομότερο."}
               </p>
               <form
                 name="contact"
@@ -72,25 +87,26 @@ export default function Contact() {
                 action="/thank-you"
                 className="space-y-4"
               >
-                <input type="hidden" name="form-name" value="contact"/>
+                <input type="hidden" name="form-name" value="contact" />
                 <p hidden>
                   <label>
-                    Don’t fill this out: <input name="bot-field"/>
+                    {locale === "en" ? "Don’t fill this out:" : "Μην το συμπληρώσεις:"}{" "}
+                    <input name="bot-field" />
                   </label>
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <input
                     type="text"
-                    name="firstName"
-                    placeholder="Όνομα"
+                    name="Όνομα"
+                    placeholder={locale === "en" ? "First name" : "Όνομα"}
                     required
                     className="flex-1 p-2 rounded bg-black/30 border border-gray-700 text-white"
                   />
                   <input
                     type="text"
-                    name="lastName"
-                    placeholder="Επώνυμο"
+                    name="Επώνυμο"
+                    placeholder={locale === "en" ? "Last name" : "Επώνυμο"}
                     required
                     className="flex-1 p-2 rounded bg-black/30 border border-gray-700 text-white"
                   />
@@ -98,37 +114,30 @@ export default function Contact() {
 
                 <input
                   type="tel"
-                  name="phone"
-                  placeholder="Τηλέφωνο"
+                  name="Τηλέφωνο"
+                  placeholder={locale === "en" ? "Phone" : "Τηλέφωνο"}
                   required
                   className="w-full p-2 rounded bg-black/30 border border-gray-700 text-white"
                 />
 
                 <textarea
-                  name="message"
+                  name="Μήνυμα"
                   rows={5}
-                  placeholder="Μήνυμα"
+                  placeholder={locale === "en" ? "Message" : "Μήνυμα"}
                   required
                   className="w-full p-2 rounded bg-black/30 border border-gray-700 text-white"
                 />
 
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                   <label className="flex items-center gap-2 text-xs sm:text-sm">
-                    <input
-                      type="checkbox"
-                      required
-                      className="accent-blue-500 scale-110"
-                    />
-                    Αποδέχομαι την{" "}
-                    <a
-                      href="/privacy-policy"
-                      className="text-blue-400 hover:underline"
-                    >
-                      Πολιτική Απορρήτου
+                    <input type="checkbox" required className="accent-blue-500 scale-110" />
+                    {locale === "en" ? "I accept the" : "Αποδέχομαι την"}{" "}
+                    <a href="/privacy-policy" className="text-blue-400 hover:underline">
+                      {locale === "en" ? "Privacy Policy" : "Πολιτική Απορρήτου"}
                     </a>
                   </label>
                   <button type="submit" className="btn">
-                    Αποστολή
+                    {locale === "en" ? "Send" : "Αποστολή"}
                   </button>
                 </div>
               </form>
@@ -152,34 +161,35 @@ export default function Contact() {
           {/* Text + Social */}
           <div className="content flex font-bold flex-col items-center gap-3 w-full">
             <p>
-              &copy; 2025 FF Medical & Wellness. All rights reserved.
+              &copy; 2025 FF Medical & Wellness.{" "}
+              {locale === "en" ? "All rights reserved." : "Όλα τα δικαιώματα διατηρούνται."}
             </p>
 
             <div className="flex flex-wrap justify-center gap-2">
-              <a
-                href="mailto:ffmedicwell@gmail.com"
-                className="hover:underline"
-              >
+              <a href="mailto:ffmedicwell@gmail.com" className="hover:underline">
                 ffmedicwell@gmail.com
               </a>
               <span className="hidden sm:inline">·</span>
-              <a href="tel:210 8070010" className="hover:underline">
+              <a href="tel:2108070010" className="hover:underline">
                 210 8070010
               </a>
               <span className="hidden sm:inline">·</span>
+              <a href="tel:2112143161" className="hover:underline">
+                211 2143161
+              </a>
+              <span className="hidden sm:inline">·</span>
               <a href="/privacy-policy" className="hover:underline">
-                Πολιτική Απορρήτου
+                {locale === "en" ? "Privacy Policy" : "Πολιτική Απορρήτου"}
               </a>
             </div>
 
             {/* Social icons */}
             <div className="mt-2">
-              <SocialSection/>
+              <SocialSection />
             </div>
           </div>
         </div>
       </footer>
-
 
       {/* Map Section */}
       <section className="w-full">
@@ -188,7 +198,7 @@ export default function Contact() {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.1926897680096!2d23.812853375855056!3d38.08917839398699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a19efc17b18f5f%3A0x8b7caf8209b192c1!2zzpfPgS4gzqDOv867z4XPhM61z4fOvc61zq_Ov8-FIDUsIM6dzq3OsSDOlc-Bz4XOuM-BzrHOr86xIDE0NiA3MQ!5e0!3m2!1sel!2sgr!4v1755200375385!5m2!1sel!2sgr"
             className="rounded-none md:rounded-lg w-full"
             height="400"
-            style={{border: 0}}
+            style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

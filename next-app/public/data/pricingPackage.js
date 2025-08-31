@@ -1,4 +1,4 @@
-const pricingPackage = [
+export const pricingPackage_el = [
   {
     title: "Εξοπλισμός i-body®",
     image: "/images/general/40.jpg",
@@ -45,4 +45,49 @@ const pricingPackage = [
   },
 ];
 
-export default pricingPackage;
+export const pricingPackage_en = [
+  {
+    title: "i-body® Equipment",
+    image: "/images/general/40.jpg",
+    bullets: [
+      "Complete set of electrodes, belts & fabrics for immediate start",
+      "Available in all sizes, with ergonomic fit",
+      "Antibacterial fabrics, easy to clean",
+      "Durable materials for frequent professional use",
+      "Compatible with connect & wireless options",
+    ],
+  },
+  {
+    title: "Training & Certification",
+    image: "/images/general/29.jpg",
+    bullets: [
+      "Free training by experienced specialists",
+      "Internationally recognized EMS certificate",
+      "Inclusion in the miha bodytec partner network",
+      "Practical tools for safe & efficient operation",
+      "Continuous knowledge updates on new techniques",
+    ],
+  },
+  {
+    title: "Strategic Support",
+    image: "/images/general/32.jpg",
+    bullets: [
+      "Immediate phone & technical support",
+      "Software updates for optimal operation",
+      "Business coaching & marketing advice",
+      "Fast diagnosis and problem solving",
+      "Access to user guides & material",
+    ],
+  },
+  {
+    title: "Financial Benefit",
+    image: "/images/general/31.webp",
+    bullets: [
+      "Low initial investment cost",
+      "Rapid capital payback",
+      "Long equipment lifespan",
+      "Minimal operating expenses",
+      "High return with low risk",
+    ],
+  },
+];

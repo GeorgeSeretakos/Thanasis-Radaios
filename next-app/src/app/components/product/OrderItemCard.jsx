@@ -1,4 +1,11 @@
-export default function OrderItemCard({ item, qty, onQtyChange }) {
+"use client";
+
+import { useEffect, useMemo, useRef, useState } from "react";
+// Bilingual product lists (update your data file accordingly):
+import { products_el, products_en } from "../../../../public/data/orderProducts";
+
+/* -------------------- OrderItemCard -------------------- */
+export default function OrderItemCard({ item, qty, onQtyChange, locale = "el" }) {
   return (
     <div className="rounded-2xl border border-gray-200 shadow-sm overflow-hidden bg-white flex flex-col">
       <div className="w-full h-40 bg-gray-50">
@@ -14,7 +21,9 @@ export default function OrderItemCard({ item, qty, onQtyChange }) {
         <div className="font-semibold leading-snug">{item.desc}</div>
 
         <div className="mt-auto">
-          <label className="text-sm text-gray-600">Ποσότητα</label>
+          <label className="text-sm text-gray-600">
+            {locale === "en" ? "Quantity" : "Ποσότητα"}
+          </label>
           <input
             type="number"
             min="0"

@@ -1,17 +1,41 @@
+// app/blog/page.jsx
 "use client";
-import { useState } from "react";
-import posts from "../../../public/data/blog";
+
+import { useEffect, useState, useMemo } from "react";
+import * as blogData from "../../../public/data/blog";
 import BlogCard from "../components/blog/BlogCard";
 
 export default function BlogPage() {
-  const [category, setCategory] = useState("news");
+  const [locale, setLocale] = useState("el");
+  const [category, setCategory] = useState("news"); // keep stable keys: "news" | "studies"
 
-  const tabs = [
-    { value: "news", label: "Νέα" },
-    { value: "studies", label: "Μελέτες" },
-  ];
+  useEffect(() => {
+    const saved = localStorage.getItem("locale") || "el";
+    setLocale(saved);
+  }, []);
 
-  const filteredPosts = posts.filter((p) => p.category === category);
+  // Resolve posts from data file in a flexible way:
+  // - Prefer posts_en / posts_el if present
+  // - Fallback to default export or `posts`
+  const posts = useMemo(() => {
+    const fallback =
+      blogData.default || blogData.posts || []; // backward compatibility
+    if (locale === "en") return blogData.posts_en || fallback;
+    return blogData.posts_el || fallback;
+  }, [locale]);
+
+  const tabs =
+    locale === "en"
+      ? [
+        { value: "news", label: "News" },
+        { value: "studies", label: "Studies" },
+      ]
+      : [
+        { value: "news", label: "Νέα" },
+        { value: "studies", label: "Μελέτες" },
+      ];
+
+  const filteredPosts = posts.filter((p) => p?.category === category);
 
   return (
     <main>
@@ -27,6 +51,7 @@ export default function BlogPage() {
                   ? "border-white text-white font-medium"
                   : "border-transparent hover:border-white text-white"
               }`}
+              aria-current={category === tab.value ? "page" : undefined}
             >
               {tab.label}
             </button>
@@ -36,13 +61,22 @@ export default function BlogPage() {
 
       {/* Grid */}
       <section className="py-12 max-w-6xl mx-auto px-4">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredPosts.filter(Boolean).map((post) => (
-            <div key={post.slug || post.pdfUrl || post.title}>
-              <BlogCard post={post} />
-            </div>
-          ))}
-        </div>
+        {filteredPosts.length === 0 ? (
+          <p className="text-center text-gray-600">
+            {locale === "en"
+              ? "No posts in this category yet."
+              : "Δεν υπάρχουν δημοσιεύσεις σε αυτή την κατηγορία."}
+          </p>
+        ) : (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredPosts.map((post) => (
+              <div key={post.slug || post.pdfUrl || post.title}>
+                {/* Pass locale so BlogCard can pick the right language fields if it supports them */}
+                <BlogCard post={post} locale={locale} />
+              </div>
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );
