@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Great_Vibes, Manrope, Open_Sans, Roboto } from "next
 import "./styles/globals.css";
 import Navbar from "./components/Navbar";
 import NewsletterModal from "./components/NewsletterModal";
+import CookieBanner from "@/app/components/CookieBanner";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -14,7 +15,6 @@ export const metadata = {
     title: "Miha Bodytec",
     description: "Website for Miha Bodytec",
 };
-
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -59,6 +59,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar/>
         <NewsletterModal/>
         <main className="mt-16">{children}</main>
+
+        <CookieBanner />
         </body>
         </html>
     );

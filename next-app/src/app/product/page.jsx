@@ -30,7 +30,7 @@ export default function ProductPage() {
   return (
     <>
       <IntroSection
-        image="/images/product/medical_1.png"
+        image="/images/product/medical_1.webp"
         title={locale === "en" ? "The Product" : "Το προϊόν"}
         paragraph={
           <>

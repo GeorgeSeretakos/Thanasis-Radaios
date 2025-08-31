@@ -10,32 +10,46 @@ export default function NewsletterModal() {
 
   // Helper: pick locale on first load
   const resolveInitialLocale = () => {
+    // 1) If user already picked, honor it
     try {
       const saved = localStorage.getItem("locale");
       if (saved === "en" || saved === "el") return saved;
     } catch {}
-    const htmlLang = typeof document !== "undefined" ? document.documentElement.lang : "";
-    if (htmlLang === "en" || htmlLang === "el") return htmlLang;
-    const nav = (typeof navigator !== "undefined" ? navigator.language : "el").toLowerCase();
-    if (nav.startsWith("en")) return "en";
-    if (nav.startsWith("el") || nav.startsWith("gr")) return "el";
+
+    // 2) Prefer browser language
+    try {
+      const lang =
+        (navigator.languages && navigator.languages[0]) ||
+        navigator.language ||
+        "";
+      const lc = String(lang).toLowerCase();
+      if (lc.startsWith("el") || lc.startsWith("gr")) return "el";
+      if (lc.startsWith("en")) return "en";
+    } catch {}
+
+    // 3) Fallback
     return "el";
   };
 
   const seenKeyFor = (loc) => `newsletterModalSeen:${loc}`;
 
   useEffect(() => {
-    // 1) Resolve locale
+    // 1) Resolve locale (does NOT read <html lang> anymore)
     const resolved = resolveInitialLocale();
     setLocale(resolved);
+
     // Persist if first time
-    if (!localStorage.getItem("locale")) {
-      localStorage.setItem("locale", resolved);
-      // keep <html lang> roughly in sync
+    try {
+      if (!localStorage.getItem("locale")) {
+        localStorage.setItem("locale", resolved);
+      }
+    } catch {}
+    // keep <html lang> roughly in sync (client-side)
+    if (typeof document !== "undefined") {
       document.documentElement.lang = resolved;
     }
 
-    // 2) Show modal only if not seen for this locale in this session
+    // 2) Show modal only if not seen for this locale in THIS session
     const seenKey = seenKeyFor(resolved);
     const hasSeen = sessionStorage.getItem(seenKey);
     if (!hasSeen) {
@@ -43,12 +57,19 @@ export default function NewsletterModal() {
       sessionStorage.setItem(seenKey, "true");
     }
 
-    // 3) React to navbar locale switch
+    // 3) React to navbar locale switch (supports string or { locale })
     const onLocaleChange = (e) => {
-      const next = e?.detail?.locale || localStorage.getItem("locale") || "el";
+      const detail = e?.detail;
+      const next =
+        (typeof detail === "string" && detail) ||
+        (detail && detail.locale) ||
+        localStorage.getItem("locale") ||
+        "el";
+
       setLocale(next);
       document.documentElement.lang = next;
     };
+
     window.addEventListener("locale:changed", onLocaleChange);
     return () => window.removeEventListener("locale:changed", onLocaleChange);
   }, []);
@@ -71,6 +92,17 @@ export default function NewsletterModal() {
     closeAria: isEN ? "Close" : "Κλείσιμο",
   };
 
+  const closeModal = () => {
+    setOpen(false);
+    // mark closed so cookie banner can appear (if you implemented that flow)
+    try {
+      sessionStorage.setItem("newsletterClosed", "true");
+      const lc = localStorage.getItem("locale") || "el";
+      sessionStorage.setItem(`newsletterModalSeen:${lc}`, "true");
+      window.dispatchEvent(new Event("newsletter:closed"));
+    } catch {}
+  };
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
@@ -80,7 +112,7 @@ export default function NewsletterModal() {
     >
       <div className="bg-white text-black rounded-xl p-5 sm:p-6 w-full max-w-[22rem] sm:max-w-md md:max-w-lg shadow-2xl relative max-h-[90vh] overflow-y-auto">
         <button
-          onClick={() => setOpen(false)}
+          onClick={closeModal}
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
           aria-label={t.closeAria}
           type="button"

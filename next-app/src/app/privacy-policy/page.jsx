@@ -7,7 +7,7 @@ export default function PrivacyPolicyContent() {
   const [locale, setLocale] = useState("el");
 
   useEffect(() => {
-    const saved = localStorage.getItem("locale") || "el";
+    const saved = typeof window !== "undefined" ? localStorage.getItem("locale") || "el" : "el";
     setLocale(saved);
   }, []);
 
@@ -51,9 +51,9 @@ export default function PrivacyPolicyContent() {
     changesTerms: isEN ? "Changes" : "Τροποποιήσεις",
     law: isEN ? "Governing law & jurisdiction" : "Εφαρμοστέο δίκαιο & δικαιοδοσία",
 
-    // Bodies (selected)
-    controllerBody: isEN
-      ? <>
+    // Bodies
+    controllerBody: isEN ? (
+      <>
         The data controller is <strong>FF Medical & Wellness</strong>.
         <ul>
           <li>Address: Iroon Polytechneiou 5, Nea Erythraia, 146 71, Greece</li>
@@ -61,14 +61,16 @@ export default function PrivacyPolicyContent() {
           <li>Phone: <a href="tel:2108070010">210 8070010</a></li>
         </ul>
       </>
-      : <>
+    ) : (
+      <>
         Υπεύθυνος επεξεργασίας είναι η <strong>FF Medical & Wellness</strong>.
         <ul>
           <li>Διεύθυνση: Ηρώων Πολυτεχνείου 5, Νέα Ερυθραία, 146 71, Ελλάδα</li>
           <li>Email: <a href="mailto:ffmedicwell@gmail.com">ffmedicwell@gmail.com</a></li>
           <li>Τηλέφωνο: <a href="tel:2108070010">210 8070010</a></li>
         </ul>
-      </>,
+      </>
+    ),
 
     formsIntro: isEN
       ? "We collect data exclusively through the following Netlify forms on our site:"
@@ -92,179 +94,165 @@ export default function PrivacyPolicyContent() {
       ? <>Important: Please <em>do not</em> submit special categories of data (e.g., health information, payment details). The forms are intended for general enquiries, order requests and newsletter opt-in.</>
       : <>Σημαντικό: Παρακαλούμε <em>μην</em> υποβάλλετε ευαίσθητα δεδομένα (π.χ. δεδομένα υγείας, στοιχεία πληρωμών). Οι φόρμες προορίζονται για γενικά αιτήματα, αιτήσεις παραγγελίας και εγγραφή στο newsletter.</>,
 
-    purposesBody: isEN
-      ? (
-        <>
-          We use your data solely for:
-          <ul>
-            <li><strong>Responding to your enquiry</strong> via the contact form (Art. 6(1)(b) GDPR – pre-contractual steps and/or Art. 6(1)(f) GDPR – legitimate interests).</li>
-            <li><strong>Processing your order request</strong> and communicating with you about it (Art. 6(1)(b) GDPR; and/or Art. 6(1)(f) GDPR).</li>
-            <li><strong>Sending the newsletter</strong> only if you have given your prior <strong>consent</strong> (Art. 6(1)(a) GDPR). You can withdraw consent at any time.</li>
-            <li><strong>Compliance with legal obligations</strong> where required (Art. 6(1)(c) GDPR).</li>
-          </ul>
-          We do not use analytics/remarketing tools on this site.
-        </>
-      )
-      : (
-        <>
-          Χρησιμοποιούμε τα στοιχεία σας αποκλειστικά για:
-          <ul>
-            <li><strong>Ανταπόκριση στο αίτημά σας</strong> μέσω της φόρμας επικοινωνίας (άρθρο 6(1)(b) GDPR και/ή άρθρο 6(1)(f) GDPR).</li>
-            <li><strong>Διαχείριση του αιτήματος παραγγελίας</strong> και επικοινωνία σχετικά με αυτό (άρθρο 6(1)(b) GDPR και/ή άρθρο 6(1)(f) GDPR).</li>
-            <li><strong>Αποστολή newsletter</strong> μόνο με προηγούμενη <strong>συγκατάθεση</strong> (άρθρο 6(1)(a) GDPR). Μπορείτε να ανακαλέσετε ανά πάσα στιγμή.</li>
-            <li><strong>Συμμόρφωση με νομικές υποχρεώσεις</strong> όπου απαιτείται (άρθρο 6(1)(c) GDPR).</li>
-          </ul>
-          Δεν χρησιμοποιούμε εργαλεία στατιστικών/remarketing στον ιστότοπο.
-        </>
-      ),
+    purposesBody: isEN ? (
+      <>
+        We use your data solely for:
+        <ul>
+          <li><strong>Responding to your enquiry</strong> via the contact form (Art. 6(1)(b) GDPR – pre-contractual steps and/or Art. 6(1)(f) GDPR – legitimate interests).</li>
+          <li><strong>Processing your order request</strong> and communicating with you about it (Art. 6(1)(b) GDPR; and/or Art. 6(1)(f) GDPR).</li>
+          <li><strong>Sending the newsletter</strong> only if you have given your prior <strong>consent</strong> (Art. 6(1)(a) GDPR). You can withdraw consent at any time.</li>
+          <li><strong>Compliance with legal obligations</strong> where required (Art. 6(1)(c) GDPR).</li>
+        </ul>
+        We do not use analytics/remarketing tools on this site.
+      </>
+    ) : (
+      <>
+        Χρησιμοποιούμε τα στοιχεία σας αποκλειστικά για:
+        <ul>
+          <li><strong>Ανταπόκριση στο αίτημά σας</strong> μέσω της φόρμας επικοινωνίας (άρθρο 6(1)(b) GDPR και/ή άρθρο 6(1)(f) GDPR).</li>
+          <li><strong>Διαχείριση του αιτήματος παραγγελίας</strong> και επικοινωνία σχετικά με αυτό (άρθρο 6(1)(b) GDPR και/ή άρθρο 6(1)(f) GDPR).</li>
+          <li><strong>Αποστολή newsletter</strong> μόνο με προηγούμενη <strong>συγκατάθεση</strong> (άρθρο 6(1)(a) GDPR). Μπορείτε να ανακαλέσετε ανά πάσα στιγμή.</li>
+          <li><strong>Συμμόρφωση με νομικές υποχρεώσεις</strong> όπου απαιτείται (άρθρο 6(1)(c) GDPR).</li>
+        </ul>
+        Δεν χρησιμοποιούμε εργαλεία στατιστικών/remarketing στον ιστότοπο.
+      </>
+    ),
 
-    recipientsBody: isEN
-      ? (
-        <>
-          Access to your data may be available to:
-          <ul>
-            <li><strong>Netlify (Netlify Forms)</strong> as our processor for receiving/storing submissions.</li>
-            <li><strong>Our email provider</strong> for sending/receiving related messages.</li>
-            <li><strong>Hosting/CDN (Netlify)</strong> for site operation and security.</li>
-          </ul>
-          Our partners process data only under our instructions and based on data processing agreements (Art. 28 GDPR). We do not share your data with third-party marketing platforms unless you explicitly subscribe to the newsletter.
-        </>
-      )
-      : (
-        <>
-          Πρόσβαση στα δεδομένα σας μπορεί να έχουν:
-          <ul>
-            <li><strong>Netlify (Netlify Forms)</strong> ως εκτελών την επεξεργασία για λήψη/αποθήκευση υποβολών.</li>
-            <li><strong>Ο πάροχος email</strong> της εταιρείας μας για αποστολή/παραλαβή σχετικών μηνυμάτων.</li>
-            <li><strong>Φιλοξενία/CDN (Netlify)</strong> για λειτουργία και ασφάλεια του ιστότοπου.</li>
-          </ul>
-          Οι συνεργάτες μας επεξεργάζονται δεδομένα μόνο κατ’ εντολή μας και βάσει συμβάσεων επεξεργασίας (άρθρο 28 GDPR). Δεν κοινοποιούμε στοιχεία σας σε πλατφόρμες μάρκετινγκ τρίτων, εκτός αν εγγραφείτε ρητά στο newsletter.
-        </>
-      ),
+    recipientsBody: isEN ? (
+      <>
+        Access to your data may be available to:
+        <ul>
+          <li><strong>Netlify (Netlify Forms)</strong> as our processor for receiving/storing submissions.</li>
+          <li><strong>Our email provider</strong> for sending/receiving related messages.</li>
+          <li><strong>Hosting/CDN (Netlify)</strong> for site operation and security.</li>
+        </ul>
+        Our partners process data only under our instructions and based on data processing agreements (Art. 28 GDPR). We do not share your data with third-party marketing platforms unless you explicitly subscribe to the newsletter.
+      </>
+    ) : (
+      <>
+        Πρόσβαση στα δεδομένα σας μπορεί να έχουν:
+        <ul>
+          <li><strong>Netlify (Netlify Forms)</strong> ως εκτελών την επεξεργασία για λήψη/αποθήκευση υποβολών.</li>
+          <li><strong>Ο πάροχος email</strong> της εταιρείας μας για αποστολή/παραλαβή σχετικών μηνυμάτων.</li>
+          <li><strong>Φιλοξενία/CDN (Netlify)</strong> για λειτουργία και ασφάλεια του ιστότοπου.</li>
+        </ul>
+        Οι συνεργάτες μας επεξεργάζονται δεδομένα μόνο κατ’ εντολή μας και βάσει συμβάσεων επεξεργασίας (άρθρο 28 GDPR). Δεν κοινοποιούμε στοιχεία σας σε πλατφόρμες μάρκετινγκ τρίτων, εκτός αν εγγραφείτε ρητά στο newsletter.
+      </>
+    ),
 
     transfersBody: isEN
       ? "Because we use providers such as Netlify and Google services (YouTube, Google Maps), data transfers outside the EEA (e.g., to the USA) may occur. Such transfers are covered by Standard Contractual Clauses (SCCs) or equivalent safeguards under EU law."
       : "Λόγω χρήσης παρόχων όπως το Netlify και υπηρεσιών της Google (YouTube, Google Maps), ενδέχεται να πραγματοποιούνται διαβιβάσεις δεδομένων εκτός ΕΟΧ (π.χ. στις ΗΠΑ). Οι διαβιβάσεις καλύπτονται από Τυποποιημένες Συμβατικές Ρήτρες (SCCs) ή ισοδύναμες εγγυήσεις βάσει του δικαίου της ΕΕ.",
 
-    retentionBody: isEN
-      ? (
-        <ul>
-          <li><strong>Contact form submissions:</strong> retained as needed to respond/manage your request, with <em>periodic review</em> and deletion when no longer needed (at least annually).</li>
-          <li><strong>Order request form:</strong> retained for pre-contract communication and follow-up for up to <em>24 months</em> after last interaction, unless longer is required by law or to establish/exercise legal claims.</li>
-          <li><strong>Newsletter sign-ups:</strong> retained <em>until you withdraw consent</em> (unsubscribe) or after prolonged inactivity. You can unsubscribe anytime.</li>
-          <li><strong>Corporate email correspondence:</strong> retained as necessary for service/record-keeping, with <em>periodic review</em> and deletion when no longer required.</li>
-        </ul>
-      )
-      : (
-        <ul>
-          <li><strong>Υποβολές φόρμας επικοινωνίας:</strong> διατηρούνται όσο απαιτείται για απάντηση/διαχείριση, με <em>περιοδική ανασκόπηση</em> και διαγραφή όταν δεν χρειάζονται πλέον (τουλάχιστον ετήσια).</li>
-          <li><strong>Φόρμα αίτησης παραγγελίας:</strong> διατηρείται για προσυμβατική επικοινωνία και παρακολούθηση έως <em>24 μήνες</em> από την τελευταία αλληλεπίδραση, εκτός αν απαιτείται μεγαλύτερο διάστημα από τον νόμο ή για νομικές αξιώσεις.</li>
-          <li><strong>Εγγραφές στο newsletter:</strong> διατηρούνται <em>μέχρι ανάκληση συγκατάθεσης</em> (unsubscribe) ή μετά από παρατεταμένη αδράνεια. Μπορείτε να απεγγραφείτε ανά πάσα στιγμή.</li>
-          <li><strong>Ανταλλαγή email στο εταιρικό mailbox:</strong> διατηρείται όσο είναι αναγκαίο για εξυπηρέτηση/τεκμηρίωση, με <em>περιοδική ανασκόπηση</em> και διαγραφή όταν δεν είναι πλέον απαραίτητα.</li>
-        </ul>
-      ),
+    retentionBody: isEN ? (
+      <ul>
+        <li><strong>Contact form submissions:</strong> retained as needed to respond/manage your request, with <em>periodic review</em> and deletion when no longer needed (at least annually).</li>
+        <li><strong>Order request form:</strong> retained for pre-contract communication and follow-up for up to <em>24 months</em> after last interaction, unless longer is required by law or to establish/exercise legal claims.</li>
+        <li><strong>Newsletter sign-ups:</strong> retained <em>until you withdraw consent</em> (unsubscribe) or after prolonged inactivity. You can unsubscribe anytime.</li>
+        <li><strong>Corporate email correspondence:</strong> retained as necessary for service/record-keeping, with <em>periodic review</em> and deletion when no longer required.</li>
+      </ul>
+    ) : (
+      <ul>
+        <li><strong>Υποβολές φόρμας επικοινωνίας:</strong> διατηρούνται όσο απαιτείται για απάντηση/διαχείριση, με <em>περιοδική ανασκόπηση</em> και διαγραφή όταν δεν χρειάζονται πλέον (τουλάχιστον ετήσια).</li>
+        <li><strong>Φόρμα αίτησης παραγγελίας:</strong> διατηρείται για προσυμβατική επικοινωνία και παρακολούθηση έως <em>24 μήνες</em> από την τελευταία αλληλεπίδραση, εκτός αν απαιτείται μεγαλύτερο διάστημα από τον νόμο ή για νομικές αξιώσεις.</li>
+        <li><strong>Εγγραφές στο newsletter:</strong> διατηρούνται <em>μέχρι ανάκληση συγκατάθεσης</em> (unsubscribe) ή μετά από παρατεταμένη αδράνεια. Μπορείτε να απεγγραφείτε ανά πάσα στιγμή.</li>
+        <li><strong>Ανταλλαγή email στο εταιρικό mailbox:</strong> διατηρείται όσο είναι αναγκαίο για εξυπηρέτηση/τεκμηρίωση, με <em>περιοδική ανασκόπηση</em> και διαγραφή όταν δεν είναι πλέον απαραίτητα.</li>
+      </ul>
+    ),
 
-    embedsBody: isEN
-      ? (
-        <>
-          The site includes embedded <strong>YouTube videos</strong> and a <strong>Google Map</strong>. When viewing/interacting, these providers may collect usage data and/or place cookies under their policies.
-          <ul>
-            <li>Google/YouTube Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
-          </ul>
-          Links to other sites or social profiles lead to third-party environments where their own policies apply.
-        </>
-      )
-      : (
-        <>
-          Ο ιστότοπος περιλαμβάνει ενσωματωμένα <strong>βίντεο YouTube</strong> και <strong>χάρτη Google</strong>. Κατά την προβολή/αλληλεπίδραση, οι πάροχοι ενδέχεται να συλλέγουν δεδομένα χρήσης ή/και να τοποθετούν cookies σύμφωνα με τις πολιτικές τους.
-          <ul>
-            <li>Πολιτική Απορρήτου Google/YouTube: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
-          </ul>
-          Οι σύνδεσμοι προς άλλα sites ή social οδηγούν σε περιβάλλοντα τρίτων, όπου ισχύουν οι δικές τους πολιτικές.
-        </>
-      ),
+    embedsBody: isEN ? (
+      <>
+        The site includes embedded <strong>YouTube videos</strong> and a <strong>Google Map</strong>. When viewing/interacting, these providers may collect usage data and/or place cookies under their policies.
+        <ul>
+          <li>Google/YouTube Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+        </ul>
+        Links to other sites or social profiles lead to third-party environments where their own policies apply.
+      </>
+    ) : (
+      <>
+        Ο ιστότοπος περιλαμβάνει ενσωματωμένα <strong>βίντεο YouTube</strong> και <strong>χάρτη Google</strong>. Κατά την προβολή/αλληλεπίδραση, οι πάροχοι ενδέχεται να συλλέγουν δεδομένα χρήσης ή/και να τοποθετούν cookies σύμφωνα με τις πολιτικές τους.
+        <ul>
+          <li>Πολιτική Απορρήτου Google/YouTube: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+        </ul>
+        Οι σύνδεσμοι προς άλλα sites ή social οδηγούν σε περιβάλλοντα τρίτων, όπου ισχύουν οι δικές τους πολιτικές.
+      </>
+    ),
 
-    storageBody: isEN
-      ? (
-        <>
-          We do not use marketing cookies. We use:
-          <ul>
-            <li><code>localStorage</code> to remember your language preference (<code>locale</code>).</li>
-            <li><code>sessionStorage</code> to limit showing the newsletter modal (<code>newsletterModalSeen:&lt;locale&gt;</code>).</li>
-          </ul>
-          These are functional items you can clear from your browser at any time.
-        </>
-      )
-      : (
-        <>
-          Δεν χρησιμοποιούμε cookies μάρκετινγκ. Χρησιμοποιούμε:
-          <ul>
-            <li><code>localStorage</code> για την προτίμηση γλώσσας (<code>locale</code>).</li>
-            <li><code>sessionStorage</code> για τον περιορισμό εμφάνισης του newsletter modal (<code>newsletterModalSeen:&lt;locale&gt;</code>).</li>
-          </ul>
-          Τα στοιχεία αυτά είναι λειτουργικά και μπορείτε να τα διαγράψετε ανά πάσα στιγμή από τον φυλλομετρητή σας.
-        </>
-      ),
+    storageBody: isEN ? (
+      <>
+        We do not use marketing cookies. We use:
+        <ul>
+          <li><code>localStorage</code> to remember your language preference (<code>locale</code>).</li>
+          <li><code>sessionStorage</code> to limit showing the newsletter modal (<code>newsletterModalSeen:&lt;locale&gt;</code>).</li>
+        </ul>
+        These are functional items you can clear from your browser at any time.
+      </>
+    ) : (
+      <>
+        Δεν χρησιμοποιούμε cookies μάρκετινγκ. Χρησιμοποιούμε:
+        <ul>
+          <li><code>localStorage</code> για την προτίμηση γλώσσας (<code>locale</code>).</li>
+          <li><code>sessionStorage</code> για τον περιορισμό εμφάνισης του newsletter modal (<code>newsletterModalSeen:&lt;locale&gt;</code>).</li>
+        </ul>
+        Τα στοιχεία αυτά είναι λειτουργικά και μπορείτε να τα διαγράψετε ανά πάσα στιγμή από τον φυλλομετρητή σας.
+      </>
+    ),
 
     securityBody: isEN
       ? "We implement appropriate technical and organisational measures (HTTPS, access controls, software updates) to protect data against unauthorised access, loss or alteration."
       : "Εφαρμόζουμε κατάλληλα τεχνικά και οργανωτικά μέτρα (HTTPS, έλεγχος πρόσβασης, ενημερώσεις λογισμικού) για την προστασία των δεδομένων από μη εξουσιοδοτημένη πρόσβαση, απώλεια ή αλλοίωση.",
 
-    rightsBody: isEN
-      ? (
-        <>
-          You may exercise at any time:
-          <ul>
-            <li>Right of access (copy)</li>
-            <li>Right to rectification</li>
-            <li>Right to erasure (“right to be forgotten”), where applicable</li>
-            <li>Right to restriction of processing</li>
-            <li>Right to object (for legitimate-interest bases)</li>
-            <li>Right to data portability (where applicable)</li>
-          </ul>
-          You also have the right to lodge a complaint with the Hellenic DPA – <a href="https://www.dpa.gr/" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.
-        </>
-      )
-      : (
-        <>
-          Μπορείτε να ασκήσετε ανά πάσα στιγμή:
-          <ul>
-            <li>Δικαίωμα πρόσβασης και λήψης αντιγράφου</li>
-            <li>Δικαίωμα διόρθωσης</li>
-            <li>Δικαίωμα διαγραφής (“λήθη”) όπου εφαρμόζεται</li>
-            <li>Δικαίωμα περιορισμού επεξεργασίας</li>
-            <li>Δικαίωμα εναντίωσης (σε βάσεις εννόμου συμφέροντος)</li>
-            <li>Δικαίωμα φορητότητας (όπου εφαρμόζεται)</li>
-          </ul>
-          Έχετε επίσης δικαίωμα καταγγελίας στην ΑΠΔΠΧ – <a href="https://www.dpa.gr/" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.
-        </>
-      ),
+    rightsBody: isEN ? (
+      <>
+        You may exercise at any time:
+        <ul>
+          <li>Right of access (copy)</li>
+          <li>Right to rectification</li>
+          <li>Right to erasure (“right to be forgotten”), where applicable</li>
+          <li>Right to restriction of processing</li>
+          <li>Right to object (for legitimate-interest bases)</li>
+          <li>Right to data portability (where applicable)</li>
+        </ul>
+        You also have the right to lodge a complaint with the Hellenic DPA – <a href="https://www.dpa.gr/" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.
+      </>
+    ) : (
+      <>
+        Μπορείτε να ασκήσετε ανά πάσα στιγμή:
+        <ul>
+          <li>Δικαίωμα πρόσβασης και λήψης αντιγράφου</li>
+          <li>Δικαίωμα διόρθωσης</li>
+          <li>Δικαίωμα διαγραφής (“λήθη”) όπου εφαρμόζεται</li>
+          <li>Δικαίωμα περιορισμού επεξεργασίας</li>
+          <li>Δικαίωμα εναντίωσης (σε βάσεις εννόμου συμφέροντος)</li>
+          <li>Δικαίωμα φορητότητας (όπου εφαρμόζεται)</li>
+        </ul>
+        Έχετε επίσης δικαίωμα καταγγελίας στην ΑΠΔΠΧ – <a href="https://www.dpa.gr/" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.
+      </>
+    ),
 
     minorsBody: isEN
       ? "This website targets adults. If you are under 16, please do not submit personal data without parental/guardian consent."
       : "Η ιστοσελίδα απευθύνεται σε ενήλικες. Αν είστε κάτω των 16 ετών, μην υποβάλλετε προσωπικά δεδομένα χωρίς συγκατάθεση γονέα/κηδεμόνα.",
 
-    contactPrivacyBody: isEN
-      ? (
-        <>
-          For privacy questions/requests:
-          <ul>
-            <li>Email: <a href="mailto:ffmedicwell@gmail.com">ffmedicwell@gmail.com</a></li>
-            <li>Phone: <a href="tel:2108070010">210 8070010</a></li>
-            <li>Address: Iroon Polytechneiou 5, Nea Erythraia, 146 71, Greece</li>
-          </ul>
-        </>
-      )
-      : (
-        <>
-          Για αιτήματα/ερωτήσεις σχετικά με τα δεδομένα σας:
-          <ul>
-            <li>Email: <a href="mailto:ffmedicwell@gmail.com">ffmedicwell@gmail.com</a></li>
-            <li>Τηλέφωνο: <a href="tel:2108070010">210 8070010</a></li>
-            <li>Διεύθυνση: Ηρώων Πολυτεχνείου 5, Νέα Ερυθραία, 146 71, Ελλάδα</li>
-          </ul>
-        </>
-      ),
+    contactPrivacyBody: isEN ? (
+      <>
+        For privacy questions/requests:
+        <ul>
+          <li>Email: <a href="mailto:ffmedicwell@gmail.com">ffmedicwell@gmail.com</a></li>
+          <li>Phone: <a href="tel:2108070010">210 8070010</a></li>
+          <li>Address: Iroon Polytechneiou 5, Nea Erythraia, 146 71, Greece</li>
+        </ul>
+      </>
+    ) : (
+      <>
+        Για αιτήματα/ερωτήσεις σχετικά με τα δεδομένα σας:
+        <ul>
+          <li>Email: <a href="mailto:ffmedicwell@gmail.com">ffmedicwell@gmail.com</a></li>
+          <li>Τηλέφωνο: <a href="tel:2108070010">210 8070010</a></li>
+          <li>Διεύθυνση: Ηρώων Πολυτεχνείου 5, Νέα Ερυθραία, 146 71, Ελλάδα</li>
+        </ul>
+      </>
+    ),
 
     changesBody: isEN
       ? "We may update this Policy periodically. The current version is published on this page with an updated effective date."
@@ -277,22 +265,135 @@ export default function PrivacyPolicyContent() {
     ipBody: isEN
       ? "The content (marks, logos, texts, images, presentation material) is protected by intellectual property laws. Reproduction, distribution or modification is prohibited without prior written permission, unless expressly permitted by a relevant third-party license."
       : "Το περιεχόμενο (σήματα, λογότυπα, κείμενα, εικόνες, υλικό παρουσίασης) προστατεύεται από δικαιώματα πνευματικής ιδιοκτησίας. Απαγορεύεται η αναπαραγωγή, διανομή ή τροποποίηση χωρίς προηγούμενη γραπτή άδεια, εκτός εάν ρητά επιτρέπεται από σχετική άδεια τρίτου.",
-    thirdLicBody: isEN
-      ? "We use images and icons from third-party free resources under their licenses (e.g., Pexels, Unsplash, Freepik, FreeImages, Flaticon). Where attribution is required, it is provided on this page and/or near the relevant material. Trademarks and names belong to their respective owners. If any rights holder believes their rights are affected, please contact us for prompt resolution."
-      : "Χρησιμοποιούμε εικόνες και εικονίδια από τρίτες πλατφόρμες δωρεάν πόρων σύμφωνα με τις άδειές τους (π.χ. Pexels, Unsplash, Freepik, FreeImages, Flaticon). Όπου απαιτείται αναφορά προέλευσης, αυτή παρέχεται στην παρούσα σελίδα ή/και δίπλα στο σχετικό υλικό. Τα εμπορικά σήματα ανήκουν στους νόμιμους δικαιούχους τους. Αν θεωρείτε ότι θίγονται δικαιώματά σας, επικοινωνήστε μαζί μας για άμεση διευθέτηση.",
-    acceptableUseBody: isEN
-      ? (
-        <ul>
-          <li>Do not use the site in ways that violate the law or third-party rights.</li>
-          <li>No attempts at unauthorised access to systems/data or interference with site operation.</li>
+
+    // CENTRALIZED CREDITS (single key, rich content)
+    thirdLicBody: isEN ? (
+      <>
+        <p>
+          <strong>Centralized attribution:</strong> We do <em>not</em> place attribution next to each image or icon.
+          To stay compliant, all attributions and ownership notices are provided <em>on this page</em>.
+          If any license requires attribution closer to the asset, please let us know and we will add it near the asset or remove the asset.
+        </p>
+        <p>We use images and icons from third-party resources under their respective licenses. Indicatively:</p>
+        <ul className="list-disc pl-6 space-y-1 mt-2">
+          <li>
+            <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> — Pexels License (no attribution required; attribution appreciated).
+          </li>
+          <li>
+            <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a> — Unsplash License (no attribution required; attribution appreciated).
+          </li>
+          <li>
+            <a href="https://www.freepikcompany.com/legal" target="_blank" rel="noopener noreferrer">Freepik / Storyset</a> — Free assets generally require attribution (link to author/source); premium plans may waive attribution as per terms.
+          </li>
+          <li>
+            <a href="https://www.freeimages.com/license" target="_blank" rel="noopener noreferrer">FreeImages</a> — Platform license; many assets require attribution per-asset terms.
+          </li>
+          <li>
+            <a href="https://www.flaticon.com/license" target="_blank" rel="noopener noreferrer">Flaticon</a> — Free use with attribution (link & author); premium may remove attribution per license.
+          </li>
+          <li>
+            <a href="https://pixabay.com/service/license/" target="_blank" rel="noopener noreferrer">Pixabay</a> — Pixabay License (no attribution required; some restrictions).
+          </li>
+          <li>
+            <a href="https://www.svgrepo.com/page/licensing/" target="_blank" rel="noopener noreferrer">SVG Repo</a> — Aggregated icons (CC0, MIT, etc.); check the license on each asset’s page; attribution may be required.
+          </li>
+          <li>
+            <a href="https://github.com/tailwindlabs/heroicons/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">Heroicons</a> — MIT License (no attribution required).
+          </li>
+          <li>
+            <a href="https://github.com/lucide-icons/lucide/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Lucide</a> — ISC License (no attribution required).
+          </li>
+          <li>
+            <a href="https://icons8.com/license" target="_blank" rel="noopener noreferrer">Icons8</a> — Free use with link attribution to Icons8; commercial licenses available.
+          </li>
+          <li>
+            <a href="https://thenounproject.com/legal/" target="_blank" rel="noopener noreferrer">The Noun Project</a> — Attribution required unless you hold a paid license.
+          </li>
+          <li>
+            <a href="https://undraw.co/license" target="_blank" rel="noopener noreferrer">unDraw</a> — unDraw License (free for commercial & personal use; no attribution required).
+          </li>
+          <li>
+            <a href="https://openmoji.org/license/" target="_blank" rel="noopener noreferrer">OpenMoji</a> — CC BY-SA 4.0 (attribution & share-alike required).
+          </li>
+          <li>
+            <a href="https://lordicon.com/license" target="_blank" rel="noopener noreferrer">Lordicon</a> — Free animated icons with attribution; paid plans may waive attribution.
+          </li>
         </ul>
-      )
-      : (
-        <ul>
-          <li>Απαγορεύεται χρήση του ιστότοπου κατά τρόπο που παραβιάζει τον νόμο ή δικαιώματα τρίτων.</li>
-          <li>Απαγορεύεται απόπειρα μη εξουσιοδοτημένης πρόσβασης σε συστήματα/δεδομένα ή παρεμβάσεις στη λειτουργία του ιστότοπου.</li>
+        <p className="mt-2">
+          Trademarks, logos, and names remain the property of their respective owners. If any rights holder believes their rights are affected,
+          please contact us for prompt resolution.
+        </p>
+      </>
+    ) : (
+      <>
+        <p>
+          <strong>Κεντρική αναφορά:</strong> Δεν τοποθετούμε απόδοση (attribution) δίπλα σε κάθε εικόνα ή εικονίδιο.
+          Για λόγους συμμόρφωσης, όλες οι αποδόσεις και οι δηλώσεις κυριότητας παρέχονται <em>σε αυτή τη σελίδα</em>.
+          Αν κάποια άδεια απαιτεί απόδοση κοντά στο υλικό, ενημερώστε μας για να την προσθέσουμε δίπλα στο υλικό ή να το αφαιρέσουμε.
+        </p>
+        <p>Χρησιμοποιούμε εικόνες και εικονίδια από τρίτες πλατφόρμες σύμφωνα με τις άδειές τους. Ενδεικτικά:</p>
+        <ul className="list-disc pl-6 space-y-1 mt-2">
+          <li>
+            <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> — Άδεια Pexels (χωρίς υποχρεωτική απόδοση· συνιστάται).
+          </li>
+          <li>
+            <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a> — Άδεια Unsplash (χωρίς υποχρεωτική απόδοση· συνιστάται).
+          </li>
+          <li>
+            <a href="https://www.freepikcompany.com/legal" target="_blank" rel="noopener noreferrer">Freepik / Storyset</a> — Τα δωρεάν στοιχεία συνήθως απαιτούν απόδοση (σύνδεσμος σε δημιουργό/πηγή)· στα premium πακέτα ενδέχεται να μην απαιτείται.
+          </li>
+          <li>
+            <a href="https://www.freeimages.com/license" target="_blank" rel="noopener noreferrer">FreeImages</a> — Άδεια πλατφόρμας· πολλά στοιχεία απαιτούν απόδοση κατά περίπτωση.
+          </li>
+          <li>
+            <a href="https://www.flaticon.com/license" target="_blank" rel="noopener noreferrer">Flaticon</a> — Δωρεάν χρήση με απόδοση (σύνδεσμος & δημιουργός)· στα premium ενδέχεται να μην απαιτείται.
+          </li>
+          <li>
+            <a href="https://pixabay.com/service/license/" target="_blank" rel="noopener noreferrer">Pixabay</a> — Άδεια Pixabay (χωρίς υποχρεωτική απόδοση· ορισμένοι περιορισμοί).
+          </li>
+          <li>
+            <a href="https://www.svgrepo.com/page/licensing/" target="_blank" rel="noopener noreferrer">SVG Repo</a> — Συγκεντρωτικό αποθετήριο (CC0, MIT κ.ά.)· ελέγχετε την άδεια στη σελίδα κάθε στοιχείου· ενδέχεται να απαιτείται απόδοση.
+          </li>
+          <li>
+            <a href="https://github.com/tailwindlabs/heroicons/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">Heroicons</a> — MIT License (δεν απαιτείται απόδοση).
+          </li>
+          <li>
+            <a href="https://github.com/lucide-icons/lucide/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Lucide</a> — ISC License (δεν απαιτείται απόδοση).
+          </li>
+          <li>
+            <a href="https://icons8.com/license" target="_blank" rel="noopener noreferrer">Icons8</a> — Δωρεάν χρήση με σύνδεσμο απόδοσης προς Icons8· διαθέσιμες εμπορικές άδειες.
+          </li>
+          <li>
+            <a href="https://thenounproject.com/legal/" target="_blank" rel="noopener noreferrer">The Noun Project</a> — Απαιτείται απόδοση εκτός αν έχετε επί πληρωμή άδεια.
+          </li>
+          <li>
+            <a href="https://undraw.co/license" target="_blank" rel="noopener noreferrer">unDraw</a> — Άδεια unDraw (ελεύθερη χρήση για εμπορικούς/προσωπικούς σκοπούς· δεν απαιτείται απόδοση).
+          </li>
+          <li>
+            <a href="https://openmoji.org/license/" target="_blank" rel="noopener noreferrer">OpenMoji</a> — CC BY-SA 4.0 (απαιτείται απόδοση & share-alike).
+          </li>
+          <li>
+            <a href="https://lordicon.com/license" target="_blank" rel="noopener noreferrer">Lordicon</a> — Δωρεάν animated icons με απόδοση· τα επί πληρωμή πλάνα ενδέχεται να μην την απαιτούν.
+          </li>
         </ul>
-      ),
+        <p className="mt-2">
+          Τα εμπορικά σήματα, τα λογότυπα και οι ονομασίες ανήκουν στους νόμιμους δικαιούχους τους.
+          Αν κάποιος δικαιούχος θεωρεί ότι θίγονται δικαιώματά του, παρακαλούμε επικοινωνήστε μαζί μας για άμεση διευθέτηση.
+        </p>
+      </>
+    ),
+
+    acceptableUseBody: isEN ? (
+      <ul>
+        <li>Do not use the site in ways that violate the law or third-party rights.</li>
+        <li>No attempts at unauthorised access to systems/data or interference with site operation.</li>
+      </ul>
+    ) : (
+      <ul>
+        <li>Απαγορεύεται χρήση του ιστότοπου κατά τρόπο που παραβιάζει τον νόμο ή δικαιώματα τρίτων.</li>
+        <li>Απαγορεύεται απόπειρα μη εξουσιοδοτημένης πρόσβασης σε συστήματα/δεδομένα ή παρεμβάσεις στη λειτουργία του ιστότοπου.</li>
+      </ul>
+    ),
     linksBody: isEN
       ? "The site includes links to our other pages and social accounts (YouTube, Facebook). We are not responsible for third-party content or privacy policies."
       : "Ο ιστότοπος περιέχει συνδέσμους προς άλλες σελίδες μας και λογαριασμούς σε κοινωνικά δίκτυα (YouTube, Facebook). Δεν ευθυνόμαστε για το περιεχόμενο ή τις πολιτικές απορρήτου των τρίτων.",
@@ -310,9 +411,11 @@ export default function PrivacyPolicyContent() {
       : "Οι όροι διέπονται από το Ελληνικό Δίκαιο. Αρμόδια τα δικαστήρια Αθηνών, με την επιφύλαξη αναγκαστικών διατάξεων προστασίας καταναλωτή.",
 
     contactFooterH: isEN ? "Contact" : "Επικοινωνία",
-    contactFooterB: isEN
-      ? <>For anything related to this page (Privacy Policy or Terms), contact <a href="mailto:ffmedicwell@gmail.com">ffmedicwell@gmail.com</a> or <a href="tel:2108070010">210 8070010</a>.</>
-      : <>Για οτιδήποτε σχετικό με την παρούσα σελίδα (Πολιτική Απορρήτου ή Όρους Χρήσης) επικοινωνήστε στο <a href="mailto:ffmedicwell@gmail.com">ffmedicwell@gmail.com</a> ή στο <a href="tel:2108070010">210 8070010</a>.</>,
+    contactFooterB: isEN ? (
+      <>For anything related to this page (Privacy Policy or Terms), contact <a href="mailto:ffmedicwell@gmail.com">ffmedicwell@gmail.com</a> or <a href="tel:2108070010">210 8070010</a>.</>
+    ) : (
+      <>Για οτιδήποτε σχετικό με την παρούσα σελίδα (Πολιτική Απορρήτου ή Όρους Χρήσης) επικοινωνήστε στο <a href="mailto:ffmedicwell@gmail.com">ffmedicwell@gmail.com</a> ή στο <a href="tel:2108070010">210 8070010</a>.</>
+    ),
   };
 
   return (
@@ -473,7 +576,7 @@ export default function PrivacyPolicyContent() {
 
           <section id="third-party-licenses" className="mb-6">
             <h3>3) {t.thirdLic}</h3>
-            <p>{t.thirdLicBody}</p>
+            <div>{t.thirdLicBody}</div>
           </section>
 
           <section id="acceptable-use" className="mb-6">
