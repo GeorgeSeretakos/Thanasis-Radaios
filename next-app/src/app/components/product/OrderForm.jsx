@@ -8,7 +8,6 @@ export default function OrderForm() {
   const [draftQty, setDraftQty] = useState(1);
   const [items, setItems] = useState([]);
 
-  const jsonRef = useRef(null);
   const textRef = useRef(null);
 
   const selected = useMemo(
@@ -31,12 +30,7 @@ export default function OrderForm() {
       }
       return [
         ...prev,
-        {
-          id: selected.id,
-          desc: selected.desc,
-          unit: selected.unit,
-          quantity: qty,
-        },
+        { id: selected.id, desc: selected.desc, unit: selected.unit, quantity: qty },
       ];
     });
     setDraftQty(1);
@@ -47,9 +41,7 @@ export default function OrderForm() {
   const updateQty = (id, q) =>
     setItems((prev) =>
       prev.map((x) =>
-        x.id === id
-          ? { ...x, quantity: Math.max(0, parseInt(q || 0, 10)) }
-          : x
+        x.id === id ? { ...x, quantity: Math.max(0, parseInt(q || 0, 10)) } : x
       )
     );
 
@@ -59,16 +51,9 @@ export default function OrderForm() {
       alert("Πρόσθεσε τουλάχιστον 1 προϊόν.");
       return;
     }
-    const payload = items.map(({ id, desc, unit, quantity }) => ({
-      id,
-      description: desc,
-      unit,
-      quantity,
-    }));
-    const textLines = payload
-      .map((p) => `• ${p.description} | ${p.unit} | Ποσ.: ${p.quantity}`)
+    const textLines = items
+      .map((p) => `• ${p.desc} | ${p.unit} | Ποσ.: ${p.quantity}`)
       .join("\n");
-    if (jsonRef.current) jsonRef.current.value = JSON.stringify(payload);
     if (textRef.current) textRef.current.value = textLines;
   };
 
@@ -132,12 +117,12 @@ export default function OrderForm() {
         )}
       </div>
 
-      {/* Items list — mobile cards */}
+      {/* Items list — mobile cards + desktop table (unchanged) */}
       {items.length > 0 && (
         <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm mb-8">
           <h3 className="font-semibold mb-4">Επιλογές</h3>
 
-          {/* Mobile (cards) */}
+          {/* Mobile cards */}
           <div className="md:hidden space-y-3">
             {items.map((it) => (
               <div
@@ -171,7 +156,7 @@ export default function OrderForm() {
             ))}
           </div>
 
-          {/* Desktop (table) */}
+          {/* Desktop table */}
           <div className="hidden md:block overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead>
@@ -232,8 +217,7 @@ export default function OrderForm() {
           </label>
         </p>
 
-        {/* Hidden payloads sent with the order */}
-        <input ref={jsonRef} type="hidden" name="order_items_json" />
+        {/* Only the text payload now */}
         <input ref={textRef} type="hidden" name="order_items_text" />
 
         {/* Customer info */}
@@ -242,14 +226,14 @@ export default function OrderForm() {
           <div className="grid gap-4 sm:grid-cols-2">
             <input
               type="text"
-              name="firstName"
+              name="Όνομα"
               placeholder="Όνομα"
               required
               className="p-2 rounded border border-gray-300"
             />
             <input
               type="text"
-              name="lastName"
+              name="Επώνυμο"
               placeholder="Επώνυμο"
               required
               className="p-2 rounded border border-gray-300"
@@ -259,20 +243,22 @@ export default function OrderForm() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <input
               type="tel"
-              name="phone"
+              name="Τηλέφωνο"
+              required
               placeholder="Τηλέφωνο"
               className="p-2 rounded border border-gray-300"
             />
             <input
               type="email"
               name="email"
+              required
               placeholder="Email"
               className="p-2 rounded border border-gray-300"
             />
           </div>
 
           <textarea
-            name="message"
+            name="Μήνυμα / Σχόλιο"
             rows={4}
             placeholder="Μήνυμα / Σχόλιο"
             className="mt-4 w-full p-2 rounded border border-gray-300"

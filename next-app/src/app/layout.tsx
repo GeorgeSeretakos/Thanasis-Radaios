@@ -49,7 +49,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
             <input type="hidden" name="form-name" value="order-request"/>
             <textarea name="order_items_text"/>
-            <input type="hidden" name="order_items_json"/>
             <input type="text" name="firstName"/>
             <input type="text" name="lastName"/>
             <input type="tel" name="phone"/>
