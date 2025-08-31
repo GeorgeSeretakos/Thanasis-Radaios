@@ -218,7 +218,7 @@ export default function OrderForm() {
         </p>
 
         {/* Only the text payload now */}
-        <input ref={textRef} type="hidden" name="Σύνοψη_Παραγγελίας:" />
+        <input ref={textRef} type="hidden" name="Σύνοψη_Παραγγελίας" />
 
         {/* Customer info */}
         <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
