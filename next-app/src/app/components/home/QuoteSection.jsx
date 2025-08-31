@@ -20,17 +20,14 @@ export default function QuoteSection() {
   return (
     <section className="relative h-[60vh]">
       {/* Background Image */}
-      <Image
+      <img
         src="/images/general/9.webp"
-        alt="Quote background"
-        fill
-        priority
-        sizes="100vw"
-        className="absolute inset-0 object-cover object-center z-0"
+        alt="Quote Background"
+        className="absolute inset-0 fill w-full h-full object-cover object-center z-0"
       />
 
       {/* Black Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+      <div className="absolute inset-0 bg-black/60 z-10"/>
 
       {/* Text content */}
       <div className="relative z-20 h-full text-white flex items-center justify-center px-4">

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 // Bilingual product lists (update your data file accordingly):
-import { products_el, products_en } from "../../../../public/data/orderProducts";
+import products from "../../../../public/data/orderProducts";
 
 export default function OrderForm() {
   const [locale, setLocale] = useState("el");
@@ -17,11 +17,6 @@ export default function OrderForm() {
     setLocale(saved);
   }, []);
 
-  // choose the right products list
-  const products = useMemo(
-    () => (locale === "en" ? products_en : products_el),
-    [locale]
-  );
 
   const selected = useMemo(
     () => products.find((p) => p.id === draftId),

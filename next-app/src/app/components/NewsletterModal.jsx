@@ -6,21 +6,56 @@ import Link from "next/link";
 
 export default function NewsletterModal() {
   const [open, setOpen] = useState(false);
-  const [locale, setLocale] = useState("el");
+  const [locale, setLocale] = useState(null); // null until resolved
+
+  // Helper: pick locale on first load
+  const resolveInitialLocale = () => {
+    try {
+      const saved = localStorage.getItem("locale");
+      if (saved === "en" || saved === "el") return saved;
+    } catch {}
+    const htmlLang = typeof document !== "undefined" ? document.documentElement.lang : "";
+    if (htmlLang === "en" || htmlLang === "el") return htmlLang;
+    const nav = (typeof navigator !== "undefined" ? navigator.language : "el").toLowerCase();
+    if (nav.startsWith("en")) return "en";
+    if (nav.startsWith("el") || nav.startsWith("gr")) return "el";
+    return "el";
+  };
+
+  const seenKeyFor = (loc) => `newsletterModalSeen:${loc}`;
 
   useEffect(() => {
-    const saved = localStorage.getItem("locale") || "el";
-    setLocale(saved);
+    // 1) Resolve locale
+    const resolved = resolveInitialLocale();
+    setLocale(resolved);
+    // Persist if first time
+    if (!localStorage.getItem("locale")) {
+      localStorage.setItem("locale", resolved);
+      // keep <html lang> roughly in sync
+      document.documentElement.lang = resolved;
+    }
 
-    const hasSeen = sessionStorage.getItem("newsletterModalSeen");
+    // 2) Show modal only if not seen for this locale in this session
+    const seenKey = seenKeyFor(resolved);
+    const hasSeen = sessionStorage.getItem(seenKey);
     if (!hasSeen) {
       setOpen(true);
-      sessionStorage.setItem("newsletterModalSeen", "true");
+      sessionStorage.setItem(seenKey, "true");
     }
+
+    // 3) React to navbar locale switch
+    const onLocaleChange = (e) => {
+      const next = e?.detail?.locale || localStorage.getItem("locale") || "el";
+      setLocale(next);
+      document.documentElement.lang = next;
+    };
+    window.addEventListener("locale:changed", onLocaleChange);
+    return () => window.removeEventListener("locale:changed", onLocaleChange);
   }, []);
 
-  const isEN = locale === "en";
+  if (locale == null || !open) return null;
 
+  const isEN = locale === "en";
   const t = {
     title: isEN ? "Subscribe to our Newsletter" : "Εγγραφή στο Newsletter",
     blurb: isEN
@@ -36,8 +71,6 @@ export default function NewsletterModal() {
     closeAria: isEN ? "Close" : "Κλείσιμο",
   };
 
-  if (!open) return null;
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
@@ -46,7 +79,6 @@ export default function NewsletterModal() {
       aria-labelledby="newsletter-title"
     >
       <div className="bg-white text-black rounded-xl p-5 sm:p-6 w-full max-w-[22rem] sm:max-w-md md:max-w-lg shadow-2xl relative max-h-[90vh] overflow-y-auto">
-        {/* Close button */}
         <button
           onClick={() => setOpen(false)}
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
@@ -62,7 +94,7 @@ export default function NewsletterModal() {
         <p className="mb-4 text-sm text-gray-600">{t.blurb}</p>
 
         <form
-          name="newsletter"              // keep the Greek form name (what Netlify receives)
+          name="newsletter"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
@@ -77,7 +109,7 @@ export default function NewsletterModal() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            {/* Keep field names in Greek; only placeholders change */}
+            {/* Keep field names in Greek — only placeholders change */}
             <input
               type="text"
               name="Όνομα"
@@ -111,11 +143,7 @@ export default function NewsletterModal() {
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm">
             <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                required
-                className="accent-blue-600 scale-110"
-              />
+              <input type="checkbox" required className="accent-blue-600 scale-110" />
               {t.privacyPrefix}
               <Link href="/privacy-policy" className="text-blue-600 hover:underline">
                 {t.privacyLink}

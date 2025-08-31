@@ -47,7 +47,7 @@ export default function Navbar() {
             <NavItem href="/" label={locale === "en" ? "Home" : "Αρχική"} />
             <NavItem href="/product" label={locale === "en" ? "Product" : "Το προϊόν"} />
             <NavItem href="/company" label={locale === "en" ? "Company" : "Η εταιρεία"} />
-            <NavItem href="/ems" label={locale === "en" ? "EMS Training" : "Άσκηση EMS"} />
+            <NavItem href="/ems" label={locale === "en" ? "EMS Exercise" : "Άσκηση EMS"} />
             <NavItem href="/collab" label={locale === "en" ? "Collaboration" : "Συνεργασία"} />
             <NavItem href="/blog" label="Blog" />
             <NavItem href="/contact" label={locale === "en" ? "Contact" : "Επικοινωνία"} />
@@ -93,7 +93,7 @@ export default function Navbar() {
             <NavItem href="/" label={locale === "en" ? "Home" : "Αρχική"} />
             <NavItem href="/product" label={locale === "en" ? "Product" : "Το προϊόν"} />
             <NavItem href="/company" label={locale === "en" ? "Company" : "Η εταιρεία"} />
-            <NavItem href="/ems" label={locale === "en" ? "EMS Training" : "Άσκηση EMS"} />
+            <NavItem href="/ems" label={locale === "en" ? "EMS Exercise" : "Άσκηση EMS"} />
             <NavItem href="/collab" label={locale === "en" ? "Collaboration" : "Συνεργασία"} />
             <NavItem href="/blog" label="Blog" />
             <NavItem href="/contact" label={locale === "en" ? "Contact" : "Επικοινωνία"} />
