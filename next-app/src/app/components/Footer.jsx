@@ -87,11 +87,11 @@ export default function Contact() {
                 action="/thank-you"
                 className="space-y-4"
               >
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="contact"/>
                 <p hidden>
                   <label>
                     {locale === "en" ? "Don’t fill this out:" : "Μην το συμπληρώσεις:"}{" "}
-                    <input name="bot-field" />
+                    <input name="bot-field"/>
                   </label>
                 </p>
 
@@ -113,6 +113,14 @@ export default function Contact() {
                 </div>
 
                 <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  className="w-full p-2 rounded bg-black/30 border border-gray-700 text-white"
+                />
+
+                <input
                   type="tel"
                   name="Τηλέφωνο"
                   placeholder={locale === "en" ? "Phone" : "Τηλέφωνο"}
@@ -130,7 +138,7 @@ export default function Contact() {
 
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                   <label className="flex items-center gap-2 text-xs sm:text-sm">
-                    <input type="checkbox" required className="accent-blue-500 scale-110" />
+                    <input type="checkbox" required className="accent-blue-500 scale-110"/>
                     {locale === "en" ? "I accept the" : "Αποδέχομαι την"}{" "}
                     <a href="/privacy-policy" className="text-blue-400 hover:underline">
                       {locale === "en" ? "Privacy Policy" : "Πολιτική Απορρήτου"}

@@ -4,6 +4,7 @@
 import { useEffect, useState, useMemo } from "react";
 import * as blogData from "../../../public/data/blog";
 import BlogCard from "../components/blog/BlogCard";
+import NewsletterModal from "../components/NewsletterModal";
 
 export default function BlogPage() {
   const [locale, setLocale] = useState("el");
@@ -39,6 +40,7 @@ export default function BlogPage() {
 
   return (
     <main>
+      <NewsletterModal/>
       {/* Tabs */}
       <div className="w-full bg-[#1C86D1] shadow-sm">
         <nav className="flex max-w-7xl mx-auto gap-6 p-4">

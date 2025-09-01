@@ -49,7 +49,7 @@ export default function Navbar() {
             <NavItem href="/company" label={locale === "en" ? "Company" : "Η εταιρεία"} />
             <NavItem href="/ems" label={locale === "en" ? "EMS Exercise" : "Άσκηση EMS"} />
             <NavItem href="/collab" label={locale === "en" ? "Collaboration" : "Συνεργασία"} />
-            <NavItem href="/blog" label="Blog" />
+            <NavItem href="/blog" label={locale === "en" ? "News" : "Νέα"} />
             <NavItem href="/contact" label={locale === "en" ? "Contact" : "Επικοινωνία"} />
           </div>
 
@@ -95,7 +95,7 @@ export default function Navbar() {
             <NavItem href="/company" label={locale === "en" ? "Company" : "Η εταιρεία"} />
             <NavItem href="/ems" label={locale === "en" ? "EMS Exercise" : "Άσκηση EMS"} />
             <NavItem href="/collab" label={locale === "en" ? "Collaboration" : "Συνεργασία"} />
-            <NavItem href="/blog" label="Blog" />
+            <NavItem href="/blog" label={locale === "en" ? "News" : "Νέα"} />
             <NavItem href="/contact" label={locale === "en" ? "Contact" : "Επικοινωνία"} />
           </div>
 
