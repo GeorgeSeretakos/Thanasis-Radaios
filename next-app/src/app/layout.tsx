@@ -47,7 +47,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <input type="email" name="email"/>
             <input type="tel" name="phone"/>
             <textarea name="message"/>
-            <input type="checkbox" name="consent" />
             <input type="text" name="bot-field"/>
         </form>
 
