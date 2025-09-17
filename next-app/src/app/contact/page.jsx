@@ -19,10 +19,10 @@ export default function Contact() {
           action="/thank-you"
           className="space-y-4"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contact"/>
           <p hidden>
             <label>
-              Don’t fill this out: <input name="bot-field" />
+              Don’t fill this out: <input name="bot-field"/>
             </label>
           </p>
 
@@ -45,6 +45,15 @@ export default function Contact() {
               className="w-full rounded-xl border border-white/15 px-3.5 py-3 text-sm outline-none focus:ring-2 focus:ring-black/20"
             />
           </div>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="Email"
+            className="w-full rounded-xl border border-white/15 px-3.5 py-3 text-sm outline-none focus:ring-2 focus:ring-black/20"
+          />
 
           <input
             id="phone"
@@ -81,13 +90,25 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm bg-white/15 text-white hover:cursor-pointer"
+              className="btn btn-primary"
             >
               Αποστολή
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12h14M13 5l7 7-7 7"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
               </svg>
             </button>
+
           </div>
         </form>
       </div>

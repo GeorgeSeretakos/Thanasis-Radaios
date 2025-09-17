@@ -42,10 +42,10 @@ export default function ServiceTabs({ individuals, pros }) {
           <button
             key={t.key}
             onClick={() => setActive(t.key)}
-            className={`px-5 py-2.5 rounded-xl text-sm md:text-base font-medium transition-colors border
+            className={`px-5 py-2.5 rounded-xl text-sm md:text-base font-medium transition-colors
         ${
               active === t.key
-                ? "bg-white/10 border-white/20 text-white shadow-sm"
+                ? "bg-white/10 text-white shadow-sm"
                 : "bg-white/[0.03] hover:cursor-pointer border-white/10 text-white/70 hover:text-white hover:border-white/20 hover:bg-white/[0.06]"
             }`}
             aria-pressed={active === t.key}

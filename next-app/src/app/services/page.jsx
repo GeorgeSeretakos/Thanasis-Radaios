@@ -3,6 +3,7 @@
 import PageHeader from "../components/PageHeader";
 import ServiceTabs from "../components/ServiceTabs";
 import { servicesIndividuals, servicesPros } from "../../../public/data/servicesData";
+import TestimonialsCarousel from "../components/TestimonialsCarousel";
 
 export default function ServicesPage() {
   return (
@@ -19,6 +20,8 @@ export default function ServicesPage() {
           pros={{ label: "Επαγγελματίες", items: servicesPros }}
         />
       </section>
+
+      <TestimonialsCarousel />
     </main>
   );
 }

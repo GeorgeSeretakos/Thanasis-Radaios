@@ -28,6 +28,8 @@ export default function Navbar() {
           <a href="/about" className="text-white/80 hover:text-white transition">Γραφείο</a>
           <a href="/services" className="text-white/80 hover:text-white transition">Υπηρεσίες</a>
           <a href="/faq" className="text-white/80 hover:text-white transition">FAQ</a>
+          <a href="/projects" className="text-white/80 hover:text-white transition">Έργα</a>
+          <a href="/blog" className="text-white/80 hover:text-white transition">Νέα</a>
           <a
             href="/contact"
             className="inline-flex items-center justify-center rounded-lg border border-white/20 px-3.5 py-2 text-white/90 hover:text-white hover:border-white/40 transition focus:outline-none focus:ring-2 focus:ring-white/30"
@@ -63,6 +65,8 @@ export default function Navbar() {
             <a href="/about" className="py-3 px-2 rounded-md hover:bg-white/5">Γραφείο</a>
             <a href="/services" className="py-3 px-2 rounded-md hover:bg-white/5">Υπηρεσίες</a>
             <a href="/faq" className="py-3 px-2 rounded-md hover:bg-white/5">FAQ</a>
+            <a href="/projects" className="text-white/80 hover:text-white transition">Έργα</a>
+            <a href="/blog" className="text-white/80 hover:text-white transition">Νέα</a>
             <a
               href="/contact"
               className="mt-1 inline-flex items-center justify-center rounded-lg border border-white/20 px-3.5 py-2 text-white/90 hover:text-white hover:border-white/40 transition focus:outline-none focus:ring-2 focus:ring-white/30"

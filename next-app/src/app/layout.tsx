@@ -1,26 +1,23 @@
 import {
-    Geist,
-    Geist_Mono,
-    Great_Vibes,
-    Manrope,
     Open_Sans,
-    Roboto,
+    Noto_Serif,
 } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const greatVibes = Great_Vibes({
-    weight: "400",
-    subsets: ["latin"],
-    variable: "--font-great-vibes",
+const openSans = Open_Sans({
+    subsets: ["latin", "greek"],
+    variable: "--font-open-sans",
+    display: "swap",
 });
-const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
-const openSans = Open_Sans({ variable: "--font-open-sans", subsets: ["latin"] });
-const roboto = Roboto({ variable: "--font-roboto", subsets: ["latin"] });
+
+const notoSerif = Noto_Serif({
+    subsets: ["latin", "greek"],
+    variable: "--font-noto-serif",
+    display: "swap",
+});
 
 export const metadata = {
     title: "Τεχνικό Γραφείο Θ. Γ. Ραδαίος",
@@ -32,19 +29,30 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html lang="el">
         <body
             className={`
-          ${manrope.variable} ${openSans.variable} ${roboto.variable}
-          ${geistSans.variable} ${geistMono.variable} ${greatVibes.variable}
-          antialiased
-          min-h-screen flex flex-col bg-[#0B0B0C] text-white
+          ${openSans.variable}
+          ${notoSerif.variable}
+          antialiased min-h-screen flex flex-col bg-[#0B0B0C] text-white
         `}
         >
+        <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            hidden
+        >
+            <input type="hidden" name="form-name" value="contact"/>
+            <input type="text" name="firstName"/>
+            <input type="text" name="lastName"/>
+            <input type="email" name="email"/>
+            <input type="tel" name="phone"/>
+            <textarea name="message"/>
+            <input type="text" name="bot-field"/>
+        </form>
 
-        <Navbar />
-
-        {/* Ο χώρος για περιεχόμενο — θα κάνει flex-1 */}
+        <Navbar/>
         <main className="flex-1 mt-16">{children}</main>
-
-        <Footer />
+        <Footer/>
         </body>
         </html>
     );
