@@ -1,4 +1,3 @@
-// components/ServiceCard.jsx
 export default function ServiceCard({ iconSrc, iconAlt, title, description }) {
   return (
     <div

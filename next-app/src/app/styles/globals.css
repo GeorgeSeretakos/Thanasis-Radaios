@@ -19,14 +19,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0B0B0C;
     --foreground: #ededed;
   }
 }
 
 body {
-  background: white;
-  color: black;
+  background: #0B0B0C;
+  color: white;
   font-family: var(--font-sans);
 }
 
@@ -73,4 +73,71 @@ li {
 
 .title-black {
   @apply font-bold mb-6 text-black;
+}
+
+/* FAQ Answer Styling */
+.faq-answer p {
+  margin-bottom: 1rem; /* extra gap between paragraphs */
+}
+
+.faq-answer ul,
+.faq-answer ol {
+  margin: 1rem 0 1rem 1.25rem; /* spacing & indentation */
+  padding-left: 1.25rem;
+  list-style: disc; /* ensure bullets are visible */
+}
+
+.faq-answer li {
+  margin-bottom: 0.5rem; /* spacing between list items */
+  line-height: 1.7;
+}
+
+/* FAQ inline info icon + tooltip */
+.faq-answer .faq-info{
+  position:relative;
+  display:inline-flex;
+  width:18px;height:18px;
+  margin-left:.25rem; vertical-align:middle;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:9999px;
+  align-items:center; justify-content:center;
+  cursor:pointer; user-select:none;
+}
+.faq-answer .faq-info::before{
+  content:"i";
+  font-weight:700; font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size:12px; line-height:1; color:rgba(255,255,255,.9);
+}
+
+/* bubble */
+.faq-answer .faq-info::after{
+  content:attr(data-tip);
+  position:absolute;
+  left:50%; bottom:calc(100% + 10px);
+  transform:translateX(-50%) translateY(4px);
+  opacity:0; pointer-events:none;
+  background:rgba(20,20,22,.98);
+  color:#fff; font-size:12.5px; line-height:1.45;
+  padding:10px 12px; border-radius:10px;
+  box-shadow:0 6px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.08);
+  max-width:38ch; width:max-content; white-space:normal; z-index:30;
+  transition:opacity .15s ease, transform .15s ease;
+}
+/* arrow */
+.faq-answer .faq-info:hover::before,
+.faq-answer .faq-info:focus-visible::before{ color:#fff; }
+.faq-answer .faq-info:hover::after,
+.faq-answer .faq-info:focus-visible::after{
+  opacity:1; transform:translateX(-50%) translateY(0);
+}
+.faq-answer .faq-info::marker{ content:""; }
+.faq-answer .faq-info:focus{ outline:none; }
+
+.service-answer {
+  background: lightgray;        /* απαλό γκρι/λευκό */
+  color: #222;                /* πιο σκούρο, ευανάγνωστο κείμενο */
+  padding: 1.5rem 1.75rem;
+  border-radius: 12px;
+  line-height: 1.7;
+  font-size: 15.5px;
 }

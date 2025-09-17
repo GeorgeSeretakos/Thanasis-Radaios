@@ -1,141 +1,77 @@
 "use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [locale, setLocale] = useState("el"); // default Greek
-  const pathname = usePathname();
-
-  // load saved language
-  useEffect(() => {
-    const saved = localStorage.getItem("locale") || "el";
-    setLocale(saved);
-  }, []);
-
-  // close menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
-  const switchLang = (lang) => {
-    setLocale(lang);
-    localStorage.setItem("locale", lang);
-    window.location.reload(); // force reload to re-render everything
-  };
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-white text-black shadow right-0 z-50 fixed top-0 w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-16 lg:h-18">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <img
-                src="/logo/3.png"
-                alt="Logo"
-                className="h-10 sm:h-12 lg:h-16 w-auto"
-              />
-            </Link>
+    <header className="fixed inset-x-0 top-0 z-50 bg-[#0B0B0C]/80 backdrop-blur border-b border-white/10">
+      <div className="mx-auto max-w-6xl px-4 h-16 flex items-center text-white">
+        {/* 3) Λογότυπο + Τίτλος: πάντα ορατό */}
+        <a href="/" className="flex items-center gap-3 group">
+          <img
+            src="/logo/logo_sign.png"
+            alt="Λογότυπο"
+            className="h-16 w-auto object-contain opacity-95 group-hover:opacity-100 transition"
+          />
+          <div className="leading-tight">
+            <p className="text-[11px] tracking-widest text-white/50 uppercase">Τεχνικό Γραφείο</p>
+            <p className="text-sm sm:text-base font-semibold">
+              Θανάσης Γ. Ραδαίος – Πολιτικός Μηχανικός
+            </p>
           </div>
+        </a>
 
-          {/* Desktop Links */}
-          <div className="hidden sm:flex sm:space-x-4 lg:space-x-5 items-center font-semibold text-xs lg:text-sm">
-            <NavItem href="/" label={locale === "en" ? "Home" : "Αρχική"} />
-            <NavItem href="/product" label={locale === "en" ? "Product" : "Το προϊόν"} />
-            <NavItem href="/company" label={locale === "en" ? "Company" : "Η εταιρεία"} />
-            <NavItem href="/ems" label={locale === "en" ? "EMS Exercise" : "Άσκηση EMS"} />
-            <NavItem href="/collab" label={locale === "en" ? "Collaboration" : "Συνεργασία"} />
-            <NavItem href="/blog" label={locale === "en" ? "News" : "Νέα"} />
-            <NavItem href="/contact" label={locale === "en" ? "Contact" : "Επικοινωνία"} />
-          </div>
+        {/* Desktop πλοήγηση */}
+        <nav className="hidden md:flex items-center gap-6 text-sm ml-auto">
+          <a href="/" className="text-white/80 hover:text-white transition">Αρχική</a>
+          <a href="/about" className="text-white/80 hover:text-white transition">Γραφείο</a>
+          <a href="/services" className="text-white/80 hover:text-white transition">Υπηρεσίες</a>
+          <a href="/faq" className="text-white/80 hover:text-white transition">FAQ</a>
+          <a
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-lg border border-white/20 px-3.5 py-2 text-white/90 hover:text-white hover:border-white/40 transition focus:outline-none focus:ring-2 focus:ring-white/30"
+          >
+            Επικοινωνία
+          </a>
+        </nav>
 
-          {/* Language toggle (desktop) */}
-          <div className="hidden sm:flex items-center gap-1 ml-2 text-xs">
-            <span
-              onClick={() => switchLang("el")}
-              className={`cursor-pointer font-medium ${
-                locale === "el" ? "text-black" : "text-gray-400"
-              }`}
-            >
-              EL
-            </span>
-            <span className="text-gray-400">|</span>
-            <span
-              onClick={() => switchLang("en")}
-              className={`cursor-pointer font-medium ${
-                locale === "en" ? "text-black" : "text-gray-400"
-              }`}
-            >
-              EN
-            </span>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="sm:hidden">
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1C86D1]"
-            >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
+        {/* Mobile toggle */}
+        <button
+          aria-label={open ? "Κλείσιμο μενού" : "Άνοιγμα μενού"}
+          aria-expanded={open}
+          className="md:hidden ml-auto inline-flex items-center justify-center rounded-lg border border-white/20 p-2 text-white hover:border-white/40 transition focus:outline-none focus:ring-2 focus:ring-white/30"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          ) : (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          )}
+        </button>
       </div>
 
-      {/* Mobile Links */}
-      {mobileOpen && (
-        <div className="sm:hidden bg-white shadow-md border-t">
-          <div className="flex flex-col space-y-2 px-4 py-4 font-medium">
-            <NavItem href="/" label={locale === "en" ? "Home" : "Αρχική"} />
-            <NavItem href="/product" label={locale === "en" ? "Product" : "Το προϊόν"} />
-            <NavItem href="/company" label={locale === "en" ? "Company" : "Η εταιρεία"} />
-            <NavItem href="/ems" label={locale === "en" ? "EMS Exercise" : "Άσκηση EMS"} />
-            <NavItem href="/collab" label={locale === "en" ? "Collaboration" : "Συνεργασία"} />
-            <NavItem href="/blog" label={locale === "en" ? "News" : "Νέα"} />
-            <NavItem href="/contact" label={locale === "en" ? "Contact" : "Επικοινωνία"} />
-          </div>
-
-          {/* Mobile language toggle */}
-          <div className="flex justify-end gap-1 px-4 py-2 text-xs">
-            <span
-              onClick={() => switchLang("el")}
-              className={`cursor-pointer font-medium ${
-                locale === "el" ? "text-black" : "text-gray-400"
-              }`}
+      {/* Mobile panel */}
+      {open && (
+        <div className="md:hidden border-t border-white/10 bg-[#0B0B0C]/95 backdrop-blur">
+          <nav className="mx-auto max-w-6xl px-4 py-4 grid gap-1 text-sm text-white">
+            <a href="/" className="py-3 px-2 rounded-md hover:bg-white/5">Αρχική</a>
+            <a href="/about" className="py-3 px-2 rounded-md hover:bg-white/5">Γραφείο</a>
+            <a href="/services" className="py-3 px-2 rounded-md hover:bg-white/5">Υπηρεσίες</a>
+            <a href="/faq" className="py-3 px-2 rounded-md hover:bg-white/5">FAQ</a>
+            <a
+              href="/contact"
+              className="mt-1 inline-flex items-center justify-center rounded-lg border border-white/20 px-3.5 py-2 text-white/90 hover:text-white hover:border-white/40 transition focus:outline-none focus:ring-2 focus:ring-white/30"
             >
-              EL
-            </span>
-            <span className="text-gray-400">|</span>
-            <span
-              onClick={() => switchLang("en")}
-              className={`cursor-pointer font-medium ${
-                locale === "en" ? "text-black" : "text-gray-400"
-              }`}
-            >
-              EN
-            </span>
-          </div>
+              Επικοινωνία
+            </a>
+          </nav>
         </div>
       )}
-    </nav>
-  );
-}
-
-function NavItem({ href, label }) {
-  const pathname = usePathname();
-  const isActive = pathname === href;
-
-  return (
-    <Link
-      href={href}
-      className={`inline-flex items-center px-2 py-1 rounded-sm transition whitespace-nowrap
-        ${isActive ? "text-[#1C86D1]" : "hover:text-[#1C86D1]"}`}
-    >
-      {label}
-    </Link>
+    </header>
   );
 }
