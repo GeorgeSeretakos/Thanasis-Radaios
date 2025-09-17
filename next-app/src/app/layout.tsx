@@ -38,33 +38,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           min-h-screen flex flex-col bg-[#0B0B0C] text-white
         `}
         >
-        {/* Netlify hidden forms */}
-        <form
-            name="newsletter"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            hidden
-        >
-            <input type="hidden" name="form-name" value="newsletter" />
-            <input type="text" name="Όνομα" />
-            <input type="text" name="Επώνυμο" />
-            <input type="email" name="email" />
-            <input type="tel" name="Τηλέφωνο" />
-        </form>
-
-        <form
-            name="order-request"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            hidden
-        >
-            <input type="hidden" name="form-name" value="order-request" />
-            <textarea name="Σύνοψη_Παραγγελίας" />
-            <input type="text" name="Όνομα" />
-            <input type="text" name="Επώνυμο" />
-            <input type="tel" name="Τηλέφωνο" />
-            <textarea name="Μήνυμα / Σχόλιο" />
-        </form>
 
         <Navbar />
 

@@ -141,3 +141,86 @@ li {
   line-height: 1.7;
   font-size: 15.5px;
 }
+
+/* soft blue callout used in service pages */
+.faq-answer .attention-soft {
+  background: rgba(28, 134, 209, 0.10);   /* low-opacity blue */
+  border: 1px solid rgba(28, 134, 209, 0.38);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  margin: 1.25rem 0;
+}
+
+/* --- Service detail helpers (match screenshots) --- */
+.faq-answer .svc-divider{
+  height:1px;
+  background: rgba(112, 160, 200, .45); /* bluish line */
+  margin: 1.1rem 0;
+}
+
+.faq-answer .svc-info{
+  text-align:center;
+  font-style: italic;
+  margin: .4rem 0;
+  color: rgba(160, 200, 235, .95); /* blue text */
+}
+.faq-answer .svc-info a{
+  text-decoration: underline;
+  color: rgba(160, 200, 235, .95);
+}
+
+.faq-answer .svc-sec{
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  margin-top: 1.4rem;
+  margin-bottom: .4rem;
+  position: relative;
+  /* keep headings neutral (no blue) per your request */
+}
+.faq-answer .svc-sec::before{
+  content: "➤";
+  margin-right: .5rem;
+  opacity: .9;
+}
+
+.faq-answer .svc-square{
+  list-style: square;         /* override global disc */
+  margin-left: 1.25rem;       /* extra indent like the shots */
+}
+
+.faq-answer .svc-important{
+  margin-top: .6rem;
+}
+
+/* You already added .attention-soft earlier for the blue callout */
+/* Thick dark divider used after the intro */
+.faq-answer .svc-divider-thick{
+  height: 6px;
+  background: rgba(80, 80, 86, .6);
+  border-radius: 3px;
+  margin: 1.25rem 0 1.5rem;
+}
+
+/* Already added earlier (thin bluish) — kept for consistency:
+.faq-answer .svc-divider{ height:1px; background:rgba(112,160,200,.45); margin:1.1rem 0; }
+.faq-answer .svc-info{ text-align:center; font-style:italic; color:rgba(160,200,235,.95); }
+.faq-answer .svc-info a{ text-decoration:underline; color:rgba(160,200,235,.95); }
+*/
+
+/* Numbered step heading */
+.faq-answer .svc-step{
+  font-weight: 800;
+  margin-top: 1.25rem;
+  margin-bottom: .4rem;
+}
+
+/* Inline cyan highlight for “Σημαντικό” line (as in screenshot) */
+.faq-answer .svc-note-inline{
+  display: inline-block;
+  background: rgba(28, 134, 209, 0.22);          /* soft cyan highlight */
+  padding: .35rem .5rem;
+  border-radius: 6px;
+  line-height: 1.6;
+  margin: .4rem 0 .75rem;
+}
