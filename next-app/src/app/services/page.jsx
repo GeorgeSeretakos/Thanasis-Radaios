@@ -1,9 +1,9 @@
 "use client";
 
-import PageHeader from "../components/PageHeader";
-import ServiceTabs from "../components/ServiceTabs";
+import PageHeader from "../components/general/PageHeader";
+import ServiceTabs from "../components/services/ServiceTabs";
 import { servicesIndividuals, servicesPros } from "../../../public/data/servicesData";
-import TestimonialsCarousel from "../components/TestimonialsCarousel";
+import TestimonialsCarousel from "../components/services/TestimonialsCarousel";
 
 export default function ServicesPage() {
   return (

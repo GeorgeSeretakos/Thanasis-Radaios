@@ -1,10 +1,9 @@
-// app/faq/page.jsx
 'use client';
 
 import { useEffect, useMemo, useState } from "react";
 import CATEGORIES from "../../../public/data/qa";
 import FaqPanel from "../components/faq/FaqPanel";
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../components/general/PageHeader";
 
 export default function Page() {
   const [active, setActive] = useState(CATEGORIES[0].id);

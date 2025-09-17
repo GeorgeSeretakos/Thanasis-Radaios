@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import testimonials from "@/../public/data/testimonials";
+import testimonials from "../../../../public/data/testimonials";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 

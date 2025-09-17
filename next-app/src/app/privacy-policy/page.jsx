@@ -1,4 +1,3 @@
-// app/privacy-policy/PrivacyPolicyContent.jsx
 "use client";
 
 import { useEffect, useState } from "react";

@@ -211,3 +211,83 @@ li { @apply mb-1; }
 .blog h4 {
   @apply text-base font-semibold mt-4 mb-2 text-gray-100;
 }
+
+
+/* ===== Service Detail Accents (dark) ===== */
+
+/* Default = BLUE. Switch to GRAY by adding class="accent-gray" on the .faq-answer container */
+.faq-answer{
+  --svc-accent: #60A5FA;            /* blue-400 */
+  --svc-accent-fg: color-mix(in srgb, var(--svc-accent) 85%, white 15%);
+  --svc-accent-line: color-mix(in srgb, var(--svc-accent) 70%, transparent);
+  --svc-accent-bg: color-mix(in srgb, var(--svc-accent) 12%, transparent);
+  --svc-accent-border: color-mix(in srgb, var(--svc-accent) 38%, transparent);
+}
+
+/* Gray variant */
+.faq-answer.accent-gray{
+  --svc-accent: #9CA3AF;            /* gray-400 */
+}
+
+/* Section heading */
+.faq-answer .svc-sec{
+  margin-top: 2rem;        /* md:mt-10; simplified in CSS */
+  margin-bottom: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-weight: 800;
+  color: var(--svc-accent-fg);
+  position: relative;
+}
+.faq-answer .svc-sec::after{
+  content:"";
+  position:absolute; left:0; bottom:-10px;
+  width: 72px; height: 3px; border-radius: 9999px;
+  background: var(--svc-accent-line);
+  opacity:.9;
+}
+
+/* Card-like blocks */
+.faq-answer .svc-block{
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.05);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Soft divider */
+.faq-answer .svc-rule{
+  height:1px; margin:1rem 0 1.25rem;
+  background: linear-gradient(90deg, transparent, var(--svc-accent-line), transparent);
+}
+
+/* Readability */
+.faq-answer p{ color:#E5E7EB; line-height:1.75; margin-bottom:1rem; }     /* gray-200 */
+.faq-answer ul, .faq-answer ol{ color:#E5E7EB; padding-left:1.25rem; margin-bottom:1.25rem; }
+.faq-answer li{ margin-bottom:.5rem; }
+
+/* Inline note pill */
+.faq-answer .svc-note-inline{
+  display:inline-block; padding:.35rem .5rem; border-radius:6px; line-height:1.6;
+  background: var(--svc-accent-bg);
+  border: 1px solid var(--svc-accent-border);
+}
+
+/* Attention box */
+.faq-answer .attention-soft{
+  border-radius:12px; padding:1rem 1.1rem; margin:1.25rem 0;
+  background: var(--svc-accent-bg);
+  border: 1px solid var(--svc-accent-border);
+}
+
+/* Info line (centered blue/gray text) */
+.faq-answer .svc-info{
+  text-align:center; font-style:italic; margin:.4rem 0;
+  color: var(--svc-accent-fg);
+}
+.faq-answer .svc-info a{
+  text-decoration:underline;
+  color: var(--svc-accent-fg);
+}
+

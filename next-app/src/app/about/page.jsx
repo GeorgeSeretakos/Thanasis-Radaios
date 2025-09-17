@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../components/general/PageHeader";
 
 export default function Page() {
   const GALLERY = [

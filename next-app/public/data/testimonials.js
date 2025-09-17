@@ -1,4 +1,3 @@
-// /public/data/testimonials.ts (or .js)
 const testimonials = [
   {
     name: "Πάρις Ορφανιώτης",

@@ -1,4 +1,3 @@
-// app/services/components/ServiceAccordion.jsx
 "use client";
 
 import { useEffect, useState, useRef } from "react";

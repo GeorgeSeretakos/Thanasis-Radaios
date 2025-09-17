@@ -1,5 +1,4 @@
-// app/contact/page.jsx
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../components/general/PageHeader";
 
 export default function Contact() {
   return (

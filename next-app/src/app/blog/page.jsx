@@ -1,7 +1,7 @@
 "use client";
 import posts from "../../../public/data/blog";
 import BlogCard from "../components/blog/BlogCard";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/general/Navbar";
 
 export default function BlogPage() {
   return (
