@@ -9,6 +9,7 @@ import {
 import "./styles/globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import {ReactNode} from "react";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -26,7 +27,7 @@ export const metadata = {
     description: "Πολιτικός Μηχανικός ΕΜΠ, MSc — Άδεια • Μελέτη • Κατασκευή.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="el">
         <body
