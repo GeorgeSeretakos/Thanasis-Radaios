@@ -2,8 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-// import IntroSection from "../components/IntroSection"; // <- αφαιρείται
-import PageHeader from "../components/PageHeader";       // <- προστίθεται
+import PageHeader from "../components/PageHeader";
 
 export default function Page() {
   const GALLERY = [
@@ -12,6 +11,7 @@ export default function Page() {
     { src: "/images/office/3.jpg",  alt: "Χώρος συναντήσεων" },
     { src: "/images/office/4.jpg",  alt: "Βιβλιοθήκη / αρχειοθήκη" },
     { src: "/images/office/5.jpg",  alt: "Εξωτερικός χώρος" },
+    { src: "/images/office/6.jpg",  alt: "Εξωτερικός χώρος" },
   ];
 
   const [open, setOpen] = useState(false);

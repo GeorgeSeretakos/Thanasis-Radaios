@@ -107,7 +107,7 @@ export default function Footer() {
                   loading="lazy"
                 />
                 <div className="hidden sm:block text-xs text-white/60 leading-5">
-                  Τεχνικό Γραφείο — λύσεις μελέτης, αδειοδότησης &amp; κατασκευής
+                  Τεχνικό Γραφείο — Άδεια, Μελέτη, Κατασκευή
                 </div>
               </div>
             </div>
