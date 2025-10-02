@@ -11,7 +11,7 @@ export default function Footer() {
           <header className="text-center">
             <p className="text-[11px] tracking-widest text-white/50 uppercase">Τεχνικό Γραφείο</p>
             <h2 className="mt-2 text-2xl md:text-3xl font-semibold leading-tight">
-              <span className="block">Θανάσης Γ. Ραδαίος - Πολιτικός Μηχανικός Msc ΕΜΠ</span>
+              <span className="block">Θανάσης Γ. Ραδαίος - Πολιτικός Μηχανικός ΕΜΠ MSc</span>
             </h2>
           </header>
 
@@ -161,19 +161,19 @@ export default function Footer() {
                 aria-hidden="true"
                 loading="lazy"
               />
-              <span>© {year} Θ. Γ. Ραδαίος — Όλα τα δικαιώματα διατηρούνται.</span>
+              <span>© {year} T. G. Radaios — All rights reserved.</span>
             </div>
             <nav className="flex items-center gap-4">
               <a href="/privacy"
                  className="hover:text-white/90 focus:outline-none focus:ring-2 focus:ring-white/30 rounded px-1">
-                Πολιτική Απορρήτου
+                Privacy Policy
               </a>
               <span className="hidden sm:inline text-white/25">|</span>
               <a
                 href="mailto:thanasisradaios@gmail.com"
                 className="hover:text-white/90 focus:outline-none focus:ring-2 focus:ring-white/30 rounded px-1"
               >
-                Υποστήριξη
+                Support
               </a>
             </nav>
           </div>

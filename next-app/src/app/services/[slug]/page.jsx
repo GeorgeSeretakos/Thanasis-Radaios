@@ -40,7 +40,7 @@ export default function ServiceDetailPage({ params }) {
 
       {/* Header */}
       <section className="max-w-5xl mx-auto">
-        <PageHeader eyebrow={svc.category} title={svc.title} lead={svc.summary} />
+        <PageHeader title={svc.title} lead={svc.summary} />
       </section>
 
       {/* Body */}

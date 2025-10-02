@@ -4,8 +4,7 @@ export default function Contact() {
   return (
     <main className="w-full">
       <PageHeader
-        eyebrow="Επικοινωνία"
-        title="Ελάτε σε επαφή μαζί μας"
+        title="Επικοινωνήστε μαζί μας"
         lead="Συμπληρώστε τη φόρμα και θα σας απαντήσουμε άμεσα."
       />
 
@@ -18,10 +17,10 @@ export default function Contact() {
           action="/thank-you"
           className="space-y-4"
         >
-          <input type="hidden" name="form-name" value="contact"/>
+          <input type="hidden" name="form-name" value="contact" />
           <p hidden>
             <label>
-              Don’t fill this out: <input name="bot-field"/>
+              Don’t fill this out: <input name="bot-field" />
             </label>
           </p>
 
@@ -32,7 +31,7 @@ export default function Contact() {
               name="firstName"
               type="text"
               required
-              placeholder="Όνομα"
+              placeholder="Όνομα *"
               className="w-full rounded-xl border border-white/15 px-3.5 py-3 text-sm outline-none focus:ring-2 focus:ring-black/20"
             />
             <input
@@ -40,7 +39,7 @@ export default function Contact() {
               name="lastName"
               type="text"
               required
-              placeholder="Επώνυμο"
+              placeholder="Επώνυμο *"
               className="w-full rounded-xl border border-white/15 px-3.5 py-3 text-sm outline-none focus:ring-2 focus:ring-black/20"
             />
           </div>
@@ -50,7 +49,7 @@ export default function Contact() {
             name="email"
             type="email"
             required
-            placeholder="Email"
+            placeholder="Email *"
             className="w-full rounded-xl border border-white/15 px-3.5 py-3 text-sm outline-none focus:ring-2 focus:ring-black/20"
           />
 
@@ -59,7 +58,7 @@ export default function Contact() {
             name="phone"
             type="tel"
             required
-            placeholder="Τηλέφωνο"
+            placeholder="Τηλέφωνο *"
             className="w-full rounded-xl border border-white/15 px-3.5 py-3 text-sm outline-none focus:ring-2 focus:ring-black/20"
           />
 
@@ -84,13 +83,11 @@ export default function Contact() {
               Αποδέχομαι την{" "}
               <a href="/privacy-policy" className="opacity-70 hover:underline">
                 Πολιτική Απορρήτου
-              </a>
+              </a>{" "}
+              *
             </label>
 
-            <button
-              type="submit"
-              className="btn btn-primary"
-            >
+            <button type="submit" className="btn btn-primary">
               Αποστολή
               <svg
                 width="16"
@@ -107,7 +104,6 @@ export default function Contact() {
                 />
               </svg>
             </button>
-
           </div>
         </form>
       </div>

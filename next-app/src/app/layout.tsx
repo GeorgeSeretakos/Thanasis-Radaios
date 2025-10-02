@@ -1,22 +1,16 @@
 import {
-    Open_Sans,
-    Noto_Serif,
+    Roboto,
 } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from "./components/general/Navbar";
 import Footer from "./components/general/Footer";
 import { ReactNode } from "react";
 
-const openSans = Open_Sans({
+const roboto = Roboto({
     subsets: ["latin", "greek"],
-    variable: "--font-open-sans",
+    variable: "--font-roboto",
     display: "swap",
-});
-
-const notoSerif = Noto_Serif({
-    subsets: ["latin", "greek"],
-    variable: "--font-noto-serif",
-    display: "swap",
+    weight: ["400", "500", "700"], // βάλε όσα weights θες
 });
 
 export const metadata = {
@@ -29,10 +23,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html lang="el">
         <body
             className={`
-          ${openSans.variable}
-          ${notoSerif.variable}
-          antialiased min-h-screen flex flex-col bg-[#0B0B0C] text-white
-        `}
+                ${roboto.variable}
+                antialiased min-h-screen flex flex-col bg-[#0B0B0C] text-white font-sans
+            `}
         >
         <form
             name="contact"
@@ -51,7 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </form>
 
         <Navbar/>
-        <main className="flex-1 mt-16">{children}</main>
+        <main className="flex-1 mt-16 text-justify">{children}</main>
         <Footer/>
         </body>
         </html>

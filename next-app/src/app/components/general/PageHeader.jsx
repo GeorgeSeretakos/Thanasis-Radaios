@@ -1,5 +1,4 @@
-// app/components/PageHeader.jsx
-export default function PageHeader({ eyebrow, title, lead, points = [], note = null }) {
+export default function PageHeader({ title, lead, points = [], note = null }) {
   return (
     <section className="relative max-w-3xl mx-auto py-10 md:py-14">
       {/* Soft backdrop */}
@@ -7,9 +6,6 @@ export default function PageHeader({ eyebrow, title, lead, points = [], note = n
 
       <div>
         <header className="text-center">
-          {eyebrow && (
-            <p className="text-[11px] tracking-widest uppercase opacity-70">{eyebrow}</p>
-          )}
           <h1 className="mt-2 text-3xl md:text-4xl font-semibold leading-tight">
             {title}
           </h1>

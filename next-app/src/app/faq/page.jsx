@@ -26,7 +26,6 @@ export default function Page() {
   return (
     <main className="bg-[#0B0B0C] text-white">
       <PageHeader
-        eyebrow="FAQ"
         title="Συνήθεις Ερωτήσεις & Συμβουλές"
         points={[
           "Εδώ θα βρείτε συμβουλές και απαντήσεις σε συνηθισμένες ερωτήσεις σχετικά με ακίνητα και θέματα μηχανικού.",

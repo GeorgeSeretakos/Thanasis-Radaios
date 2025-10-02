@@ -37,7 +37,6 @@ export default function Page() {
     <main className="bg-[#0B0B0C] text-white">
       {/* ΝΕΟ header, ίδιο στυλ με Contact */}
       <PageHeader
-        eyebrow="Γραφείο"
         title="Ποιοι Είμαστε"
         lead="Σύντομες πληροφορίες"
       />
@@ -68,7 +67,7 @@ export default function Page() {
                     <div>
                       <h3 className="text-lg md:text-xl font-semibold">Θανάσης Γ. Ραδαίος</h3>
                       <p className="mt-1 text-white/75 text-sm md:text-base">
-                        Πολιτικός Μηχανικός <br/> M.Sc. ΕΜΠ
+                        Πολιτικός Μηχανικός <br/> ΕΜΠ MSc
                       </p>
                     </div>
                   </figcaption>
