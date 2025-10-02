@@ -25,7 +25,7 @@ export default function ServiceAccordion({ items, groupKey }) {
   if (!items?.length) return null;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2.5"> {/* reduced vertical space */}
       {items.map((it) => {
         const anchorId = `${groupKey}-${it.slug}`;
         const isHighlighted = highlightId === it.id;
@@ -41,20 +41,25 @@ export default function ServiceAccordion({ items, groupKey }) {
               id={anchorId}
               ref={(node) => (refs.current[it.id] = node)}
               className={[
-                "rounded-2xl border overflow-hidden transition",
-                "bg-white/[0.04] border-white/10 hover:border-white/20",
+                " overflow-hidden transition",
+                "border-b border-white/40", // stronger right border by default
+                "hover:border-0 hover:bg-white/[0.04]", // no border + gray bg on hover
                 "focus-within:ring-2 focus-within:ring-white/30",
-                isHighlighted ? "ring-2 ring-white/40" : "",
+                isHighlighted ? "ring-2 ring-white/40 bg-white/[0.04]" : "",
               ].join(" ")}
             >
-              <div className="px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-3">
+
+
+              <div className="px-5 py-3 md:px-6 md:py-4 flex items-center justify-between gap-3">
                 {/* Text side */}
                 <div>
-                  <h3 className="text-base md:text-lg font-semibold text-white/95 leading-tight">
+                  <h3 className="text-base md:text-lg font-bold text-white leading-tight">
                     {it.title}
                   </h3>
                   {it.summary && (
-                    <p className="mt-1 text-sm text-white/80">{it.summary}</p>
+                    <p className="mt-0.5 text-xs italic text-white/70">
+                      {it.summary}
+                    </p>
                   )}
                 </div>
 

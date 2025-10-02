@@ -22,12 +22,12 @@ export default function Navbar() {
             alt="Λογότυπο"
             className="h-16 w-auto object-contain opacity-95 group-hover:opacity-100 transition"
           />
-          <div className="leading-tight">
-            <p className="text-[11px] tracking-widest text-white/50 uppercase">Τεχνικό Γραφείο</p>
-            <p className="text-sm sm:text-base font-semibold">
-              Θανάσης Γ. Ραδαίος – Πολιτικός Μηχανικός
-            </p>
-          </div>
+          {/*<div className="leading-tight">*/}
+          {/*  <p className="text-[11px] tracking-widest text-white/50 uppercase">Τεχνικό Γραφείο</p>*/}
+          {/*  <p className="text-sm sm:text-base font-semibold">*/}
+          {/*    Θανάσης Γ. Ραδαίος – Πολιτικός Μηχανικός*/}
+          {/*  </p>*/}
+          {/*</div>*/}
         </a>
 
         {/* Desktop πλοήγηση */}

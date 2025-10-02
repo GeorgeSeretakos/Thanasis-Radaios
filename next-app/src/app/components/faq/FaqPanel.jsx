@@ -17,7 +17,7 @@ export default function FaqPanel({ category }) {
         {/* Removed the Copy Link button as requested */}
       </div>
 
-      <div className="mt-6 grid gap-6">
+      <div className="mt-6 grid gap-2">
         {category.items.map((item, i) => (
           <FaqItem key={i} q={item.q} aHtml={item.aHtml} />
         ))}
