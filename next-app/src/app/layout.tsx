@@ -19,10 +19,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
-        <html lang="el">
-        <body
-            className={`${roboto.variable} antialiased min-h-screen flex flex-col bg-[#0B0B0C] text-white font-sans`}
-        >
+        <html lang="el" className={roboto.variable}>
+        <body className="antialiased min-h-screen flex flex-col bg-[#0B0B0C] text-white">
         <form
             name="contact"
             method="POST"
