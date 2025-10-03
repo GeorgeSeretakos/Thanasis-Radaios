@@ -5,7 +5,7 @@ export default function ProjectsPage() {
     <PageHeader
       title="Έργα"
       note={[
-        "Δείτε εδώ ορισμένα από τα έργα μας"
+        "Τα έργα του γραφείου μας θα προστεθούν σύντομα"
       ]}
     />
   );

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import CATEGORIES from "../../../public/data/qa";
 import FaqPanel from "../components/faq/FaqPanel";
 import PageHeader from "../components/general/PageHeader";
+import InfoLine from "../components/services/InfoLine";
 
 export default function Page() {
   const [active, setActive] = useState(CATEGORIES[0].id);
@@ -32,10 +33,9 @@ export default function Page() {
           "Οι ερωτήσεις έχουν οργανωθεί σε θεματικές ενότητες για ευκολότερη πλοήγηση.",
           "Οι απαντήσεις καλύπτουν πολλές περιπτώσεις, αλλά δεν εξαντλούν όλες τις πιθανές ανάγκες.",
         ]}
-        note={[
-          "Επικοινωνήστε μαζί μας για περισσότερες πληροφορίες σχετικά με τη δική σας περίπτωση."
-        ]}
       />
+
+      <InfoLine className="-mt-8" variant="inline" />
 
       {/* Content */}
       <section className="pb-12 md:pb-16">
@@ -44,7 +44,7 @@ export default function Page() {
           <FaqPanel category={activeCategory} />
 
           {/* Other categories */}
-          <div className="mt-12 grid gap-12">
+          <div className="mt-4 grid gap-4">
             {CATEGORIES.filter((c) => c.id !== activeCategory.id).map((c) => (
               <FaqPanel key={c.id} category={c} />
             ))}

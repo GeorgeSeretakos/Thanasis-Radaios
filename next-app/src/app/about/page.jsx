@@ -83,20 +83,18 @@ export default function Page() {
       </section>
 
       {/* Contact CTA */}
-      <section className="border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 flex flex-col items-center text-center">
-          <h3 className="text-lg font-medium">Χρειάζεστε περισσότερες πληροφορίες;</h3>
-          <p className="mt-2 text-white/80">
-            Είμαστε στη διάθεσή σας για κάθε διευκρίνιση σχετικά με τη δική σας περίπτωση.
-          </p>
-          <div className="mt-4">
-            <a
-              href="/contact"
-              className="inline-flex items-center rounded-xl border border-white/20 px-4 py-2 text-white/90 hover:text-white hover:border-white/40 transition focus:outline-none focus:ring-2 focus:ring-white/30"
-            >
-              Επικοινωνία
-            </a>
-          </div>
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 flex flex-col items-center text-center">
+        <h3 className="text-lg font-medium">Χρειάζεστε περισσότερες πληροφορίες;</h3>
+        <p className="mt-2 text-white/80">
+          Είμαστε στη διάθεσή σας για κάθε διευκρίνιση σχετικά με τη δική σας περίπτωση.
+        </p>
+        <div className="mt-4">
+          <a
+            href="/contact"
+            className="inline-flex items-center rounded-xl border border-white/20 px-4 py-2 text-white/90 hover:text-white hover:border-white/40 transition focus:outline-none focus:ring-2 focus:ring-white/30"
+          >
+            Επικοινωνία
+          </a>
         </div>
       </section>
     </main>

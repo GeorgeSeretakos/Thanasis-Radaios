@@ -9,7 +9,6 @@ export default function ReviewsPage() {
         title="Κριτικές Πελατών"
         lead="Διαβάστε τι έχουν να πουν οι συνεργάτες και οι πελάτες μας."
       />
-
       <Testimonials />
     </main>
   );

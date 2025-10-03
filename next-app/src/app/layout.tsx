@@ -1,16 +1,15 @@
-import {
-    Roboto,
-} from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from "./components/general/Navbar";
 import Footer from "./components/general/Footer";
+import RuleWrapper from "./components/general/RuleWrapper";
 import { ReactNode } from "react";
 
 const roboto = Roboto({
     subsets: ["latin", "greek"],
     variable: "--font-roboto",
     display: "swap",
-    weight: ["400", "500", "700"], // βάλε όσα weights θες
+    weight: ["400", "500", "700"],
 });
 
 export const metadata = {
@@ -22,10 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="el">
         <body
-            className={`
-                ${roboto.variable}
-                antialiased min-h-screen flex flex-col bg-[#0B0B0C] text-white font-sans
-            `}
+            className={`${roboto.variable} antialiased min-h-screen flex flex-col bg-[#0B0B0C] text-white font-sans`}
         >
         <form
             name="contact"
@@ -34,18 +30,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             data-netlify-honeypot="bot-field"
             hidden
         >
-            <input type="hidden" name="form-name" value="contact"/>
-            <input type="text" name="firstName"/>
-            <input type="text" name="lastName"/>
-            <input type="email" name="email"/>
-            <input type="tel" name="phone"/>
-            <textarea name="message"/>
-            <input type="text" name="bot-field"/>
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" name="firstName" />
+            <input type="text" name="lastName" />
+            <input type="email" name="email" />
+            <input type="tel" name="phone" />
+            <textarea name="message" />
+            <input type="text" name="bot-field" />
         </form>
 
-        <Navbar/>
+        <Navbar />
         <main className="flex-1 mt-16 text-justify">{children}</main>
-        <Footer/>
+        <RuleWrapper />
+        <Footer />
         </body>
         </html>
     );

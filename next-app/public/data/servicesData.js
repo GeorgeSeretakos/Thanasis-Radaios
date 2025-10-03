@@ -17,9 +17,6 @@ export const servicesIndividuals = [
             Η νομοθεσία καθορίζει διαφορετικούς τύπους αδειών ανάλογα με τη φύση των εργασιών.
             Ακολουθεί μια συνοπτική παρουσίαση των βασικών τύπων αδειών.
           </p>
-
-          <div className="svc-rule"/>
-
           <InfoLine variant="inline"/>
         </section>
 
@@ -73,6 +70,7 @@ export const servicesIndividuals = [
             εγκρίσεις.
           </p>
         </section>
+
         <div className="attention-soft">
           <p style={{textAlign: "center", fontWeight: 700, marginBottom: ".5rem"}}>ΠΡΟΣΟΧΗ</p>
           <ul>
@@ -112,9 +110,7 @@ export const servicesIndividuals = [
           <p>
             Ακολουθούν συνοπτικές πληροφορίες για τη διαδικασία αδειοδότησης καταστημάτων και επιχειρήσεων.
           </p>
-
-          <div className="svc-rule" />
-          <InfoLine />
+          <InfoLine/>
         </section>
 
         {/* Βήμα 1 */}
@@ -136,7 +132,8 @@ export const servicesIndividuals = [
         <section className="svc-block">
           <h4 className="svc-sec">2. ΕΓΚΡΙΣΗ ΕΓΚΑΤΑΣΤΑΣΗΣ</h4>
           <p>
-            Για ορισμένες δραστηριότητες απαιτείται να προηγηθεί έγκριση ή γνωστοποίηση της εγκατάστασης της δραστηριότητας.
+            Για ορισμένες δραστηριότητες απαιτείται να προηγηθεί έγκριση ή γνωστοποίηση της εγκατάστασης της
+            δραστηριότητας.
           </p>
         </section>
 
@@ -144,7 +141,8 @@ export const servicesIndividuals = [
         <section className="svc-block">
           <h4 className="svc-sec">3. ΓΝΩΣΤΟΠΟΙΗΣΗ ΛΕΙΤΟΥΡΓΙΑΣ</h4>
           <p>
-            Ο ενδιαφερόμενος γνωστοποιεί την λειτουργία της επιχείρησης του και υποβάλλει τα απαραίτητα δικαιολογητικά. Η διαδικασία γίνεται ηλεκτρονικά.
+            Ο ενδιαφερόμενος γνωστοποιεί την λειτουργία της επιχείρησης του και υποβάλλει τα απαραίτητα δικαιολογητικά.
+            Η διαδικασία γίνεται ηλεκτρονικά.
           </p>
         </section>
       </>
@@ -172,8 +170,6 @@ export const servicesIndividuals = [
             , καταγράφεται το πραγματικό εμβαδόν του και διορθώνονται τυχόν λάθη σε
             συμβόλαια.
           </p>
-
-          <div className="svc-rule" />
         </section>
 
         {/* Περιεχόμενα ΗΤΚ */}
@@ -191,6 +187,7 @@ export const servicesIndividuals = [
             <li>Πίνακα χιλιοστών και μελέτη κατανομής δαπανών</li>
           </ul>
         </section>
+
 
         {/* Διαδικασία */}
         <section className="svc-block">
@@ -228,7 +225,7 @@ export const servicesIndividuals = [
             </li>
           </ol>
 
-          <div className="attention-soft" style={{ marginTop: "1rem" }}>
+          <div className="attention-soft" style={{marginTop: "1rem"}}>
             <p>
               <em>
                 Η συμπλήρωση της ΗΤΚ είναι υποχρεωτική πριν τη σύνταξη οποιουδήποτε
@@ -481,7 +478,7 @@ export const servicesPros = [
   {
     id: "pro-statikes-neon",
     slug: "statikes-meletes-neon-kataskevon",
-    title: "Στατικές Μελέτες Νέων Κατασκευών",
+    title: "ΣΤΑΤΙΚΕΣ ΜΕΛΕΤΕΣ ΝΕΩΝ ΚΑΤΑΣΚΕΥΩΝ",
     summary:
       "Μελέτες για όλα τα είδη/υλικά, σε συνεργασία με αρχιτέκτονα & μηχανολόγο.",
     content: () => (
@@ -514,7 +511,7 @@ export const servicesPros = [
   {
     id: "pro-4495",
     slug: "meletes-statiki-eparkeia-4495-2017",
-    title: "Μελέτες Στατικής Επάρκειας για Ν.4495/2017",
+    title: "ΜΕΛΕΤΕΣ ΣΤΑΤΙΚΗΣ ΕΠΑΡΚΕΙΑΣ ΓΙΑ Ν.4495/2017",
     summary:
       "Μελέτες για διαδικασία τακτοποίησης αυθαιρέτων σύμφωνα με τον Ν.4495/2017.",
     content: () => (
@@ -534,7 +531,7 @@ export const servicesPros = [
   {
     id: "pro-kanEPE",
     slug: "apotimisi-enischyseis-kanEPE",
-    title: "Μελέτες Αποτίμησης & Ενισχύσεων κατά ΚΑΝ.ΕΠΕ.",
+    title: "ΜΕΛΕΤΕΣ ΑΠΟΤΙΜΗΣΗΣ & ΕΝΙΣΧΥΣΕΩΝ ΚΑΤΑ ΚΑΝ.ΕΠΕ.",
     summary:
       "Αποτίμηση υφιστάμενων, προτάσεις ενίσχυσης, συνεργασία ειδικοτήτων.",
     content: () => (
@@ -569,7 +566,7 @@ export const servicesPros = [
   {
     id: "pro-remata",
     slug: "oriothetisi-diefth-Rematon",
-    title: "Μελέτες Οριοθέτησης & Διευθέτησης Ρεμάτων",
+    title: "ΜΕΛΕΤΕΣ ΟΡΙΟΘΕΤΗΣΗΣ & ΔΙΕΥΘΕΤΗΣΗΣ ΡΕΜΑΤΩΝ",
     summary: "Πλήρης διαδικασία προσωρινής/οριστικής οριοθέτησης υδατορεμάτων.",
     content: () => (
       <>

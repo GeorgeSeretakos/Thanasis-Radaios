@@ -32,32 +32,44 @@ export default function ServiceTabs({ individuals, pros }) {
     }
   }, [active]);
 
-  const current = useMemo(() => TABS.find(t => t.key === active) ?? TABS[0], [active]);
+  const current = useMemo(
+    () => TABS.find((t) => t.key === active) ?? TABS[0],
+    [active]
+  );
+
+  // Navbar-like tab styles (minimal, with gold underline)
+  const tabItem =
+    "relative px-3 py-2 text-sm md:text-base font-medium text-white/80 hover:text-white hover:cursor-pointer transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 rounded";
+  const activeBar =
+    "pointer-events-none absolute inset-x-2 -bottom-0.5 h-[2px] bg-[#D4AF37FF]";
 
   return (
     <div className="w-full">
-      {/* Tabs */}
-      <div className="flex items-center justify-center gap-3 mb-8">
-        {TABS.map((t) => (
-          <button
-            key={t.key}
-            onClick={() => setActive(t.key)}
-            className={`px-5 py-2.5 rounded-xl text-sm md:text-base font-medium transition-colors
-        ${
-              active === t.key
-                ? "bg-white/10 text-white shadow-sm"
-                : "bg-white/[0.03] hover:cursor-pointer border-white/10 text-white/70 hover:text-white hover:border-white/20 hover:bg-white/[0.06]"
-            }`}
-            aria-pressed={active === t.key}
-          >
-            {t.label}
-          </button>
-        ))}
+      {/* Tabs (Navbar minimal style) */}
+      <div className="flex items-center justify-center gap-0 mb-6">
+        {TABS.map((t, i) => {
+          const isActive = active === t.key;
+          return (
+            <div key={t.key} className="flex items-center">
+              <button
+                type="button"
+                onClick={() => setActive(t.key)}
+                aria-pressed={isActive}
+                className={`${tabItem} ${isActive ? "text-white" : ""}`}
+              >
+                {t.label}
+                {isActive && <span className={activeBar} />}
+              </button>
+              {i < TABS.length - 1 && (
+                <span aria-hidden="true" className="mx-1 h-4 w-px bg-white/15" />
+              )}
+            </div>
+          );
+        })}
       </div>
 
-
       {/* List (Accordion) */}
-      <ServiceAccordion items={current.items} groupKey={current.key}/>
+      <ServiceAccordion items={current.items} groupKey={current.key} />
     </div>
   );
 }

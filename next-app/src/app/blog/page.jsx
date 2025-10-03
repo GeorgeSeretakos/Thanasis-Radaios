@@ -2,12 +2,15 @@
 import posts from "../../../public/data/blog";
 import BlogCard from "../components/blog/BlogCard";
 import Navbar from "../components/general/Navbar";
+import PageHeader from "../components/general/PageHeader";
 
 export default function BlogPage() {
   return (
-    <main className="mt-16">
-      <Navbar />
-      {/* Grid */}
+    <>
+      <PageHeader
+        title="Νέα"
+        lead="Μάθετε τα τελευταία νέα, ενημερώσεις και άρθρα από το γραφείο μας"
+      />
       <section className="py-12 max-w-6xl mx-auto px-4">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.filter(Boolean).map((post) => (
@@ -17,6 +20,6 @@ export default function BlogPage() {
           ))}
         </div>
       </section>
-    </main>
+    </>
   );
 }
