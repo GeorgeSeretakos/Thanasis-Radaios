@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 export default function InfoLine({
-                                   href = "/contact",
-                                   variant = "inline", // "inline" | "card"
-                                   className = "",
-                                 }) {
+href = "/contact",
+variant = "inline", // "inline" | "card"
+className = "",
+}) {
   if (variant === "card") {
     return (
       <div className={`my-8 ${className}`}>
