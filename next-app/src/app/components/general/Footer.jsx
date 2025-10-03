@@ -29,7 +29,7 @@ export default function Footer() {
 
 
           {/* Contact info + CTAs */}
-          <div className="mt-3 mx-auto max-w-3xl text-left">
+          <div className="mt-3 mx-auto max-w-4xl text-left">
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs md:text-sm leading-snug">
 
               {/* Phones */}
