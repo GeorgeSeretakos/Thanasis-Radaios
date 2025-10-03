@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main className="bg-[#0B0B0C] text-white overflow-x-hidden">
       {/* Header */}
-      <PageHeader title="Ποιοι Είμαστε" lead="Σύντομες πληροφορίες" />
+      <PageHeader title="Ποιοί Είμαστε" lead="Σύντομες πληροφορίες" />
 
       {/* Thanasis section */}
       <section className="pb-8 md:pb-10">

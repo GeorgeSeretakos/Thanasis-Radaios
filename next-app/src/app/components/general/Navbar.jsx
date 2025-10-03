@@ -8,7 +8,7 @@ export default function NavbarSeparators() {
   const links = useMemo(
     () => [
       { href: "/", label: "Αρχική" },
-      { href: "/about", label: "Γραφείο" },
+      { href: "/about", label: "Ποιοί Είμαστε" },
       { href: "/services", label: "Υπηρεσίες" },
       { href: "/projects", label: "Έργα" },
       { href: "/faq", label: "FAQ" },

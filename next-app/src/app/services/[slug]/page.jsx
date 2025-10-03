@@ -29,24 +29,52 @@ export default function ServiceDetailPage({ params }) {
 
   return (
     <main className="px-4">
-      {/* Breadcrumb */}
       <nav className="max-w-5xl mx-auto pt-6 text-sm">
-        <Link href="/services" className="opacity-70 hover:opacity-100">Υπηρεσίες</Link>
-        <span className="opacity-50 mx-1">/</span>
-        <span className="opacity-90">{svc.category}</span>
-        <span className="opacity-50 mx-1">/</span>
-        <span className="opacity-100">{svc.title}</span>
+        <div className="flex items-center justify-between gap-2">
+          {/* Left: breadcrumb */}
+          <div className="flex flex-wrap items-center">
+            <Link href="/services" className="opacity-70 hover:opacity-100">Υπηρεσίες</Link>
+            <span className="opacity-50 mx-1">/</span>
+            <span className="opacity-90">{svc.category}</span>
+            <span className="opacity-50 mx-1">/</span>
+            <span className="opacity-100">{svc.title}</span>
+          </div>
+
+          <Link
+            href={backHref}
+            className="hidden sm:inline-flex items-center gap-1 opacity-70 hover:opacity-100"
+          >
+            <span aria-hidden>←</span>
+            <span className="underline underline-offset-2 decoration-white/20 hover:decoration-white/40">
+              Πίσω στις Υπηρεσίες
+            </span>
+          </Link>
+        </div>
+
+        {/* On mobile (<sm): move the back link below to avoid overlap */}
+        <Link
+          href={backHref}
+          className="sm:hidden mt-2 inline-flex items-center gap-1 opacity-80 hover:opacity-100"
+        >
+          <span aria-hidden>←</span>
+          <span className="underline underline-offset-2 decoration-white/20 hover:decoration-white/40">
+            Πίσω στις Υπηρεσίες
+          </span>
+        </Link>
       </nav>
+
+
 
       {/* Header */}
       <section className="max-w-5xl mx-auto">
-        <PageHeader title={svc.title} lead={svc.summary} />
+        <PageHeader title={svc.title} lead={svc.summary}/>
       </section>
+
 
       {/* Body */}
       <section className="max-w-5xl mx-auto pb-20">
         {svc.aHtml ? (
-          <div className="faq-answer" dangerouslySetInnerHTML={{ __html: svc.aHtml }} />
+          <div className="faq-answer" dangerouslySetInnerHTML={{__html: svc.aHtml}}/>
         ) : (
           <div className="faq-answer">
             {typeof svc.content === "function" ? svc.content() : svc.content}
@@ -55,10 +83,6 @@ export default function ServiceDetailPage({ params }) {
 
         {/* CTAs */}
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link href={backHref} className="btn btn-secondary">
-            ← Πίσω στις Υπηρεσίες
-          </Link>
-
           {faqHref && (
             <Link href={faqHref} className="btn btn-outline">
               Σχετικές Ερωτήσεις (FAQ)
