@@ -217,7 +217,7 @@ export default function Footer() {
         </div>
 
         {/* Map */}
-        <div className="relative w-[100dvw] left-1/2 -translate-x-1/2 h-40 md:h-52 lg:h-64">
+        <div className="relative w-[100dvw] left-1/2 -translate-x-1/2 h-32 md:h-44 lg:h-56">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6304424848936!2d23.693277075851736!3d38.00907959862871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a3b09e2f49df%3A0x67a12e8301f2d17a!2zzqTOlc6nzp3Omc6azp8gzpPOoc6RzqbOlc6Zzp8gLSDOmM6xzr3OrM-DzrfPgiDOky4gzqHOsc60zrHOr86_z4I!5e0!3m2!1sel!2sgr!4v1757517408506!5m2!1sel!2sgr"
             className="absolute inset-0 w-full h-full"
@@ -235,13 +235,6 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center">
           <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-xs text-white/65">
             <div className="flex items-center gap-3">
-              <img
-                src="/logo/logo_sign.png"
-                alt=""
-                className="h-5 w-auto opacity-80 hidden sm:block"
-                aria-hidden="true"
-                loading="lazy"
-              />
               <span>© {year} T. G. Radaios — All rights reserved.</span>
             </div>
             <nav className="flex items-center gap-4">

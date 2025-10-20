@@ -8,6 +8,87 @@ export default function Contact() {
         lead="Συμπληρώστε τη φόρμα και θα σας απαντήσουμε άμεσα."
       />
 
+      {/* Contact info row (same as Footer) */}
+      <section>
+        <div className="mx-auto max-w-4xl text-left">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs md:text-sm leading-snug">
+            {/* Phones */}
+            <div className="flex items-center gap-2">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="h-4 w-4 text-white/70"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 5c0-1.1.9-2 2-2h2l2 4-2 1c1 2.5 3.5 5 6 6l1-2 4 2v2c0 1.1-.9 2-2 2 0 0-10 1-15-11V5Z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+              </svg>
+              <div className="flex flex-wrap items-center gap-x-2">
+                <a href="tel:2105745542" className="hover:underline">
+                  <span dir="ltr">21 0574 5542</span>
+                </a>
+                <span className="text-white/35">·</span>
+                <a href="tel:6942242707" className="hover:underline">
+                  <span dir="ltr">694 224 2707</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-center gap-2">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="h-4 w-4 text-white/70"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v0l-8 5L4 6v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <a
+                href="mailto:thanasisradaios@gmail.com"
+                className="hover:underline break-words"
+              >
+                thanasisradaios@gmail.com
+              </a>
+            </div>
+
+            {/* Address */}
+            <div className="flex items-center gap-2">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="h-4 w-4 text-white/70"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 22s7-5.12 7-11a7 7 0 1 0-14 0c0 5.88 7 11 7 11Z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+                <circle
+                  cx="12"
+                  cy="11"
+                  r="2.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+              </svg>
+              <address className="not-italic">
+                Βασιλέως Αλεξάνδρου 58, Περιστέρι 121 34
+              </address>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="mx-auto max-w-2xl rounded-2xl backdrop-blur p-6 sm:p-8 shadow-sm">
         <form
           name="contact"
