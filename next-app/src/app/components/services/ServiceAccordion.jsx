@@ -25,7 +25,7 @@ export default function ServiceAccordion({ items, groupKey }) {
   if (!items?.length) return null;
 
   return (
-    <div className="space-y-2.5"> {/* reduced vertical space */}
+    <div className=""> {/* reduced vertical space */}
       {items.map((it) => {
         const anchorId = `${groupKey}-${it.slug}`;
         const isHighlighted = highlightId === it.id;
