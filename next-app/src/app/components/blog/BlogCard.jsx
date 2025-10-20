@@ -13,7 +13,7 @@ export default function BlogCard({ post }) {
       : null;
 
   return (
-    <div className="rounded-lg shadow-md overflow-hidden flex flex-col h-72">
+    <div className="border-1 rounded-lg shadow-md overflow-hidden flex flex-col h-72">
       {/* Εικόνα → ΜΟΝΟ για news */}
       <div className="relative w-full h-[55%]">
         <img
@@ -24,7 +24,7 @@ export default function BlogCard({ post }) {
       </div>
 
       {/* Περιεχόμενο */}
-      <div className="flex flex-col flex-1 p-4 border-1 border-t-0 rounded-b-lg">
+      <div className="flex flex-col flex-1 p-4 border-t-0 rounded-b-lg">
         <h4 className="font-semibold">{post.title}</h4>
 
         {targetUrl && (

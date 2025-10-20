@@ -16,19 +16,7 @@ export default function BlogSlugPage({ params }) {
 
   return (
     <article className="max-w-3xl mx-auto py-12 px-4">
-      <h3 className="title-black text-center">{post.title}</h3>
-
-      {post.image && (
-        <div className="mb-6">
-          <img
-            src={post.image}
-            alt={post.title}
-            width={800}
-            height={500}
-            className="w-full h-auto rounded-lg"
-          />
-        </div>
-      )}
+      <h2 className="title-black text-center">{post.title}</h2>
 
       {post.contentHtml ? (
         <div

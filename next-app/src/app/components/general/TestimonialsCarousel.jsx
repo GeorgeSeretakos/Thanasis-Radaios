@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 export default function TestimonialsCarousel() {
   const reviewUrl =
-    "https://www.google.com/search?sca_esv=021f25b48a55cba3&rlz=1C1KNTJ_elGR1073GR1075&sxsrf=AE3TifPVivCbWuu2tZnIviOqJapJ-C20Nw:1758107047531&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E_xgR4P6chtqLjdrK4zjdjG-QZrsj8Zn8aio5UqOyehauuSwWK3zOHmRXsUHWGfvwUSET8p0xkOgLjCkYxbAUf7dPHWD0788SZPqtR7I9cSQ0G7p3XiXvjJPgQJFbm0e0Gdav8jMXk6At095Qa6A1eVbby83b9MHrwsqvX6tQpqhLiE2bQ%3D%3D&q=%CE%A4%CE%95%CE%A7%CE%9D%CE%99%CE%9A%CE%9F+%CE%93%CE%A1%CE%91%CE%A6%CE%95%CE%99%CE%9F+-+%CE%98%CE%B1%CE%BD%CE%AC%CF%83%CE%B7%CF%82+%CE%93.+%CE%A1%CE%B1%CE%B4%CE%B1%CE%AF%CE%BF%CF%82+%CE%9A%CF%81%CE%B9%CF%84%CE%B9%CE%BA%CE%AD%CF%82&sa=X&ved=2ahUKEwjMiq6Q09-PAxWzBtsEHbCeJN0Q0bkNegQIJBAD&biw=1440&bih=791&dpr=1.5";
+    "https://www.google.gr/maps/place/%CE%A4%CE%95%CE%A7%CE%9D%CE%99%CE%9A%CE%9F+%CE%93%CE%A1%CE%91%CE%A6%CE%95%CE%99%CE%9F+-+%CE%98%CE%B1%CE%BD%CE%AC%CF%83%CE%B7%CF%82+%CE%93.+%CE%A1%CE%B1%CE%B4%CE%B1%CE%AF%CE%BF%CF%82/@38.0090796,23.6932771,864m/data=!3m1!1e3!4m8!3m7!1s0x14a1a3b09e2f49df:0x67a12e8301f2d17a!8m2!3d38.0090754!4d23.695852!9m1!1b1!16s%2Fg%2F11ss8g7zsr?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D";
 
   return (
     <div className="relative bg-cover bg-center px-4 flex justify-center items-center py-12 sm:py-16 md:py-20">
@@ -43,20 +43,21 @@ export default function TestimonialsCarousel() {
             modules={[Pagination, Autoplay]}
             spaceBetween={16}
             slidesPerView={1}
-            pagination={{ clickable: true }}
+            pagination={{clickable: true}}
             loop={true}
-            autoplay={{ delay: 10000 }}
+            autoplay={{delay: 10000}}
             breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 24 },
+              640: {slidesPerView: 1},
+              768: {slidesPerView: 2, spaceBetween: 20},
+              1024: {slidesPerView: 3, spaceBetween: 24},
             }}
           >
             {testimonials.map((r, idx) => (
               <SwiperSlide key={idx} className="flex">
-                <div className="bg-[#141416] border border-white/10 shadow-sm rounded-xl p-4 md:p-5 text-left flex flex-col flex-1">
-                  {/* Header */}
-                  <div className="flex items-center gap-2">
+                {/* Card with constant height */}
+                <div className="bg-[#141416] shadow rounded-xl p-4 md:p-5 text-left flex flex-col flex-1 h-64 md:h-72">
+                  {/* Header (fixed) */}
+                  <div className="flex items-center gap-2 shrink-0">
                     {r.avatar ? (
                       <img
                         src={r.avatar}
@@ -71,25 +72,23 @@ export default function TestimonialsCarousel() {
                       </div>
                     )}
                     <div className="flex flex-col">
-                      <span className="font-bold text-white">{r.name}</span>
-                      <span className="text-xs text-gray-400">{r.years}</span>
+                      <span className="font-bold">{r.name}</span>
+                      <span className="text-xs">{r.years}</span>
                     </div>
                     <div className="ml-auto">
-                      <img
-                        src="/icons/google.png"
-                        alt="Google"
-                        className="w-5 h-5"
-                      />
+                      <img src="/icons/google.png" alt="Google" className="w-5 h-5"/>
                     </div>
                   </div>
 
-                  {/* Stars directly under name */}
-                  <div className="text-yellow-400 mt-1 text-sm md:text-base">
-                    {"★".repeat(r.stars)}
+                  {/* Stars */}
+                  <div className="text-yellow-400 text-sm md:text-base leading-none mt-2 shrink-0">
+                    {"★".repeat(r.stars || 5)}
                   </div>
 
-                  {/* Text directly after stars */}
-                  <p className="mt-1 text-gray-200 text-sm">{r.text}</p>
+                  {/* Review */}
+                  <div className="mt-2 text-sm leading-relaxed flex-1 overflow-y-auto pr-1 review-scroll">
+                    {r.text}
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
@@ -108,15 +107,37 @@ export default function TestimonialsCarousel() {
             margin-top: 1.5rem;
           }
           .swiper-pagination-bullet {
-            background: rgba(255,255,255,0.6) !important;
-            opacity: 0.6;
+            background: white !important;
+            opacity: 0.4;
           }
           .swiper-pagination-bullet-active {
-            background: rgba(255,255,255,1) !important;
+            background: white !important;
             opacity: 1;
+          }
+
+          /* White scrollbar */
+          .review-scroll::-webkit-scrollbar {
+            width: 6px;
+          }
+          .review-scroll::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          .review-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 9999px;
+          }
+          .review-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.8);
+          }
+
+          /* For Firefox */
+          .review-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.6) transparent;
           }
         `}
       </style>
+
     </div>
   );
 }
