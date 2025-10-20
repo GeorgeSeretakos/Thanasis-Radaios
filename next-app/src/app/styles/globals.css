@@ -15,7 +15,6 @@ html {
   font-family: var(--font-sans);
 }
 
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -246,6 +245,7 @@ li { @apply mb-1; }
   position: relative;
 }
 
+/* ↓ Smaller font size applied here ↓ */
 .faq-answer .svc-block{
   border: 1px solid rgba(255,255,255,.1);
   background: rgba(255,255,255,.05);
@@ -257,9 +257,25 @@ li { @apply mb-1; }
   height:1px; margin:1rem 0 1.25rem;
   background: linear-gradient(90deg, transparent, var(--svc-accent-line), transparent);
 }
-.faq-answer p{ color:#E5E7EB; line-height:1.75; margin-bottom:1rem; }
-.faq-answer ul, .faq-answer ol{ color:#E5E7EB; padding-left:1.25rem; margin-bottom:1.25rem; }
-.faq-answer li{ margin-bottom:.5rem; }
+
+/* ↓ Smaller FAQ font scale ↓ */
+.faq-answer p {
+  color: #E5E7EB;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.faq-answer ul,
+.faq-answer ol {
+  color: #E5E7EB;
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+.faq-answer li {
+  margin-bottom: .5rem;
+}
+
 .faq-answer .svc-note-inline{
   display:inline-block; padding:.35rem .5rem; border-radius:6px; line-height:1.6;
   background: var(--svc-accent-bg);
@@ -300,6 +316,7 @@ input[type="checkbox"] {
 .faq-answer ul, .faq-answer ol {
   margin: .5rem 0 .75rem 1.1rem;
   padding-left: 1.1rem;
+  font-size: 0.9rem;
 }
 .faq-answer .svc-sec {
   margin-top: 1.1rem;
@@ -317,7 +334,6 @@ input[type="checkbox"] {
 .faq-answer .svc-info { margin: .3rem 0; }
 .faq-answer section + section { margin-top: 1rem; }
 
-
 .svc-rule{
   height: 1px;
   margin: 1rem 0 1.25rem;
@@ -328,4 +344,181 @@ input[type="checkbox"] {
           transparent
   );
   opacity: .9;
+}
+
+/* ──────────────────────────────────────────────
+   Services typography — Roboto Black 16 / Roboto 13
+   ────────────────────────────────────────────── */
+
+/* Titles (e.g., ΑΔΕΙΑ ΔΟΜΗΣΗΣ, ΕΕΔΜΚ) */
+.svc-block .svc-sec {
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 900;            /* Roboto Black */
+  font-size: 16px;             /* one scale bigger */
+  line-height: 1.25;           /* balanced spacing */
+  letter-spacing: .02em;
+  color: var(--brand-accent);
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Description text (paragraphs, list items) */
+.svc-block p,
+.svc-block li,
+.svc-block .svc-note-inline {
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;   /* Roboto Regular */
+  font-size: 13px;    /* one scale bigger */
+  line-height: 1.45;  /* still tight but readable */
+  color: #E5E7EB;
+}
+
+/* Lists */
+.svc-block ul,
+.svc-block ol {
+  margin: 0.45rem 0 0.75rem 1.1rem;
+  padding-left: 1.1rem;
+}
+
+.svc-block li {
+  margin-bottom: 0.3rem;
+}
+
+/* Paragraph spacing */
+.svc-block p {
+  margin-bottom: 0.65rem;
+}
+
+/* ──────────────────────────────────────────────
+   Global typography — unified Roboto styling
+   (Titles: Roboto Black 16 / Body: Roboto 13)
+   ────────────────────────────────────────────── */
+
+/* Base font variable */
+:root {
+  --font-base: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Global defaults */
+html, body {
+  font-family: var(--font-base) !important;
+  font-size: 13px;       /* Body size */
+  line-height: 1.45;     /* Compact, readable */
+  color: #E5E7EB;
+}
+
+/* All content blocks (FAQ, Services, Blog, Content areas) */
+:where(.faq-answer, .svc-block, .blog, .content) {
+  font-family: var(--font-base) !important;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #E5E7EB;
+}
+
+/* Ensure nested text elements inherit properly */
+:where(.faq-answer *, .svc-block *, .blog *, .content *) {
+  font-family: inherit !important;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Unified headings */
+:where(h1, h2, h3, h4, .svc-sec, .title-teal, .title-black) {
+  font-family: var(--font-base) !important;
+  font-weight: 900;      /* Roboto Black */
+  font-size: 16px;       /* Title size */
+  line-height: 1.25;
+  letter-spacing: .02em;
+  /*text-transform: uppercase;*/
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphs, lists, and inline notes */
+:where(p, li, .svc-note-inline) {
+  font-family: var(--font-base);
+  font-weight: 400;     /* Roboto Regular */
+  font-size: 13px;
+  line-height: 1.45;
+  color: #E5E7EB;
+}
+
+/* Lists */
+:where(ul, ol) {
+  margin: 0.45rem 0 0.75rem 1.1rem;
+  padding-left: 1.1rem;
+}
+:where(li) {
+  margin-bottom: 0.3rem;
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 0.65rem;
+}
+
+
+/* ──────────────────────────────────────────────
+   Footer typography (non-home pages)
+   ────────────────────────────────────────────── */
+
+/* Apply only when not on home (detectable via body:not(.home) if you set it) */
+footer:not(.home) h2 {
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 900;          /* Roboto Black */
+  font-size: 16px;           /* ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ */
+  letter-spacing: 0.14em;
+  /*text-transform: uppercase;*/
+  color: #fff;
+}
+
+footer:not(.home) .name-line-main {
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;          /* Roboto Bold */
+  font-size: 14px;           /* ΘΑΝΑΣΗΣ Γ. ΡΑΔΑΙΟΣ */
+  line-height: 1.3;
+  color: #fff;
+}
+
+footer:not(.home) .name-line-sub {
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;          /* Roboto Regular */
+  font-size: 11px;           /* Πολιτικός Μηχανικός ΕΜΠ, MSc */
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ──────────────────────────────────────────────
+   Footer typography — HOME page variant
+   ────────────────────────────────────────────── */
+
+/* ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ */
+footer.home h1 {
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;            /* Roboto Bold */
+  font-size: 25px;             /* Larger headline */
+  letter-spacing: 0.14em;      /* Expanded look */
+  /*text-transform: uppercase;*/
+  color: #fff;
+}
+
+/* ΘΑΝΑΣΗΣ Γ. ΡΑΔΑΙΟΣ */
+footer.home .name-line-main {
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;            /* Roboto Bold */
+  font-size: 14px;
+  line-height: 1.3;
+  color: #fff;
+}
+
+/* Πολιτικός Μηχανικός ΕΜΠ, MSc */
+footer.home .name-line-sub {
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;            /* Roboto Regular */
+  font-size: 11px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.85);
 }

@@ -50,7 +50,7 @@ export default function ServiceAccordion({ items, groupKey }) {
             >
 
 
-              <div className="px-5 py-3 md:px-6 md:py-4 flex items-center justify-between gap-3">
+              <div className="px-5 md:px-6 flex items-center justify-between gap-3">
                 {/* Text side */}
                 <div>
                   <h3 className="text-base md:text-lg font-bold text-white leading-tight">

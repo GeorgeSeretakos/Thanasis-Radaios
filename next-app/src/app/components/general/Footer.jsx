@@ -9,18 +9,23 @@ export default function Footer() {
   // Shared name line (scaled up globally)
   const NameLine = () => (
     <p className="mt-4 text-center leading-tight">
-      <span className="align-baseline text-lg md:text-xl font-medium tracking-wide">
-        ΘΑΝΑΣΗΣ Γ. ΡΑΔΑΙΟΣ
-      </span>
-      <span className="align-baseline text-sm md:text-base font-normal text-white/85">
-        {" "}
+    <span className="name-line-main align-baseline tracking-wide">
+      ΘΑΝΑΣΗΣ Γ. ΡΑΔΑΙΟΣ
+    </span>
+      <span className="name-line-sub align-baseline">
+      {" "}
         – Πολιτικός Μηχανικός ΕΜΠ, MSc
-      </span>
+    </span>
     </p>
   );
 
+
   return (
-    <footer className="w-full bg-[#0B0B0C] text-white h-[calc(100dvh-4rem)] grid grid-rows-[1fr_auto] overflow-x-hidden">
+    <footer
+      className={`w-full bg-[#0B0B0C] text-white h-[calc(100dvh-4rem)] grid grid-rows-[1fr_auto] overflow-x-hidden ${
+        isHome ? "home" : ""
+      }`}
+    >
       {/* MAIN */}
       <section className="min-h-0 h-full flex flex-col">
         {/* CONTENT */}
@@ -217,7 +222,7 @@ export default function Footer() {
         </div>
 
         {/* Map */}
-        <div className="relative w-[100dvw] left-1/2 -translate-x-1/2 h-32 md:h-44 lg:h-56">
+        <div className="relative w-[100dvw] left-1/2 -translate-x-1/2 h-48 md:h-60 lg:h-72">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6304424848936!2d23.693277075851736!3d38.00907959862871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a3b09e2f49df%3A0x67a12e8301f2d17a!2zzqTOlc6nzp3Omc6azp8gzpPOoc6RzqbOlc6Zzp8gLSDOmM6xzr3OrM-DzrfPgiDOky4gzqHOsc60zrHOr86_z4I!5e0!3m2!1sel!2sgr!4v1757517408506!5m2!1sel!2sgr"
             className="absolute inset-0 w-full h-full"
