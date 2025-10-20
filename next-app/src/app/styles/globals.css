@@ -312,7 +312,7 @@ input[type="checkbox"] {
 }
 /* attention-soft keeps original card look */
 .faq-answer p { margin-bottom: .75rem; line-height: 1.55; }
-.faq-answer li { margin-bottom: .35rem; line-height: 1.55; }
+.faq-answer li { margin-bottom: .35rem; line-height: 1.55; font-size: inherit}
 .faq-answer ul, .faq-answer ol {
   margin: .5rem 0 .75rem 1.1rem;
   padding-left: 1.1rem;

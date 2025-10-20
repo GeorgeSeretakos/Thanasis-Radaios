@@ -16,7 +16,8 @@ export default function Page() {
             <div className="flex items-center gap-6 md:gap-10">
               {/* Rounded photo (show full image, not cropped) */}
               <div
-                className="relative w-[9.5rem] sm:w-[10.5rem] md:w-[12rem] lg:w-[13rem] h-[12rem] sm:h-[13rem] md:h-[14rem] lg:h-[15rem] rounded-lg shrink-0 flex items-center justify-center">
+                className="relative w-[11rem] sm:w-[12.5rem] md:w-[14rem] lg:w-[15rem] h-[14rem] sm:h-[15rem] md:h-[16rem] lg:h-[17rem] rounded-lg shrink-0 flex items-center justify-center"
+              >
                 <img
                   src="/images/thanasis/1.jpg"
                   alt="Πορτρέτο: Θανάσης Γ. Ραδαίος"
@@ -28,8 +29,8 @@ export default function Page() {
 
               {/* Name & title vertically centered */}
               <div className="leading-tight text-left">
-                <h3 className="text-lg md:text-xl font-semibold">Θανάσης Γ. Ραδαίος</h3>
-                <p className="mt-1 text-white/75 text-sm md:text-base">
+                <h3>Θανάσης Γ. Ραδαίος</h3>
+                <p className="mt-1 text-white/75">
                   Πολιτικός Μηχανικός <br/> ΕΜΠ MSc
                 </p>
               </div>
