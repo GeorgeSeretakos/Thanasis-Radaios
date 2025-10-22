@@ -77,13 +77,13 @@ export default function Page() {
       {/* Office image — smaller width, show full height (no crop) */}
       <section className="mt-4">
         <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-3xl md:max-w-2xl lg:max-w-3xl">
             <img
-              src="/images/office/1.webp"
-              alt="Χώρος γραφείου — γενική άποψη"
-              className="block w-full h-auto object-contain rounded-none"
-              loading="lazy"
-            />
+            src="/images/office/1.jpg"
+            alt="Χώρος γραφείου — γενική άποψη"
+            className="block w-full h-auto object-contain rounded-none"
+            loading="lazy"
+          />
           </div>
         </div>
       </section>
