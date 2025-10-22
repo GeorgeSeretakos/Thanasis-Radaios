@@ -250,7 +250,7 @@ export default function Footer() {
                 <span>© {year} T. G. Radaios — All rights reserved.</span>
               </div>
               <nav className="flex items-center gap-4">
-                <a href="/privacy" className="hover:text-white/90">
+                <a href="/privacy-policy" className="hover:text-white/90">
                   Privacy Policy
                 </a>
                 <span className="hidden sm:inline text-white/25">|</span>
