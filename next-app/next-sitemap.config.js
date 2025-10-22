@@ -19,6 +19,5 @@ module.exports = {
         await config.transform(config, '/projects'),
         await config.transform(config, '/reviews'),
         await config.transform(config, '/services'),
-        await config.transform(config, '/thank-you'),
     ],
 };
