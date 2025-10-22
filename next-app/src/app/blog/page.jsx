@@ -1,8 +1,8 @@
 "use client";
 import posts from "../../../public/data/blog";
 import BlogCard from "../components/blog/BlogCard";
-import Navbar from "../components/general/Navbar";
 import PageHeader from "../components/general/PageHeader";
+import Footer from "../components/general/Footer";
 
 export default function BlogPage() {
   return (
@@ -20,6 +20,7 @@ export default function BlogPage() {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 }

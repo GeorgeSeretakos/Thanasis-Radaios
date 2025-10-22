@@ -1,8 +1,6 @@
 import { Roboto } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from "./components/general/Navbar";
-import Footer from "./components/general/Footer";
-import RuleWrapper from "./components/general/RuleWrapper";
 import { ReactNode } from "react";
 
 const roboto = Roboto({
@@ -39,8 +37,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
         <Navbar />
         <main className="flex-1 mt-16 text-justify">{children}</main>
-        <RuleWrapper />
-        <Footer />
         </body>
         </html>
     );

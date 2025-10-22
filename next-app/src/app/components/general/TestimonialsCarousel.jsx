@@ -33,7 +33,7 @@ export default function TestimonialsCarousel() {
             rel="noopener noreferrer"
             className="btn btn-primary mt-1 sm:mt-0"
           >
-            Αφήστε κριτική
+            Όλες οι κριτικές
           </Link>
         </div>
 

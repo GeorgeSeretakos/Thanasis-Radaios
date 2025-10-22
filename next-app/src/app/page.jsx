@@ -1,9 +1,7 @@
-import HomeAlt3 from "./components/home/HomeAlt3";
-import HomeAlt1 from "./components/home/HomeAlt1";
-import HomeAlt2 from "./components/home/HomeAlt2";
+import Home from "./components/home/Home";
 
 export const metadata = {
-  title: "Αρχική | Τεχνικό Γραφείο Θ. Γ. Ραδαίος",
+  title: "Τεχνικό Γραφείο Θ. Γ. Ραδαίος",
   description:
     "Τεχνικό Γραφείο Θανάσης Γ. Ραδαίος – Πολιτικός Μηχανικός ΕΜΠ, MSc. Άδεια – Μελέτη – Κατασκευή.",
 };
@@ -11,9 +9,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <HomeAlt1 />
-      <HomeAlt2 />
-      <HomeAlt3 />
+      <Home />
     </>
   );
 }

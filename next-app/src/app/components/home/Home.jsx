@@ -1,13 +1,15 @@
 "use client";
 
-export default function HomeAlt3() {
+export default function Home() {
   const NameLine = () => (
-    <p className="mt-4 text-center leading-tight">
-      <span className="name-line-main align-baseline tracking-wide">
+    <p className="mt-4 text-center leading-tight !text-[16px] sm:!text-[18px] md:!text-[20px]">
+      <span className="name-line-main align-baseline tracking-wide block sm:inline">
         ΘΑΝΑΣΗΣ Γ. Ραδαίος
       </span>
-      <span className="name-line-sub align-baseline">
-        {" "}– Πολιτικός Μηχανικός ΕΜΠ, MSc
+      {/* Dash hidden on mobile, shown from sm+ */}
+      <span className="hidden sm:inline">{" "}–{" "}</span>
+      <span className="name-line-sub align-baseline block sm:inline">
+        Πολιτικός Μηχανικός ΕΜΠ, MSc
       </span>
     </p>
   );
@@ -30,24 +32,24 @@ export default function HomeAlt3() {
       />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 min-h-[calc(100dvh-4rem)] flex flex-col items-center justify-center">
-        {/* Heading */}
+        {/* Heading (one scale smaller, forced) */}
         <h1 className="text-center uppercase leading-none tracking-[0.2em] font-semibold
-                       text-[25px] sm:text-[27px] md:text-[30px]">
+                       !text-[23px] sm:!text-[25px] md:!text-[28px]">
           Τεχνικό Γραφείο
         </h1>
 
-        {/* Logo larger */}
-        <div className="mt-4 w-full max-w-[520px] sm:max-w-[560px]">
+        {/* Logo one scale smaller */}
+        <div className="mt-4 w-full max-w-[480px] sm:max-w-[520px]">
           <img
-            src="/logo/logo_sign.png"
+            src="/logo/logo_final.png"
             alt="Λογότυπο"
-            className="mx-auto w-full h-36 sm:h-40 md:h-44 object-contain"
+            className="mx-auto w-full h-32 sm:h-36 md:h-40 object-contain"
           />
         </div>
 
         <NameLine />
 
-        {/* One-line contacts on desktop */}
+        {/* One-line contacts on desktop — sizes unchanged */}
         <div className="mt-6">
           <div className="flex flex-col md:flex-row items-center justify-center
                           gap-y-4 md:gap-y-0 md:gap-x-12 text-sm md:text-base">
@@ -75,7 +77,7 @@ export default function HomeAlt3() {
           </div>
         </div>
 
-        {/* CTA row (optional) */}
+        {/* CTA row — size unchanged */}
         <div className="mt-8">
           <a
             href="/contact"
